@@ -1,6 +1,10 @@
 table stats
 	lineageTag: 30a86047-a39d-490d-8ec2-9f4a178bc157
 
+	measure p-value = AVERAGE(stats[p_value])
+		formatString: 0.000
+		lineageTag: 0be01dbc-d81d-463d-8d75-b69e85bfe575
+
 	column group
 		dataType: string
 		lineageTag: c61c7d27-0175-4947-867e-14ea1dfea784
@@ -60,10 +64,6 @@ table stats
 
 		annotation SummarizationSetBy = Automatic
 
-	measure 'p-value' = AVERAGE(stats[p_value])
-		formatString: 0.000
-		lineageTag: 0be01dbc-d81d-463d-8d75-b69e85bfe575
-
 	partition stats = m
 		mode: import
 		source =
@@ -75,3 +75,4 @@ table stats
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

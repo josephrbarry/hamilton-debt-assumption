@@ -1,12 +1,104 @@
 table states
 	lineageTag: f259239c-d95c-4d44-962f-e54f26f74573
 
+	measure 'Hamilton estimate' = SUM(states[estimate_1790_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e4868f08-6b26-471f-ab91-9f7e23bbd77f
+
+	measure 'Act quota' = SUM(states[quota_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f5ff8a02-974d-48f6-9965-a3eeae59eea5
+
+	measure 'Act quota (2025 $)' = SUM(states[quota_usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a748f795-a1bb-43ce-8b96-4513ead46fac
+
+	measure 'Quota less estimate' = SUM(states[quota_vs_estimate_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9f14cece-77e8-40f8-bfa2-b7b8032fc067
+
+	measure 'Subscribed Jan 1792' = SUM(states[subscribed_1792_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9ecb5c1c-b19a-4198-8c63-ab8005bb9d05
+
+	measure 'Assumed (final)' = SUM(states[assumed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 75fa9886-d7ef-41a0-8333-05202a29cea1
+
+	measure 'Assumed (2025 $)' = SUM(states[assumed_usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 41423732-7319-4517-bcc3-e635316e436f
+
+	measure 'Unused quota' = SUM(states[quota_unused_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 62d4cf12-febe-4e64-85b2-5d477875bcbb
+
+	measure 'Take-up %' = DIVIDE(SUM(states[assumed_usd]), SUM(states[quota_usd])) * 100
+		formatString: 0.0
+		lineageTag: 1c44d400-ebc8-4ed4-ac74-9363e65bd503
+
+	measure '1793 settlement' = SUM(states[settlement_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d7f88958-af9f-477f-a18f-5427c6b063be
+
+	measure '1793 settlement (2025 $)' = SUM(states[settlement_usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7e23f139-aa29-4812-979c-55c290c29236
+
+	measure 'Settlement (absolute)' = SUM(states[settlement_abs_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5f6f1bfe-4d43-4751-bd3e-9c29a5b9b2e8
+
+	measure 'Net position' = SUM(states[net_position_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 3565ecb8-806a-4e8a-9b13-dc727cae4b47
+
+	measure 'Net position (2025 $)' = SUM(states[net_position_usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2b7fd5f0-35d0-4019-b9de-69f91fa6c451
+
+	measure 'Population 1790' = SUM(states[pop_total_1790])
+		formatString: #,0
+		lineageTag: b4c76448-bb49-4982-a538-9434be38c977
+
+	measure 'Pop. share %' = SUM(states[pop_share_pct])
+		formatString: 0.0
+		lineageTag: ef5968e7-9589-4300-a5f7-fbfb61a82ee4
+
+	measure 'Quota share %' = SUM(states[quota_share_pct])
+		formatString: 0.0
+		lineageTag: 62a54e9e-af03-4f36-9c71-66c31b3f5f72
+
+	measure 'Quota per head' = DIVIDE(SUM(states[quota_usd]), SUM(states[pop_total_1790]))
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: edace5e0-0e28-4e04-9128-b29c0627f8cd
+
+	measure 'Relief per head' = DIVIDE(SUM(states[assumed_usd]), SUM(states[pop_total_1790]))
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: f74cd759-af6d-44bb-87bb-85b8e874be20
+
+	measure 'Settlement per head' = DIVIDE(SUM(states[settlement_usd]), SUM(states[pop_total_1790]))
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 8852b158-4767-450e-9864-92d15e3e64a0
+
+	measure 'Settlement per head (2025 $)' = DIVIDE(SUM(states[settlement_usd_2025]), SUM(states[pop_total_1790]))
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 92dbb0c6-1138-46ed-9987-9ec3ecd1b88d
+
+	measure 'Net per head' = DIVIDE(SUM(states[net_position_usd]), SUM(states[pop_total_1790]))
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: f2094d4a-f429-4cdc-bb24-92113afed337
+
+	measure 'Net per head (2025 $)' = DIVIDE(SUM(states[net_position_usd_2025]), SUM(states[pop_total_1790]))
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 25616ec1-05c2-4f3d-b026-15710cf76a50
+
 	column state
 		dataType: string
 		lineageTag: 009cbdb5-d3a8-4d05-a0ad-8f734cd71e27
+		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: state
-		dataCategory: StateOrProvince
 
 		annotation SummarizationSetBy = Automatic
 
@@ -394,98 +486,6 @@ table states
 
 		annotation SummarizationSetBy = Automatic
 
-	measure 'Hamilton estimate' = SUM(states[estimate_1790_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: e4868f08-6b26-471f-ab91-9f7e23bbd77f
-
-	measure 'Act quota' = SUM(states[quota_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: f5ff8a02-974d-48f6-9965-a3eeae59eea5
-
-	measure 'Act quota (2025 $)' = SUM(states[quota_usd_2025])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a748f795-a1bb-43ce-8b96-4513ead46fac
-
-	measure 'Quota less estimate' = SUM(states[quota_vs_estimate_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 9f14cece-77e8-40f8-bfa2-b7b8032fc067
-
-	measure 'Subscribed Jan 1792' = SUM(states[subscribed_1792_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 9ecb5c1c-b19a-4198-8c63-ab8005bb9d05
-
-	measure 'Assumed (final)' = SUM(states[assumed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 75fa9886-d7ef-41a0-8333-05202a29cea1
-
-	measure 'Assumed (2025 $)' = SUM(states[assumed_usd_2025])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 41423732-7319-4517-bcc3-e635316e436f
-
-	measure 'Unused quota' = SUM(states[quota_unused_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 62d4cf12-febe-4e64-85b2-5d477875bcbb
-
-	measure 'Take-up %' = DIVIDE(SUM(states[assumed_usd]), SUM(states[quota_usd])) * 100
-		formatString: 0.0
-		lineageTag: 1c44d400-ebc8-4ed4-ac74-9363e65bd503
-
-	measure '1793 settlement' = SUM(states[settlement_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: d7f88958-af9f-477f-a18f-5427c6b063be
-
-	measure '1793 settlement (2025 $)' = SUM(states[settlement_usd_2025])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 7e23f139-aa29-4812-979c-55c290c29236
-
-	measure 'Settlement (absolute)' = SUM(states[settlement_abs_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 5f6f1bfe-4d43-4751-bd3e-9c29a5b9b2e8
-
-	measure 'Net position' = SUM(states[net_position_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 3565ecb8-806a-4e8a-9b13-dc727cae4b47
-
-	measure 'Net position (2025 $)' = SUM(states[net_position_usd_2025])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 2b7fd5f0-35d0-4019-b9de-69f91fa6c451
-
-	measure 'Population 1790' = SUM(states[pop_total_1790])
-		formatString: #,0
-		lineageTag: b4c76448-bb49-4982-a538-9434be38c977
-
-	measure 'Pop. share %' = SUM(states[pop_share_pct])
-		formatString: 0.0
-		lineageTag: ef5968e7-9589-4300-a5f7-fbfb61a82ee4
-
-	measure 'Quota share %' = SUM(states[quota_share_pct])
-		formatString: 0.0
-		lineageTag: 62a54e9e-af03-4f36-9c71-66c31b3f5f72
-
-	measure 'Quota per head' = DIVIDE(SUM(states[quota_usd]), SUM(states[pop_total_1790]))
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: edace5e0-0e28-4e04-9128-b29c0627f8cd
-
-	measure 'Relief per head' = DIVIDE(SUM(states[assumed_usd]), SUM(states[pop_total_1790]))
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: f74cd759-af6d-44bb-87bb-85b8e874be20
-
-	measure 'Settlement per head' = DIVIDE(SUM(states[settlement_usd]), SUM(states[pop_total_1790]))
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 8852b158-4767-450e-9864-92d15e3e64a0
-
-	measure 'Settlement per head (2025 $)' = DIVIDE(SUM(states[settlement_usd_2025]), SUM(states[pop_total_1790]))
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 92dbb0c6-1138-46ed-9987-9ec3ecd1b88d
-
-	measure 'Net per head' = DIVIDE(SUM(states[net_position_usd]), SUM(states[pop_total_1790]))
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: f2094d4a-f429-4cdc-bb24-92113afed337
-
-	measure 'Net per head (2025 $)' = DIVIDE(SUM(states[net_position_usd_2025]), SUM(states[pop_total_1790]))
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 25616ec1-05c2-4f3d-b026-15710cf76a50
-
 	partition states = m
 		mode: import
 		source =
@@ -497,3 +497,4 @@ table states
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

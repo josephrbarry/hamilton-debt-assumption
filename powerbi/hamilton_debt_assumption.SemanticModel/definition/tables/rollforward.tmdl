@@ -1,6 +1,14 @@
 table rollforward
 	lineageTag: fd2e3391-dc59-45d5-b691-0d0b8e8d8b4e
 
+	measure 'RF 1790 $' = SUM(rollforward[usd_1790])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9f89030d-6168-4e8d-9ea7-6f52d095a056
+
+	measure 'RF 2025 $' = SUM(rollforward[usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: adbc4da9-214a-488e-8e50-962520ce8df0
+
 	column line_order
 		dataType: int64
 		formatString: 0
@@ -55,14 +63,6 @@ table rollforward
 
 		annotation SummarizationSetBy = Automatic
 
-	measure 'RF 1790 $' = SUM(rollforward[usd_1790])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 9f89030d-6168-4e8d-9ea7-6f52d095a056
-
-	measure 'RF 2025 $' = SUM(rollforward[usd_2025])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: adbc4da9-214a-488e-8e50-962520ce8df0
-
 	partition rollforward = m
 		mode: import
 		source =
@@ -74,3 +74,4 @@ table rollforward
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

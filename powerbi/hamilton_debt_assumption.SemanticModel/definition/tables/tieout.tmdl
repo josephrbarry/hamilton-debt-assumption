@@ -1,6 +1,18 @@
 table tieout
 	lineageTag: 927cc773-7929-42db-9faf-4a0e26143513
 
+	measure Stated = SUM(tieout[stated_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 76d20207-e658-48d8-8e42-bf0b0583c5b4
+
+	measure Computed = SUM(tieout[computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9e66c7ab-91ad-4d5c-965e-aee3f69bde3d
+
+	measure Variance = SUM(tieout[variance_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c0ee8f85-9046-42b9-9311-a1198172cc17
+
 	column document
 		dataType: string
 		lineageTag: c929a0ef-116a-4cea-9393-c7da3fa36228
@@ -62,18 +74,6 @@ table tieout
 
 		annotation SummarizationSetBy = Automatic
 
-	measure 'Stated' = SUM(tieout[stated_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 76d20207-e658-48d8-8e42-bf0b0583c5b4
-
-	measure 'Computed' = SUM(tieout[computed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 9e66c7ab-91ad-4d5c-965e-aee3f69bde3d
-
-	measure 'Variance' = SUM(tieout[variance_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: c0ee8f85-9046-42b9-9311-a1198172cc17
-
 	partition tieout = m
 		mode: import
 		source =
@@ -85,3 +85,4 @@ table tieout
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

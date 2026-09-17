@@ -153,7 +153,7 @@ parentheses, and both dollar bases side by side.
 | E · 1793 T-account | Creditors (Dr) and debtors (Cr), both footing to $3,517,584; sides to scale | T-account + treemap |
 | F · Fairness test | Relief vs. settlement scatter, net position | scatter |
 | G · Apportionment | Quota minus per-head share, population-basis slicer | diverging bars |
-| H · Statistics & sources | Test schedule, notes, sources | table |
+| H · Statistics & sources | Test schedule and sources | table |
 
 **Schedule A - Summary & opinion.** Six KPIs, the opinion, the bridge from $21.5M
 authorized to $18.27M assumed, a roll-forward that foots, and the summary ledger.
