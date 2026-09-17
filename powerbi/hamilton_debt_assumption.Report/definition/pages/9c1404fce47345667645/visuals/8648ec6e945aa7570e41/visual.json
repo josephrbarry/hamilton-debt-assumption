@@ -6,7 +6,7 @@
     "y": 144,
     "z": 0,
     "height": 888,
-    "width": 1208,
+    "width": 1208.0,
     "tabOrder": 0
   },
   "visual": {
@@ -447,7 +447,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'A: regional tilt in quotas? B: did relief track 1793 contribution? C: proportional to population?'"
+                  "Value": "'A: regional tilt in quotas? B: did relief track 1793 contribution? C: proportional to population? p-values are uncorrected for multiple comparisons; C is descriptive (no p-value).'"
                 }
               }
             },

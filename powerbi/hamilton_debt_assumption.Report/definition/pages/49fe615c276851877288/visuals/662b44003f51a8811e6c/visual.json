@@ -6,11 +6,12 @@
     "y": 144,
     "z": 0,
     "height": 535.68,
-    "width": 586.07999999999993,
+    "width": 586.0799999999999,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -44,8 +45,7 @@
               },
               "queryRef": "states.1793 settlement",
               "nativeQueryRef": "1793 settlement",
-              "active": false,
-              "displayName": "Dr - due to state"
+              "displayName": "Dr - due from state"
             },
             {
               "field": {
@@ -60,7 +60,6 @@
               },
               "queryRef": "states.1793 settlement (2025 $)",
               "nativeQueryRef": "1793 settlement (2025 $)",
-              "active": false,
               "displayName": "1793 settlement (2025 $)"
             },
             {
@@ -76,7 +75,6 @@
               },
               "queryRef": "states.Settlement per head",
               "nativeQueryRef": "Settlement per head",
-              "active": false,
               "displayName": "Settlement per head"
             }
           ]
@@ -95,7 +93,7 @@
                 "Property": "1793 settlement"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ],
         "isDefaultSort": true
@@ -383,7 +381,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dr  ·  Creditor states: balances due TO the state'"
+                  "Value": "'Dr  \u00b7  Debtor states: balances due FROM the state'"
                 }
               }
             },
@@ -435,7 +433,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Seven states over-contributed to the common cost.'"
+                  "Value": "'Six states under-contributed to the common cost. Shown as negatives (in parentheses) to match the settlement sign convention used throughout.'"
                 }
               }
             },
@@ -501,13 +499,12 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "c561315bd662a465eb2b",
+        "name": "9ee4a78cf393e4cbdc3a",
         "field": {
           "Column": {
             "Expression": {
@@ -548,49 +545,42 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'New Hampshire'"
+                          "Value": "'New York'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Massachusetts'"
+                          "Value": "'Pennsylvania'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Rhode Island'"
+                          "Value": "'Delaware'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Connecticut'"
+                          "Value": "'Maryland'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'New Jersey'"
+                          "Value": "'Virginia'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'South Carolina'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Georgia'"
+                          "Value": "'North Carolina'"
                         }
                       }
                     ]

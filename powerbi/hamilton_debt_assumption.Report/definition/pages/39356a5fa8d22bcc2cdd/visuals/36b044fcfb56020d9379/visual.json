@@ -6,7 +6,7 @@
     "y": 298,
     "z": 0,
     "height": 734,
-    "width": 720,
+    "width": 720.0,
     "tabOrder": 0
   },
   "visual": {
@@ -340,7 +340,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Five primary ledgers, each footed before use (Schedule B). One does not foot: a $500,000 line error in the 1792 subscription table, reconciled and disclosed.",
+                    "value": "Five primary ledgers, each footed before use (Schedule B). One does not foot: two line errors in the 1792 subscription table ($500,000 and $30,000), reconciled and disclosed.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -362,7 +362,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "1790 specie dollars; 2025 dollars at 36.3x CPI. $21.5M was ~11% of 1790 GDP, about $3.4 trillion in today's economy.",
+                    "value": "1790 specie dollars; 2025 dollars at 36.3x CPI. $21.5M was ~11% of 1790 GDP (a modern reconstruction), about $3.4 trillion in today's economy.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

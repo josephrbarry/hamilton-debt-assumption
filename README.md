@@ -12,18 +12,22 @@ and the 1793 settlement of war accounts - and asks whether the split was defensi
 
 ## Dollars
 
-All amounts are shown as **1790 $ (2025 $)**. Conversion is by CPI at 36.3x
+All amounts are shown as **1790 $ [2025 $ in brackets]**. Conversion is by CPI at 36.3x
 (MeasuringWorth; the Federal Reserve's series starts in 1800 and gives ~19x from that
-year). CPI understates the scale: the $21.5M authorized was about **11% of 1790 GDP**.
-The same share of today's economy is roughly **$3.4 trillion**.
+year). CPI understates the scale: the $21.5M authorized was about **11% of 1790 GDP**
+(a modern reconstruction - no national accounts existed - so an order of magnitude).
+The same share of today's economy is roughly **$3.4 trillion**. Negatives are shown in
+parentheses throughout.
 
 ## The question
 
 Hamilton's *First Report on Public Credit* (January 1790) proposed that the federal
 government assume the states' unpaid war debts. Madison and Virginia objected: states
 that had already taxed themselves to pay down debt would now fund relief for states
-that hadn't. The bill deadlocked, then passed via the Compromise of 1790 (capital on
-the Potomac, Virginia's quota raised).
+that hadn't. The bill deadlocked, then passed via the Compromise of 1790: the capital
+went to the Potomac, and Virginia's quota was set at $3.5M - about what Virginia would
+pay in federal taxes, so it would "neither gain nor lose." That was below Hamilton's own
+$3.68M estimate of Virginia's debt.
 
 This is the accountant's version of that fight: **if you had to defend the allocation
 to an auditor, could you?**
@@ -46,8 +50,10 @@ boundary decisions, and OCR reconciliation in [`data/SOURCES.md`](data/SOURCES.m
 
 **The source documents don't all foot.** Hamilton's 1792 subscription table states a
 total of $18,328,186 but its rows sum to $17,798,186. Row-level tie-out (quota minus
-subscribed must equal unsubscribed) isolates a $500,000 transcription error in the North
-Carolina line. Found before any analysis was run; reconciled figure used throughout.
+subscribed must equal unsubscribed) isolates a $500,000 error in the North Carolina line
+and a $30,000 error in the Massachusetts over-subscription line - and the second one was
+carried into the printed total, which explains the whole gap. Reconciled total:
+$18,298,186. Found before any analysis was run; reconciled figures used throughout.
 
 **The quotas were set on a balance sheet that was one-third estimate and one-third
 blank.** Six states sent returns. Hamilton estimated three by round number. Four (RI, DE,
@@ -55,12 +61,15 @@ NC, GA) had nothing on file and were assigned $3.1M between them anyway - North
 Carolina's $2.4M is the largest figure in the Act with no return behind it.
 
 **Congress cut the two biggest claimants by a quarter.** Massachusetts and South
-Carolina reported $5.2M and $5.4M; the Act capped both at $4.0M. Both then
-over-subscribed their quota, confirming the reported debt was real.
+Carolina reported $5.2M and $5.4M; the Act capped both at $4.0M. Both then subscribed
+more than their quota in the first window, confirming the reported debt was real - but
+the quota was a ceiling, so neither received more than $4.0M (final: SC $3,999,652,
+MA $3,981,733).
 
 **Utilization was 85%.** $18.27M of $21.5M was assumed. Pennsylvania used 35% of its
-quota, Delaware 30%. The Act absorbed about two-thirds of state debt, not all of it -
-Hamilton's own estimate left $8.3M still on state books.
+quota, Delaware 30%. By Hamilton's own estimate, which left $8.3M still on state
+books, the Act absorbed about 70% of state debt, not all of it - though that residual
+is his estimate, graded a-f for reliability, not an audited figure.
 
 **Virginia was a debtor state.** The 1793 commissioners found Virginia owed the Union
 $100,879. Madison's argument - that Virginia had over-paid for the war - was contradicted
@@ -69,18 +78,20 @@ accounting correction.
 
 **Relief tracked contribution.** Creditor states (the seven the commissioners found were
 owed money) received $6.12 per head of debt relief; debtor states received $2.67
-(exact permutation p = 0.047; Spearman rho = 0.55). The Act didn't have the settlement
-numbers, but it landed on the right side of them.
+(exact permutation p = 0.047, uncorrected for multiple comparisons; Spearman rho = 0.55
+per head, 0.31 on raw dollars, since per-capita ratios share a denominator). Suggestive,
+not confirmatory - with 13 states the 2.3x effect size is the reliable statement. The Act
+didn't have the settlement numbers, but it landed on the right side of them.
 
 **Not proportional to population, and not meant to be.** About 20% of the $21.5M would
 have to move between states to match any population basis (total, free, or
-three-fifths). The "New England vs. South" story doesn't hold: exact permutation
-p = 0.78. South Carolina alone ($16.06 per head, 3x the mean, the only outlier) drives
-the Southern average.
+three-fifths). No detectable "New England vs. South" tilt: exact permutation p = 0.78,
+though with 4 vs. 5 states the test has little power. South Carolina alone ($16.06 per
+head, 3x the mean, the only outlier) drives the Southern average.
 
 **Net position, 1790-93.** Adding relief received to the settlement balance, eleven of
-thirteen states came out ahead. South Carolina gained $20.90 per head ($759 today),
-Massachusetts $11.00. New York (-$2.62) and Delaware (-$9.36) lost - both were
+thirteen states came out ahead. South Carolina gained $20.90 per head [$759 today],
+Massachusetts $11.00. New York ($2.62) and Delaware ($9.36) lost - both were
 under-allocated in the Act *and* debtors in the settlement.
 
 ![reconciliation](output/fig_reconciliation.png)
@@ -110,6 +121,12 @@ level - it's about who held the paper, which needs subscriber-level records.
   but with n = 4 to 7 per group they have little power. Effect sizes are reported first.
 - **Three tests, same answer.** Welch t, Mann-Whitney, and exact permutation agree on
   every comparison. Cheap insurance against "did you check normality?"
+- **No chi-square.** A goodness-of-fit test assumes counts and its value depends on the
+  unit chosen, so it isn't valid on dollar amounts. The dissimilarity index carries the
+  apportionment finding on its own.
+- **Multiple comparisons disclosed.** Seven tests are reported, uncorrected. The one
+  borderline result (p = 0.047) was the single pre-specified directional test; it's
+  labelled suggestive.
 - **Dissimilarity index.** "Share that would have to move" is half the sum of absolute
   gaps as a percent of the total - the same construct as budget-vs-benchmark variance.
 - **The denominator is a choice.** Per capita by total vs. free population reorders the

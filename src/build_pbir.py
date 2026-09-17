@@ -399,7 +399,7 @@ def card(name, x, y, w, h, *, field, title, filters=None, accent=NAVY, precision
 def gauge(name, x, y, w, h, *, value, target, maximum, title, subtitle=None) -> dict:
     return visual(
         name, "gauge", x, y, w, h,
-        roles={"Y": [value], "TargetValue": [target], "MaxValue": [maximum]},
+        roles={"Y": [value], "MaxValue": [maximum], **({"TargetValue": [target]} if target else {})},
         title=title, subtitle=subtitle,
         objects={"dataPoint": [{"properties": {"fill": color(GOLD), "target": color(NAVY)}}],
                  "labels": data_labels(True, 0, "1000000D"),
@@ -475,7 +475,7 @@ def header(prefix: str, schedule: str, headline: str, caption: str, page_no: int
         textbox(f"{prefix}-pageno", PAGE_W - M - 170, 22, 170, 70,
                 [(f"Schedule {schedule}  ·  {page_no} of {TOTAL_PAGES}", 10, False, "#C5CEDC"),
                  ("Prepared by R. Barry", 10, False, "#C5CEDC"),
-                 ("1790 $ · (2025 $ at 36.3x)", 10, False, "#C9B77A")]),
+                 ("1790 $ · [2025 $ at 36.3x]", 10, False, "#C9B77A")]),
     ]
 
 
@@ -556,10 +556,10 @@ def page_summary() -> str:
         ("Madison: wrong on his own state. The audit he demanded found Virginia a net debtor, "
          "$100,879.", 11, False, INK),
         ("Basis of preparation", 13, True, NAVY, HFONT),
-        ("Five primary ledgers, each footed before use (Schedule B). One does not foot: a $500,000 "
-         "line error in the 1792 subscription table, reconciled and disclosed.", 10, False, GREY),
-        ("1790 specie dollars; 2025 dollars at 36.3x CPI. $21.5M was ~11% of 1790 GDP, about "
-         "$3.4 trillion in today's economy.", 10, False, GREY),
+        ("Five primary ledgers, each footed before use (Schedule B). One does not foot: two line "
+         "errors in the 1792 subscription table ($500,000 and $30,000), reconciled and disclosed.", 10, False, GREY),
+        ("1790 specie dollars; 2025 dollars at 36.3x CPI. $21.5M was ~11% of 1790 GDP (a modern "
+         "reconstruction), about $3.4 trillion in today's economy.", 10, False, GREY),
     ]
     vis = header(
         "p0", "A", "Was Hamilton's 1790 debt assumption fair?",
@@ -617,14 +617,15 @@ def page_tieout() -> str:
          "to $17,798,186.21. Line-level tie-out isolates the whole $500,000 in North Carolina: quota "
          "$2,400,000 less printed subscribed $1,166,355.57 gives $1,233,644.43 unsubscribed, but the "
          "document prints $733,644.43. The reconciled figure $1,666,355.57 is used throughout.", 10, False, INK),
-        ("After correction the column is $30,000 short of the printed total; source not identified. Maryland "
-         "is $30 out - immaterial. The document's own totals are internally consistent (quota less "
-         "unsubscribed plus over-subscribed = $18,328,186), so the error sits in one printed line, not "
-         "in the Treasury's arithmetic.", 10, False, INK),
-        ("Every other document ties.", 10, True, TEAL),
+        ("After that correction the column is still $30,000 short of the printed total. A second line "
+         "explains it: Massachusetts's over-subscription is printed as $477,013.81, but $4,447,013.81 "
+         "subscribed less the $4,000,000 quota is $447,013.81. The Treasury carried the wrong line into "
+         "its total. Reconciled total: $18,298,186.21. Maryland is $30 out - immaterial.", 10, False, INK),
+        ("Both errors sit in single printed lines, not in the Treasury's arithmetic. Every other "
+         "document ties.", 10, True, TEAL),
     ]
     vis = header(
-        "p1", "B", "Tie-out: four of five source documents foot. One does not.",
+        "p1", "B", "Tie-out: four of five source documents foot. One has two line errors.",
         "Each table was footed against its own printed total before any analysis. Ties = variance under $1. "
         "Ties (rounded) = under $5,000 and explained. Does not foot = investigated and disclosed below.", 2,
     ) + [
@@ -715,14 +716,14 @@ def page_takeup() -> str:
                   subtitle="Bar length = Act quota. Gold = assumed; pale = left on the table.",
                   sort_field=QUOTA["field"], labels=False, x_title="1790 $"),
         gauge("p3-gauge", rx, TOP, right_w, gauge_h,
-              value=ASSUMED, target=QUOTA, maximum=QUOTA,
+              value=ASSUMED, target=None, maximum=QUOTA,
               title="Utilization: $18.27M assumed of $21.50M authorized ($663M of $780M in 2025 $)",
               subtitle="Needle = assumed; end of dial = authorized."),
         table("p3-table", rx, TOP + gauge_h + GAP, right_w, h - gauge_h - GAP,
               values=[STATE, QUOTA, SUBSCRIBED, ASSUMED, UNUSED, TAKEUP, ASSUMED_25],
               title="Take-up schedule by state",
-              subtitle="Subscribed = first window to Sep 1791 (MA, RI, SC over-subscribed and were scaled back to "
-                       "quota). Assumed = final after extension to 1793. Totals row foots to Schedule B.",
+              subtitle="Subscribed = first window to Sep 1791 (MA, RI, SC subscribed above quota; the quota was a "
+                       "ceiling). Assumed = final after extension to 1 Mar 1793. Totals row foots to Schedule B.",
               sort_by=TAKEUP["field"], sort_dir="Descending", totals=True),
     ]
     return page("takeup", "D · Take-up", vis)
@@ -741,36 +742,38 @@ def page_settlement() -> str:
     creditors = [f for f in ["New Hampshire", "Massachusetts", "Rhode Island", "Connecticut",
                              "New Jersey", "South Carolina", "Georgia"]]
     debtors = ["New York", "Pennsylvania", "Delaware", "Maryland", "Virginia", "North Carolina"]
-    DEBIT = proj_sum("states", "settlement_usd", "Dr - due to state")
-    CREDIT = proj_sum("states", "settlement_usd", "Cr - due from state")
+    DEBIT = proj_sum("states", "settlement_usd", "Dr - due from state")
+    CREDIT = proj_sum("states", "settlement_usd", "Cr - due to state")
 
     vis = header(
         "p4", "E", "The true-up: the 1793 settlement of war accounts, posted as a T-account. Both sides foot to $3,517,584.",
         "This is the audit Madison demanded before assumption. Each state's war expenditure was netted against "
-        "its share of the common cost. Debit side = the Union owed the state (creditor). Credit side = the state "
-        "owed the Union (debtor). Virginia is on the credit side. Source: Commissioners to Washington, 29 Jun 1793.", 5,
+        "its share of the common cost. Posted as 'the States in account with the United States': a debit balance "
+        "means the state owes the Union (debtor); a credit balance means the Union owes the state (creditor). "
+        "Virginia is on the debit side. Source: Commissioners to Washington, 29 Jun 1793.", 5,
     ) + [
         treemap("p4-treemap", M, TOP, map_w, h,
                 group=POSITION, details=STATE, value=proj_sum("states", "settlement_abs_usd", "Balance (absolute)"),
                 title="The two sides of the account, to scale",
                 subtitle="Tile area = absolute balance. The teal block and the red block are the same size: "
-                         "$3,517,584 each. Massachusetts and South Carolina are two-thirds of the debit side; "
-                         "New York is 59% of the credit side.",
+                         "$3,517,584 each. Massachusetts and South Carolina are 70% of the credit (creditor) "
+                         "side; New York is 59% of the debit (debtor) side.",
                 colors=POSITION_COLORS),
         table("p4-dr", lx, TOP, t_w, t_h,
               values=[STATE, DEBIT, SETTLEMENT_25, SETTLEMENT_PC],
-              title="Dr  ·  Creditor states: balances due TO the state",
-              subtitle="Seven states over-contributed to the common cost.",
-              filters=[state_filter(creditors)], sort_by=DEBIT["field"], sort_dir="Descending", totals=True),
+              title="Dr  ·  Debtor states: balances due FROM the state",
+              subtitle="Six states under-contributed to the common cost. Shown as negatives (in parentheses) "
+                       "to match the settlement sign convention used throughout.",
+              filters=[state_filter(debtors)], sort_by=DEBIT["field"], sort_dir="Ascending", totals=True),
         table("p4-cr", rx, TOP, t_w, t_h,
               values=[STATE, CREDIT, SETTLEMENT_25, SETTLEMENT_PC],
-              title="Cr  ·  Debtor states: balances due FROM the state",
-              subtitle="Six states under-contributed. Negatives in parentheses.",
-              filters=[state_filter(debtors)], sort_by=CREDIT["field"], sort_dir="Ascending", totals=True),
+              title="Cr  ·  Creditor states: balances due TO the state",
+              subtitle="Seven states over-contributed to the common cost.",
+              filters=[state_filter(creditors)], sort_by=CREDIT["field"], sort_dir="Descending", totals=True),
         bar_chart("p4-bars", lx, TOP + t_h + GAP, t_w * 2 + GAP, bar_h,
                   category=STATE, series=[SETTLEMENT_PC], legend_field=POSITION, legend_pairs=POSITION_COLORS,
                   title="Settlement balance per head, 1790 $",
-                  subtitle="New York ($6.10) per head, about ($221) today. South Carolina $4.84, about $176. Virginia ($0.12).",
+                  subtitle="New York ($6.10) per head [($221) today]. South Carolina $4.84 [$176]. Virginia ($0.12). Negatives in parentheses, 2025 $ in brackets.",
                   labels=True, precision=2, x_title="1790 $ per head"),
     ]
     return page("settlement", "E · 1793 T-account", vis)
@@ -788,7 +791,8 @@ def page_fairness() -> str:
         "p5", "F", "Relief tracked contribution: creditor states received 2.3x the relief per head of debtor states.",
         "Hamilton's defence was that the state debts were incurred for a common cause, so relieving them was rough "
         "justice. If so, states the 1793 audit found had over-paid should have received more relief. They did: "
-        "$6.12 vs $2.67 per head (exact permutation p = 0.047; Spearman rho = 0.55).", 6,
+        "$6.12 vs $2.67 per head (exact permutation p = 0.047, uncorrected; Spearman rho = 0.55 per head, "
+        "0.31 on raw dollars). Suggestive, not confirmatory - see Schedule H.", 6,
     ) + [
         scatter("p5-scatter", M, TOP, half_w, top_h,
                 category=STATE, xf=ASSUMED_PC, yf=SETTLEMENT_PC,
@@ -799,7 +803,7 @@ def page_fairness() -> str:
         bar_chart("p5-net", rx, TOP, half_w, top_h,
                   category=STATE, series=[NET_PC], legend_field=POSITION, legend_pairs=POSITION_COLORS,
                   title="Net position per head: relief plus settlement, 1790 $",
-                  subtitle="Eleven of thirteen came out ahead. South Carolina $20.90 ($759 today); Delaware ($9.36); New York ($2.62).",
+                  subtitle="Eleven of thirteen came out ahead. South Carolina $20.90 [$759 today]; Delaware ($9.36); New York ($2.62). Negatives in parentheses, 2025 $ in brackets.",
                   labels=True, precision=2, x_title="1790 $ per head"),
         table("p5-table", M, TOP + top_h + GAP, PAGE_W - 2 * M, bot_h,
               values=[STATE, REGION, POSITION, ASSUMED, SETTLEMENT, NET, NET_25, NET_PC, NET_PC_25, POP_SHARE],
@@ -824,8 +828,8 @@ def page_apportionment() -> str:
     vis = header(
         "p6", "G", "Not proportional to population: one dollar in five sits in a different state than a per-head split would put it.",
         "What each state would have received had $21.5M been split like congressional apportionment, versus the Act. "
-        "Choose the population basis at right; the answer barely moves. The 'North vs South' story fails "
-        "(permutation p = 0.78): South Carolina alone drives the Southern mean.", 7,
+        "Choose the population basis at right; the answer barely moves. No detectable 'North vs South' tilt "
+        "(permutation p = 0.78, low power at n = 4 vs 5): South Carolina alone drives the Southern mean.", 7,
     ) + [
         bar_chart("p6-diverging", M, TOP, left_w, h,
                   category=CF_STATE, series=[GAP_USD],
@@ -891,7 +895,8 @@ def page_stats_about() -> str:
                       proj_avg("stats", "p_value", "p-value"),
                       proj_col("stats", "read", display="Reading")],
               title="Test schedule",
-              subtitle="A: regional tilt in quotas? B: did relief track 1793 contribution? C: proportional to population?",
+              subtitle="A: regional tilt in quotas? B: did relief track 1793 contribution? C: proportional to population? "
+                       "p-values are uncorrected for multiple comparisons; C is descriptive (no p-value).",
               sort_by=proj_col("stats", "test")["field"], sort_dir="Ascending", totals=False),
         textbox("p7-method", M + table_w + GAP, TOP, col_w, h, method, bg=WHITE, spaced=True),
     ]

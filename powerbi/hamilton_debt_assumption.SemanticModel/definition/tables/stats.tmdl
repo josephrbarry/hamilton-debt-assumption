@@ -1,13 +1,9 @@
 table stats
-	lineageTag: 3ea8c9fb-efe6-4d37-86db-28fa90a82b63
-
-	measure p-value = AVERAGE(stats[p_value])
-		formatString: 0.000
-		lineageTag: 10ff01e3-975d-469d-b944-a2d6cb58dc45
+	lineageTag: 115568dd-0377-425a-b13d-afb9cf6bc54d
 
 	column group
 		dataType: string
-		lineageTag: d25792ab-4beb-49c2-bdcc-a1be82146a7c
+		lineageTag: 5fd1c225-d780-44fa-8c74-3a1689714f71
 		summarizeBy: none
 		sourceColumn: group
 
@@ -15,7 +11,7 @@ table stats
 
 	column question
 		dataType: string
-		lineageTag: 117dc989-fe1c-48be-b191-dcb421924d3d
+		lineageTag: 99ca3039-a90c-4004-a231-0b1ba2230be7
 		summarizeBy: none
 		sourceColumn: question
 
@@ -23,7 +19,7 @@ table stats
 
 	column test
 		dataType: string
-		lineageTag: bea3ff5c-cfce-4df8-a3ce-2358047a0e25
+		lineageTag: 72d744c9-c7a2-4ba6-8770-a29e7b48be6b
 		summarizeBy: none
 		sourceColumn: test
 		sortByColumn: test_order
@@ -32,7 +28,7 @@ table stats
 
 	column statistic
 		dataType: string
-		lineageTag: 98150d82-ad9b-4fbb-9ab1-3902bb45758e
+		lineageTag: c9dd6e78-644a-475e-87f8-46cdcd9152ea
 		summarizeBy: none
 		sourceColumn: statistic
 
@@ -41,7 +37,7 @@ table stats
 	column p_value
 		dataType: double
 		formatString: 0.000
-		lineageTag: a43529b1-6cec-43d4-a96d-ad55fca25a34
+		lineageTag: 048df9ae-e293-4d53-a5dd-05704ea7452a
 		summarizeBy: none
 		sourceColumn: p_value
 
@@ -49,7 +45,7 @@ table stats
 
 	column read
 		dataType: string
-		lineageTag: e986d5fe-3923-4d25-b5e8-84809bcd4b63
+		lineageTag: e232c8c1-52dd-4608-b662-1cc2e1303db6
 		summarizeBy: none
 		sourceColumn: read
 
@@ -58,11 +54,15 @@ table stats
 	column test_order
 		dataType: int64
 		formatString: 0
-		lineageTag: a6e9d741-ed78-403d-92d8-54c42c0f32c1
+		lineageTag: c80eab23-fc2e-4df5-834d-a093feaa1408
 		summarizeBy: none
 		sourceColumn: test_order
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'p-value' = AVERAGE(stats[p_value])
+		formatString: 0.000
+		lineageTag: 96f26de9-76dd-49d6-9ba2-4fca2b47ef96
 
 	partition stats = m
 		mode: import
@@ -75,4 +75,3 @@ table stats
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
-

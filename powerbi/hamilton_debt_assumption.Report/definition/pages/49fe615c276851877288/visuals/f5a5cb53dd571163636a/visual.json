@@ -11,8 +11,28 @@
   },
   "visual": {
     "visualType": "treemap",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "states"
+                    }
+                  },
+                  "Property": "position_1793"
+                }
+              },
+              "queryRef": "states.position_1793",
+              "nativeQueryRef": "position_1793",
+              "displayName": "1793 position"
+            }
+          ]
+        },
         "Details": {
           "projections": [
             {
@@ -30,26 +50,6 @@
               "nativeQueryRef": "state",
               "active": true,
               "displayName": "State"
-            }
-          ]
-        },
-        "Group": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "states"
-                    }
-                  },
-                  "Property": "position_1793"
-                }
-              },
-              "queryRef": "states.position_1793",
-              "nativeQueryRef": "position_1793",
-              "active": true,
-              "displayName": "1793 position"
             }
           ]
         },
@@ -443,7 +443,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tile area = absolute balance. The teal block and the red block are the same size: $3,517,584 each. Massachusetts and South Carolina are two-thirds of the debit side; New York is 59% of the credit side.'"
+                  "Value": "'Tile area = absolute balance. The teal block and the red block are the same size: $3,517,584 each. Massachusetts and South Carolina are 70% of the credit (creditor) side; New York is 59% of the debit (debtor) side.'"
                 }
               }
             },
@@ -509,7 +509,6 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

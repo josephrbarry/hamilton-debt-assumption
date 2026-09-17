@@ -1,26 +1,18 @@
 table ledger_long
-	lineageTag: 8f211656-5905-486b-a765-83cc98beb962
-
-	measure 'GL 1790 $' = SUM(ledger_long[usd_1790])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 6c4304f5-e3b3-4f67-8909-0a31ccff1e94
-
-	measure 'GL 2025 $' = SUM(ledger_long[usd_2025])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 029d4ad0-3341-4da9-8ecf-6bdffa30925e
+	lineageTag: ee88b232-0b9f-4266-a327-2c49eae0b209
 
 	column state
 		dataType: string
-		lineageTag: 7828b56a-a21b-4ae9-b9f4-97f3d78297f1
-		dataCategory: StateOrProvince
+		lineageTag: 68b6f45f-ed81-4c21-aa87-512854ad9ed6
 		summarizeBy: none
 		sourceColumn: state
+		dataCategory: StateOrProvince
 
 		annotation SummarizationSetBy = Automatic
 
 	column region
 		dataType: string
-		lineageTag: e676c822-a6c7-4755-a834-963ccf2ebc30
+		lineageTag: 075de67a-4d7a-4ea5-a10e-dbd703a272c8
 		summarizeBy: none
 		sourceColumn: region
 
@@ -29,7 +21,7 @@ table ledger_long
 	column step_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 3cda0410-400b-4367-87b1-e0fd0c8f593a
+		lineageTag: 571ec02e-7a41-4536-8e94-a0e1d444977c
 		summarizeBy: none
 		sourceColumn: step_order
 
@@ -37,7 +29,7 @@ table ledger_long
 
 	column step
 		dataType: string
-		lineageTag: af808261-4f87-4832-a379-5df3ba9214c0
+		lineageTag: 57741620-d8fe-4919-8beb-744ac4179ac6
 		summarizeBy: none
 		sourceColumn: step
 		sortByColumn: step_order
@@ -47,7 +39,7 @@ table ledger_long
 	column usd_1790
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 604f458e-0b86-4c5a-aec7-3060db5f3c13
+		lineageTag: 150afdb9-8fa2-45af-baa0-62fa48902f32
 		summarizeBy: none
 		sourceColumn: usd_1790
 
@@ -56,7 +48,7 @@ table ledger_long
 	column usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: f0049fea-1ca3-4f02-bd98-49e5f8764cc3
+		lineageTag: a18baa99-5706-4e6f-9575-62ca07b1ee42
 		summarizeBy: none
 		sourceColumn: usd_2025
 
@@ -65,7 +57,7 @@ table ledger_long
 	column per_capita_1790
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 672b2a3b-ac22-4a46-99b5-4ed8d22eaf74
+		lineageTag: fb1bdb79-830a-4bdb-a7c1-41f6addd2020
 		summarizeBy: none
 		sourceColumn: per_capita_1790
 
@@ -74,11 +66,19 @@ table ledger_long
 	column per_capita_2025
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 4f15330e-2e9a-40c1-ac08-3739deea9315
+		lineageTag: 193425a8-4ee2-42ea-9d6f-91cfa5816811
 		summarizeBy: none
 		sourceColumn: per_capita_2025
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'GL 1790 $' = SUM(ledger_long[usd_1790])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 3dfb493d-0d70-4764-80af-11c6b25da1f5
+
+	measure 'GL 2025 $' = SUM(ledger_long[usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: cd1404a5-c7b5-4922-aa99-ca542a6beb13
 
 	partition ledger_long = m
 		mode: import
@@ -91,4 +91,3 @@ table ledger_long
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
-

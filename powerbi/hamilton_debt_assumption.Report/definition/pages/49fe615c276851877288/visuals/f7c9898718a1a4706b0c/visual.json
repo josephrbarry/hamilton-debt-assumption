@@ -578,7 +578,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'New York ($6.10) per head, about ($221) today. South Carolina $4.84, about $176. Virginia ($0.12).'"
+                  "Value": "'New York ($6.10) per head [($221) today]. South Carolina $4.84 [$176]. Virginia ($0.12). Negatives in parentheses, 2025 $ in brackets.'"
                 }
               }
             },

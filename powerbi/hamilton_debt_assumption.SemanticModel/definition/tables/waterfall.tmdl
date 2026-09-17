@@ -1,14 +1,10 @@
 table waterfall
-	lineageTag: ee8e9a62-0927-41b8-80d6-06547950d3ca
-
-	measure 'WF 1790 $ millions' = SUM(waterfall[usd_1790_m])
-		formatString: #,0.00;(#,0.00);#,0.00
-		lineageTag: fb2e2c53-1ee5-4655-935f-f7327fd556b0
+	lineageTag: 7fd69d5f-5d79-435b-86be-236ec46351cf
 
 	column step_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 2af352b0-0bee-4506-ad63-7a5a9b158857
+		lineageTag: cf6738d6-3dcd-42f2-8f6c-6a7f3549063e
 		summarizeBy: none
 		sourceColumn: step_order
 
@@ -16,7 +12,7 @@ table waterfall
 
 	column step
 		dataType: string
-		lineageTag: 094ca953-1e9e-4287-9fa8-072d52bbf016
+		lineageTag: 9a929bee-558f-46f8-8cbc-55f5b80ccff7
 		summarizeBy: none
 		sourceColumn: step
 		sortByColumn: step_order
@@ -26,7 +22,7 @@ table waterfall
 	column usd_1790
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: cbf3bec0-ec9f-4b40-843f-76eb326e3869
+		lineageTag: 4890d089-4fce-474d-94ad-0bc8ff728128
 		summarizeBy: none
 		sourceColumn: usd_1790
 
@@ -35,7 +31,7 @@ table waterfall
 	column usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: cdad6c08-35ad-4510-8c32-a2fa5a843dcc
+		lineageTag: 42969f81-d08f-4e98-b812-7d57f87a9e8a
 		summarizeBy: none
 		sourceColumn: usd_2025
 
@@ -43,8 +39,8 @@ table waterfall
 
 	column usd_1790_m
 		dataType: double
-		formatString: #,0.00;(#,0.00)
-		lineageTag: 9d8685ef-d44a-4b34-bb50-97e8c4c6ebd7
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 3f8d9612-208b-4c55-8508-9c50a440fcbc
 		summarizeBy: none
 		sourceColumn: usd_1790_m
 
@@ -52,12 +48,16 @@ table waterfall
 
 	column usd_2025_m
 		dataType: double
-		formatString: #,0.00;(#,0.00)
-		lineageTag: 92855b30-4975-4f3e-885e-4599a920a786
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 15ffdfbe-5fce-4f60-93c0-2bf091d8275c
 		summarizeBy: none
 		sourceColumn: usd_2025_m
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'WF 1790 $ millions' = SUM(waterfall[usd_1790_m])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: dcca7b2d-545d-45dc-bc15-8057e0769417
 
 	partition waterfall = m
 		mode: import
@@ -70,4 +70,3 @@ table waterfall
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
-

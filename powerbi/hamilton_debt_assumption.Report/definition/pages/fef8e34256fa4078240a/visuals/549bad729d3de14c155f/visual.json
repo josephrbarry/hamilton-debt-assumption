@@ -207,7 +207,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "What each state would have received had $21.5M been split like congressional apportionment, versus the Act. Choose the population basis at right; the answer barely moves. The 'North vs South' story fails (permutation p = 0.78): South Carolina alone drives the Southern mean.",
+                    "value": "What each state would have received had $21.5M been split like congressional apportionment, versus the Act. Choose the population basis at right; the answer barely moves. No detectable 'North vs South' tilt (permutation p = 0.78, low power at n = 4 vs 5): South Carolina alone drives the Southern mean.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

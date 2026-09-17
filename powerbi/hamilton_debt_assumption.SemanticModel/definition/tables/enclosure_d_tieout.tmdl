@@ -1,33 +1,9 @@
 table enclosure_d_tieout
-	lineageTag: 10d35115-29c0-457b-84d1-83e4f55e04e8
-
-	measure 'ED quota' = SUM(enclosure_d_tieout[quota_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 2c31d3c7-fd0e-4b92-8a02-a3741a81e57c
-
-	measure 'ED subscribed (as printed)' = SUM(enclosure_d_tieout[subscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 273b615c-13b2-4983-80be-70c26d0101a8
-
-	measure 'ED unsubscribed (as printed)' = SUM(enclosure_d_tieout[unsubscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 82354ac7-81c9-4f5b-badd-27aed44d69c4
-
-	measure 'ED unsubscribed (computed)' = SUM(enclosure_d_tieout[unsubscribed_computed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 8100d9d4-396c-4f4e-b10e-22136fb2b8bf
-
-	measure 'ED variance' = SUM(enclosure_d_tieout[variance_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a0d6746d-f34e-4b7b-8662-d98d77a05e5e
-
-	measure 'ED subscribed (reconciled)' = SUM(enclosure_d_tieout[subscribed_reconciled_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 28dec20c-6ab7-411b-93e7-14d21a6ed78e
+	lineageTag: b39850e4-5113-469a-98f0-1a873249ec8b
 
 	column state
 		dataType: string
-		lineageTag: 420261a1-2f64-4f4d-8aa1-bcf2bfe5002c
+		lineageTag: 9f5b5d59-626e-4b1a-b399-164725181dc3
 		summarizeBy: none
 		sourceColumn: state
 		sortByColumn: line_order
@@ -37,7 +13,7 @@ table enclosure_d_tieout
 	column quota_usd
 		dataType: int64
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 7a602d48-0cc4-4594-881d-e9f151586de2
+		lineageTag: 64dc92e1-5413-4c9d-a5d3-a6459aa9ec13
 		summarizeBy: none
 		sourceColumn: quota_usd
 
@@ -46,7 +22,7 @@ table enclosure_d_tieout
 	column subscribed_printed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a258010b-0652-4f34-aff8-73c92fa91a16
+		lineageTag: 344523c7-3dad-48b7-ac6d-19e90afee5d8
 		summarizeBy: none
 		sourceColumn: subscribed_printed_usd
 
@@ -55,7 +31,7 @@ table enclosure_d_tieout
 	column unsubscribed_printed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 15bfae17-850e-4824-b8c7-9f421f5262c2
+		lineageTag: 3c93799a-d058-48fd-a494-c062325f68b8
 		summarizeBy: none
 		sourceColumn: unsubscribed_printed_usd
 
@@ -64,7 +40,7 @@ table enclosure_d_tieout
 	column oversubscribed_printed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: fd129933-3123-4f35-afdc-e3c51efbf477
+		lineageTag: e3339556-427e-4233-a0ee-59c69f6a7859
 		summarizeBy: none
 		sourceColumn: oversubscribed_printed_usd
 
@@ -73,16 +49,25 @@ table enclosure_d_tieout
 	column unsubscribed_computed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 1bf65b21-ddf5-43eb-a172-1578dd1bb450
+		lineageTag: 9c6d179c-9d3b-474e-b814-8d09544a5204
 		summarizeBy: none
 		sourceColumn: unsubscribed_computed_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column oversubscribed_computed_usd
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: bdc34534-4358-4310-925b-c6172bfd7d90
+		summarizeBy: none
+		sourceColumn: oversubscribed_computed_usd
 
 		annotation SummarizationSetBy = Automatic
 
 	column variance_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 0625ad17-9734-448a-bb1f-a664790c9c28
+		lineageTag: b2a726ec-346e-413d-8cd8-707c1b4c606d
 		summarizeBy: none
 		sourceColumn: variance_usd
 
@@ -90,7 +75,7 @@ table enclosure_d_tieout
 
 	column status
 		dataType: string
-		lineageTag: fbf88c97-97c6-48d3-97bb-b807f877de49
+		lineageTag: 3a4f1fb7-663d-4711-bd60-bc70d53ebd3f
 		summarizeBy: none
 		sourceColumn: status
 
@@ -99,7 +84,7 @@ table enclosure_d_tieout
 	column subscribed_reconciled_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 4c4e7f2e-9eed-47e6-b51b-2eb45c9cdce2
+		lineageTag: b68f6807-c032-4d71-b306-30021ba6f562
 		summarizeBy: none
 		sourceColumn: subscribed_reconciled_usd
 
@@ -108,21 +93,52 @@ table enclosure_d_tieout
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 41490f01-c83a-48bb-9a48-1fe030c84e49
+		lineageTag: 990982d5-66dd-42a0-b320-00a4d2f0ce79
 		summarizeBy: none
 		sourceColumn: line_order
 
 		annotation SummarizationSetBy = Automatic
 
+	measure 'ED quota' = SUM(enclosure_d_tieout[quota_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 06b2e670-ffe3-4e43-85f3-c53734ac513f
+
+	measure 'ED subscribed (as printed)' = SUM(enclosure_d_tieout[subscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 52b0343b-f1a4-45d4-aea9-41dff0ce136c
+
+	measure 'ED unsubscribed (as printed)' = SUM(enclosure_d_tieout[unsubscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 07738789-b3da-473d-9fcc-2ba21c4faf34
+
+	measure 'ED unsubscribed (computed)' = SUM(enclosure_d_tieout[unsubscribed_computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b8b1e0f0-1de6-4363-8ae8-b10527828ce3
+
+	measure 'ED over-subscribed (as printed)' = SUM(enclosure_d_tieout[oversubscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: eae2719a-a3ea-41a3-bf1d-7d53ebe51432
+
+	measure 'ED over-subscribed (computed)' = SUM(enclosure_d_tieout[oversubscribed_computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ef298ff3-a595-4de8-b5f0-73102cd372ee
+
+	measure 'ED variance' = SUM(enclosure_d_tieout[variance_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 873680e9-8ac7-4aef-aab6-099f635dd610
+
+	measure 'ED subscribed (reconciled)' = SUM(enclosure_d_tieout[subscribed_reconciled_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 36a5bb73-5461-4c1d-9933-e1d6bae157b2
+
 	partition enclosure_d_tieout = m
 		mode: import
 		source =
 				let
-				  Source = Csv.Document(File.Contents("C:\Claude_Projects\hamilton-debt-assumption\powerbi\data\enclosure_d_tieout.csv"), [Delimiter = ",", Columns = 10, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  Source = Csv.Document(File.Contents("C:\Claude_Projects\hamilton-debt-assumption\powerbi\data\enclosure_d_tieout.csv"), [Delimiter = ",", Columns = 11, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
 				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"state", type text}, {"quota_usd", Int64.Type}, {"subscribed_printed_usd", type number}, {"unsubscribed_printed_usd", type number}, {"oversubscribed_printed_usd", type number}, {"unsubscribed_computed_usd", type number}, {"variance_usd", type number}, {"status", type text}, {"subscribed_reconciled_usd", type number}, {"line_order", Int64.Type}})
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"state", type text}, {"quota_usd", Int64.Type}, {"subscribed_printed_usd", type number}, {"unsubscribed_printed_usd", type number}, {"oversubscribed_printed_usd", type number}, {"unsubscribed_computed_usd", type number}, {"oversubscribed_computed_usd", type number}, {"variance_usd", type number}, {"status", type text}, {"subscribed_reconciled_usd", type number}, {"line_order", Int64.Type}})
 				in
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
-

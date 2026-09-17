@@ -128,7 +128,7 @@ p_reg = stats.permutation_test((ne.values, so.values), mean_diff, alternative="t
 p_fair = stats.permutation_test((cred.values, debt.values), mean_diff, alternative="greater", **perm_kw)
 rho = stats.spearmanr(df.assumed_pc, df.settlement_balance_pc)
 pear = stats.pearsonr(df.assumed_pc, df.settlement_balance_pc)
-chi = {lbl: stats.chisquare(df.quota_usd / 1e5, df[f"cf_{b}"] / 1e5) for lbl, b in BASES}
+rho_raw = stats.spearmanr(df.assumed_usd, df.settlement_balance_usd)
 di = {lbl: df[f"gap_vs_{b}"].abs().sum() / 2 / TOTAL_QUOTA * 100 for lbl, b in BASES}
 
 st = [
@@ -136,19 +136,22 @@ st = [
      f"NE ${ne.mean():.2f} vs South ${so.mean():.2f} per head. No detectable regional tilt."),
     ("A", "Regional tilt", "Mann-Whitney U, NE vs South", f"U = {u_reg.statistic:.0f}", u_reg.pvalue,
      "Rank-based version of the same comparison; agrees."),
-    ("A", "Regional tilt", "Exact permutation, NE vs South (126 relabelings)", f"diff = ${mean_diff(ne, so):.2f}", p_reg.pvalue,
+    ("A", "Regional tilt", "Exact permutation, NE vs South (126 relabelings)", ("diff = (${:.2f})".format(-mean_diff(ne, so)) if mean_diff(ne, so) < 0 else f"diff = ${mean_diff(ne, so):.2f}"), p_reg.pvalue,
      "Every possible relabeling of 9 states as 4 NE / 5 South. South Carolina alone drives the Southern mean."),
     ("B", "Relief vs contribution", "Spearman rho, relief per head vs 1793 settlement per head", f"rho = {rho.statistic:.2f}", rho.pvalue,
      "Moderate positive rank correlation: states the audit found had over-paid got more relief."),
     ("B", "Relief vs contribution", "Pearson r, same variables", f"r = {pear.statistic:.2f}", pear.pvalue,
      "Linear version; agrees in size."),
-    ("B", "Relief vs contribution", "Exact permutation, creditor vs debtor states, one-sided", f"${cred.mean():.2f} vs ${debt.mean():.2f}", p_fair.pvalue,
-     f"Creditor states received {cred.mean() / debt.mean():.1f}x the relief per head of debtor states."),
+    ("B", "Relief vs contribution", "Spearman rho on raw dollars (no shared population denominator)", f"rho = {rho_raw.statistic:.2f}", rho_raw.pvalue,
+     "Same sign, weaker. Per-capita ratios share a denominator, which can inflate a correlation; this is the check."),
+    ("B", "Relief vs contribution", "Exact permutation, creditor vs debtor states, one-sided (1716 relabelings)", f"${cred.mean():.2f} vs ${debt.mean():.2f}", p_fair.pvalue,
+     f"Creditor states received {cred.mean() / debt.mean():.1f}x the relief per head of debtor states. Uncorrected for multiple comparisons; suggestive, not confirmatory."),
 ]
 for lbl, _ in BASES:
-    st.append(("C", "Proportional to population?", f"Chi-square goodness of fit vs {lbl.lower()}",
-               f"chi2 = {chi[lbl].statistic:.0f}", chi[lbl].pvalue,
-               f"{di[lbl]:.1f}% of the $21.5M would have to move between states to match this basis."))
+    st.append(("C", "Proportional to population?", f"Dissimilarity index vs {lbl.lower()}",
+               f"{di[lbl]:.1f}%", np.nan,
+               f"{di[lbl]:.1f}% of the $21.5M would have to move between states to match this basis. "
+               "Descriptive; no chi-square is reported because that test assumes counts and its value depends on the unit."))
 pd.DataFrame(st, columns=["group", "question", "test", "statistic", "p_value", "read"]) \
     .assign(test_order=range(1, len(st) + 1)) \
     .to_csv(OUT / "stats.csv", index=False)
@@ -157,15 +160,20 @@ pd.DataFrame(st, columns=["group", "question", "test", "statistic", "p_value", "
 sub = pd.read_csv(ROOT / "data" / "subscriptions_1792.csv").set_index("state")
 printed = sub.subscribed_usd.copy()
 printed["North Carolina"] -= 500000            # the figure as printed, before reconciliation
+oversub_printed = sub.oversubscribed_usd.copy()
+oversub_printed["Massachusetts"] += 30000      # printed $477,013.81; arithmetic gives $447,013.81
 enc = pd.DataFrame({
     "state": sub.index,
     "quota_usd": sub.quota_usd.values,
     "subscribed_printed_usd": printed.values,
     "unsubscribed_printed_usd": sub.unsubscribed_usd.values,
-    "oversubscribed_printed_usd": sub.oversubscribed_usd.values,
+    "oversubscribed_printed_usd": oversub_printed.values,
 })
 enc["unsubscribed_computed_usd"] = (enc.quota_usd - enc.subscribed_printed_usd).clip(lower=0)
-enc["variance_usd"] = enc.unsubscribed_computed_usd - enc.unsubscribed_printed_usd
+enc["oversubscribed_computed_usd"] = (enc.subscribed_printed_usd - enc.quota_usd).clip(lower=0)
+# variance = computed less printed, on whichever side of the quota the state sits
+enc["variance_usd"] = ((enc.unsubscribed_computed_usd - enc.unsubscribed_printed_usd)
+                       + (enc.oversubscribed_computed_usd - enc.oversubscribed_printed_usd))
 enc["status"] = np.where(enc.variance_usd.abs() < 1, "Ties",
                 np.where(enc.variance_usd.abs() < 1000, "Immaterial", "Does not foot"))
 enc["subscribed_reconciled_usd"] = sub.subscribed_usd.values
@@ -177,11 +185,17 @@ tie = [
     ("Schedule E, Jan 1790", "Nine known states ('about twenty-one millions and a half')", 21500000,
      df.debt_estimate_1790_usd.sum()),
     ("Enclosure D, Jan 1792", "Subscribed column, as printed", 18328186.21, printed.sum()),
+    ("Enclosure D, Jan 1792", "North Carolina line: quota less unsubscribed vs printed subscribed",
+     1166355.57, 2400000 - 733644.43),
     ("Enclosure D, Jan 1792", "Subscribed column, after NC reconciliation", 18328186.21, sub.subscribed_usd.sum()),
+    ("Enclosure D, Jan 1792", "Massachusetts line: subscribed less quota vs printed over-subscribed",
+     477013.81, 4447013.81 - 4000000),
+    ("Enclosure D, Jan 1792", "Over-subscribed column, as printed", 1255851.82, oversub_printed.sum()),
     ("Enclosure D, Jan 1792", "Unsubscribed column", 4427665.61, sub.unsubscribed_usd.sum()),
-    ("Enclosure D, Jan 1792", "Over-subscribed column", 1255851.82, sub.oversubscribed_usd.sum()),
-    ("Enclosure D, Jan 1792", "Quota - unsubscribed + over-subscribed", 18328186.21,
-     21500000 - sub.unsubscribed_usd.sum() + sub.oversubscribed_usd.sum()),
+    ("Enclosure D, Jan 1792", "Printed total explained: quota - unsubscribed + over-subscribed (both as printed)",
+     18328186.21, 21500000 - 4427665.61 + oversub_printed.sum()),
+    ("Enclosure D, Jan 1792", "Reconciled total: quota - unsubscribed + over-subscribed (MA corrected)",
+     sub.subscribed_usd.sum(), 21500000 - 4427665.61 + sub.oversubscribed_usd.sum()),
     ("Bayley (Treasury, 1881)", "Amount assumed column", 18271786.47, df.assumed_usd.sum()),
     ("Commissioners, Jun 1793", "Creditor states (Jefferson's pencilled total)", 3517584,
      df[df.settlement_balance_usd > 0].settlement_balance_usd.sum()),

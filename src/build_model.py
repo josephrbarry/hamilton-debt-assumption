@@ -68,7 +68,7 @@ MEASURES: dict[str, list[tuple[str, str, str]]] = {
     ],
     "ledger_long": [("GL 1790 $", "SUM(ledger_long[usd_1790])", USD),
                     ("GL 2025 $", "SUM(ledger_long[usd_2025])", USD)],
-    "waterfall": [("WF 1790 $ millions", "SUM(waterfall[usd_1790_m])", "#,0.00;(#,0.00);#,0.00")],
+    "waterfall": [("WF 1790 $ millions", "SUM(waterfall[usd_1790_m])", r"\$#,0.00;(\$#,0.00);\$#,0.00")],
     "rollforward": [("RF 1790 $", "SUM(rollforward[usd_1790])", USD),
                     ("RF 2025 $", "SUM(rollforward[usd_2025])", USD)],
     "counterfactual": [("CF Act quota", "SUM(counterfactual[quota_usd])", USD),
@@ -83,6 +83,8 @@ MEASURES: dict[str, list[tuple[str, str, str]]] = {
                            ("ED subscribed (as printed)", "SUM(enclosure_d_tieout[subscribed_printed_usd])", USD),
                            ("ED unsubscribed (as printed)", "SUM(enclosure_d_tieout[unsubscribed_printed_usd])", USD),
                            ("ED unsubscribed (computed)", "SUM(enclosure_d_tieout[unsubscribed_computed_usd])", USD),
+                           ("ED over-subscribed (as printed)", "SUM(enclosure_d_tieout[oversubscribed_printed_usd])", USD),
+                           ("ED over-subscribed (computed)", "SUM(enclosure_d_tieout[oversubscribed_computed_usd])", USD),
                            ("ED variance", "SUM(enclosure_d_tieout[variance_usd])", USD),
                            ("ED subscribed (reconciled)", "SUM(enclosure_d_tieout[subscribed_reconciled_usd])", USD)],
 }
@@ -102,7 +104,7 @@ def fmt_for(name: str, series: pd.Series) -> str:
         return "0.000"
     # Accounting convention: negatives in parentheses, never a minus sign.
     if name.endswith("_m"):
-        return "#,0.00;(#,0.00)"
+        return r"\$#,0.00;(\$#,0.00);\$#,0.00"
     # Desktop writes currency formats with the dollar sign escaped and three sections.
     if "per_capita" in name or "per_free_person" in name:
         return r"\$#,0.00;(\$#,0.00);\$#,0.00"

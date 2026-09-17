@@ -2,15 +2,16 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "4ef71173dc34f6802791",
   "position": {
-    "x": 1062,
+    "x": 1062.0,
     "y": 448,
     "z": 0,
     "height": 584,
-    "width": 809.99999999999989,
+    "width": 809.9999999999999,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -44,7 +45,6 @@
               },
               "queryRef": "states.Act quota",
               "nativeQueryRef": "Act quota",
-              "active": false,
               "displayName": "Act quota"
             },
             {
@@ -60,7 +60,6 @@
               },
               "queryRef": "states.Subscribed Jan 1792",
               "nativeQueryRef": "Subscribed Jan 1792",
-              "active": false,
               "displayName": "Subscribed Jan 1792"
             },
             {
@@ -76,7 +75,6 @@
               },
               "queryRef": "states.Assumed (final)",
               "nativeQueryRef": "Assumed (final)",
-              "active": false,
               "displayName": "Assumed (final)"
             },
             {
@@ -92,7 +90,6 @@
               },
               "queryRef": "states.Unused quota",
               "nativeQueryRef": "Unused quota",
-              "active": false,
               "displayName": "Unused quota"
             },
             {
@@ -108,7 +105,6 @@
               },
               "queryRef": "states.Take-up %",
               "nativeQueryRef": "Take-up %",
-              "active": false,
               "displayName": "Take-up %"
             },
             {
@@ -124,7 +120,6 @@
               },
               "queryRef": "states.Assumed (2025 $)",
               "nativeQueryRef": "Assumed (2025 $)",
-              "active": false,
               "displayName": "Assumed (2025 $)"
             }
           ]
@@ -483,7 +478,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Subscribed = first window to Sep 1791 (MA, RI, SC over-subscribed and were scaled back to quota). Assumed = final after extension to 1793. Totals row foots to Schedule B.'"
+                  "Value": "'Subscribed = first window to Sep 1791 (MA, RI, SC subscribed above quota; the quota was a ceiling). Assumed = final after extension to 1 Mar 1793. Totals row foots to Schedule B.'"
                 }
               }
             },
@@ -549,7 +544,6 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

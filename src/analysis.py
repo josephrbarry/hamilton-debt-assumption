@@ -92,16 +92,21 @@ df = df.sort_values("quota_pc", ascending=False).reset_index(drop=True)
 df.to_csv(OUT / "assumption_ledger.csv", index=False)
 
 
+def acct(x, fmt):
+    """Accounting convention: negatives in parentheses, never a minus sign."""
+    return f"({fmt.format(abs(x))})" if x < 0 else fmt.format(x)
+
+
 def m(x):        # 1790 $ millions with 2025 $ beside it
-    return f"{x / 1e6:,.2f}M ({x * CPI / 1e6:,.0f}M)"
+    return f"{acct(x / 1e6, '{:,.2f}M')} [{acct(x * CPI / 1e6, '{:,.0f}M')}]"
 
 
 def usd(x):      # 1790 $ with 2025 $ beside it
-    return f"${x:,.0f} (${x * CPI:,.0f})"
+    return f"{acct(x, '${:,.0f}')} [{acct(x * CPI, '${:,.0f}')}]"
 
 
 def pc(x):       # per-capita 1790 $ with 2025 $ beside it
-    return f"${x:.2f} (${x * CPI:,.0f})"
+    return f"{acct(x, '${:.2f}')} [{acct(x * CPI, '${:,.0f}')}]"
 
 
 L = []
@@ -110,9 +115,10 @@ w = L.append
 # ================================================================ write-up
 w("# Hamilton's 1790 Debt Assumption - an accountant's reconciliation\n")
 w("Every figure below is from a document Hamilton wrote or received. See `data/SOURCES.md`.\n")
-w(f"**Dollars are shown as 1790 $ (2025 $ in parentheses)**, converted at {CPI:.1f}x by CPI "
+w(f"**Dollars are shown as 1790 $ [2025 $ in brackets]**, converted at {CPI:.1f}x by CPI "
   "(MeasuringWorth; the Federal Reserve's series starts in 1800 and gives ~19x from that year). "
-  "CPI understates the scale of these sums. The $21.5M authorized was about 11% of 1790 GDP; "
+  "Negatives are in parentheses. CPI understates the scale of these sums: the $21.5M "
+  "authorized was about 11% of 1790 GDP (a modern reconstruction, so an order of magnitude); "
   f"the same share of the 2025 economy is ${21.5e6 * GDP_SHARE / 1e12:,.1f} trillion.\n")
 
 # ---------------------------------------------------------------- 1. opening balance
@@ -125,10 +131,11 @@ w(f"- 1793 settlement: creditors {usd(df[df.settlement_balance_usd > 0].settleme
 w("- Enclosure D (1792 subscriptions): **does not foot as printed.** The subscribed column "
   "sums to $17,798,186 against a stated $18,328,186. Row-level tie-out (quota - subscribed = "
   "unsubscribed) isolates a $500,000 error in the North Carolina line; the reconciled figure "
-  "$1,666,355.57 is used here. A $30 Maryland difference and a $30,000 residual against the "
-  "printed total remain unexplained. The printed *totals* are internally consistent "
-  "(quota - unsubscribed + oversubscribed = $18,328,186), so the error is in one line, "
-  "not the arithmetic. See `data/SOURCES.md`.")
+  "$1,666,355.57 is used here. A second line error: Massachusetts's over-subscription is "
+  "printed as $477,013.81 but $4,447,013.81 less the $4,000,000 quota is $447,013.81 - $30,000 "
+  "high. That error was carried into the printed total, which is why the reconciled column "
+  "($18,298,186) is $30,000 below it. A $30 Maryland difference is immaterial. Both errors are "
+  "in single printed lines, not in the Treasury's arithmetic. See `data/SOURCES.md`.")
 w("- Schedule E: Hamilton's nine known states sum to $21,501,206; he wrote 'about twenty-one "
   "millions and a half'. Ties.\n")
 
@@ -188,11 +195,15 @@ w(f"- The extension mattered: Pennsylvania's subscriptions rose from {m(pa.loc['
   f"to {m(pa.loc['Maryland', 'assumed_usd'])}, North Carolina's from {m(pa.loc['North Carolina', 'subscribed_usd'])} "
   f"to {m(pa.loc['North Carolina', 'assumed_usd'])}. Virginia's rose from {m(pa.loc['Virginia', 'subscribed_usd'])} "
   f"to {m(pa.loc['Virginia', 'assumed_usd'])}, still {pa.loc['Virginia', 'takeup_rate']:.0%} of quota.")
-w("- Massachusetts, Rhode Island, and South Carolina brought in *more* than their quota - "
-  "their real debt exceeded the Act. Hamilton's Schedule E had said so for MA and SC; Congress "
-  "capped them anyway.")
+w("- Massachusetts, Rhode Island, and South Carolina brought in *more* than their quota in the "
+  "first window - their real debt exceeded the Act. Hamilton's Schedule E had said so for MA and "
+  "SC; Congress capped them anyway. The quota was a ceiling: RI finished exactly at quota, SC "
+  "$348 under, MA $18,267 under.")
+share = df.assumed_usd.sum() / (df.assumed_usd.sum() + df.remaining_state_debt_usd.sum())
 w(f"- Hamilton estimated the states still owed {m(df.remaining_state_debt_usd.sum())} after "
-  "assumption. So the Act absorbed roughly two-thirds of state debt, not all of it.\n")
+  f"assumption. On that basis the Act absorbed about {share:.0%} of state debt, not all of it - "
+  "but the residual is Hamilton's own estimate, graded a-f for reliability, so treat the share "
+  "as approximate.\n")
 
 # ---------------------------------------------------------------- 4. settlement
 w("## 4. The true-up: final settlement of war accounts (Commissioners, 29 Jun 1793)\n")
@@ -227,8 +238,14 @@ w("Hamilton's defense of assumption was that the state debts were incurred for a
   "(creditor states) should have received more relief per head. Test it.\n")
 rho = stats.spearmanr(df.assumed_pc, df.settlement_balance_pc)
 pr = stats.pearsonr(df.assumed_pc, df.settlement_balance_pc)
+rho_raw = stats.spearmanr(df.assumed_usd, df.settlement_balance_usd)
 w(f"- Spearman rank correlation, relief per capita vs. settlement balance per capita: "
   f"rho = {rho.statistic:.2f} (p = {rho.pvalue:.3f}). Pearson r = {pr.statistic:.2f}.")
+w(f"- Caveat: both per-capita variables share the same denominator (population), which can "
+  f"inflate a correlation mechanically. On raw dollars the Spearman rho is {rho_raw.statistic:.2f} "
+  f"(p = {rho_raw.pvalue:.2f}) - same sign, weaker. Per head is the economically meaningful "
+  "framing (relief and burden per resident), but the strength of the association should be "
+  "read with this in mind.")
 cred_relief = df[df.position == "creditor"].assumed_pc
 debt_relief = df[df.position == "debtor"].assumed_pc
 perm = stats.permutation_test((cred_relief.values, debt_relief.values),
@@ -241,8 +258,11 @@ w(f"- Creditor states (n={len(cred_relief)}) received a mean **{pc(cred_relief.m
 w("- Read: the states the 1793 audit later found had over-paid for the war are, on the whole, "
   "the states assumption relieved most. The relationship is moderate and sits right at the "
   "conventional p = 0.05 line; with 13 observations the effect size (creditor states got about "
-  "2.3x the relief per head) is the more reliable statement. The Act didn't have the settlement "
-  "numbers, but it landed on the right side of them.\n")
+  f"{cred_relief.mean() / debt_relief.mean():.1f}x the relief per head) is the more reliable "
+  "statement. This is one of several tests in the write-up and is reported uncorrected for "
+  "multiple comparisons; it was the single pre-specified, directional test of Hamilton's stated "
+  "rationale, but p = 0.047 should be read as suggestive, not confirmatory. The Act didn't have "
+  "the settlement numbers, but it landed on the right side of them.\n")
 
 # ---------------------------------------------------------------- 6. net position
 w("## 6. Net federal position per state (relief received + settlement balance)\n")
@@ -276,18 +296,20 @@ w(f"- Quota per capita: mean {pc(desc['mean'])}, median {pc(desc['50%'])}, "
   f"Outlier (1.5xIQR): {df[df.iqr_outlier].state.tolist()}.")
 for basis, label in [("pop_total_1790", "total population"), ("pop_free_1790", "free population"),
                      ("pop_three_fifths", "three-fifths basis")]:
-    chi2, p = stats.chisquare(df.quota_usd / 1e5, df[f"cf_{basis}"] / 1e5)
     di = df[f"gap_vs_{basis}"].abs().sum() / 2 / total_quota
-    w(f"- vs {label}: {di:.1%} of the total would have to move between states to match "
-      f"(chi2 = {chi2:.0f}, p = {p:.1e}).")
+    w(f"- vs {label}: {di:.1%} of the total would have to move between states to match.")
+w("- The dissimilarity index is the substantive measure here. A chi-square goodness-of-fit "
+  "test is not applicable to dollar amounts (it assumes counts, and its value depends on the "
+  "unit chosen), so none is reported.")
 ne = df[df.region == "New England"].quota_pc
 so = df[df.region == "Southern"].quota_pc
 perm_r = stats.permutation_test((ne.values, so.values), lambda a, b: a.mean() - b.mean(),
                                 permutation_type="independent", n_resamples=np.inf,
                                 alternative="two-sided")
 w(f"- New England vs. Southern quota per head: ${ne.mean():.2f} vs ${so.mean():.2f}, exact "
-  f"permutation p = {perm_r.pvalue:.2f}. No regional tilt; South Carolina alone drives the "
-  "Southern mean.\n")
+  f"permutation p = {perm_r.pvalue:.2f}. No detectable regional tilt at this sample size "
+  "(n = 4 vs 5, low power); South Carolina alone drives the Southern mean and is the only "
+  "outlier by the 1.5xIQR rule.\n")
 
 # ---------------------------------------------------------------- 8. sensitivity
 w("## 8. Sensitivity: boundary and denominator choices\n")
@@ -319,8 +341,10 @@ w("")
 w("**On Madison's objection:** wrong on the facts for his own state. Virginia's debt was "
   "'already paid down' only in the sense that it had *not been reported*: the 1791 House of "
   "Delegates estimate put $1.17M still outstanding after assumption, and the commissioners "
-  "found Virginia a net debtor to the Union. The Compromise of 1790 that raised Virginia's "
-  "quota was a political price, not an accounting correction.")
+  "found Virginia a net debtor to the Union. The Compromise of 1790 set Virginia's quota at "
+  "$3.5M - about what Virginia would pay in federal taxes, so it would 'neither gain nor lose' - "
+  "which was a political settlement, not an accounting one; it was below Hamilton's own $3.68M "
+  "estimate.")
 w("")
 w("**On Hamilton's rationale:** the 'bind the creditors to the federal government' argument "
   "was about who *held* the paper, not which state issued it. This dataset can't test that - "

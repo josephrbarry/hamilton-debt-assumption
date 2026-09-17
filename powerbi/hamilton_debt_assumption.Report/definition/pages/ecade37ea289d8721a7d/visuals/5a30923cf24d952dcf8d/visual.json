@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "5a30923cf24d952dcf8d",
   "position": {
-    "x": 1260,
+    "x": 1260.0,
     "y": 530.88,
     "z": 0,
     "height": 501.12,
-    "width": 612,
+    "width": 612.0,
     "tabOrder": 0
   },
   "visual": {
@@ -362,7 +362,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "After correction the column is $30,000 short of the printed total; source not identified. Maryland is $30 out - immaterial. The document's own totals are internally consistent (quota less unsubscribed plus over-subscribed = $18,328,186), so the error sits in one printed line, not in the Treasury's arithmetic.",
+                    "value": "After that correction the column is still $30,000 short of the printed total. A second line explains it: Massachusetts's over-subscription is printed as $477,013.81, but $4,447,013.81 subscribed less the $4,000,000 quota is $447,013.81. The Treasury carried the wrong line into its total. Reconciled total: $18,298,186.21. Maryland is $30 out - immaterial.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -384,7 +384,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Every other document ties.",
+                    "value": "Both errors sit in single printed lines, not in the Treasury's arithmetic. Every other document ties.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

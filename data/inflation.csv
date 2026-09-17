@@ -1,4 +1,4 @@
 measure,factor_1790_to_2025,source
-cpi,36.30,"MeasuringWorth relative-value calculator (Officer & Williamson CPI series), $1 in 1790 = $36.30 in 2025"
+cpi,36.30,"MeasuringWorth relative-value calculator (Officer & Williamson CPI series), $1 in 1790 = $36.30 in 2025; accessed 17 Sep 2026 (series is revised periodically)"
 cpi_fed_1800_anchor,18.97,"Federal Reserve Bank of Minneapolis CPI table (1967=100): 1800 = 51, 2025 = 967.5. Table starts 1800; 1790 prices were lower, so this understates."
 gdp_share,159000,"MeasuringWorth 'economic share': same fraction of U.S. GDP in 2025 as $1 was of 1790 GDP"

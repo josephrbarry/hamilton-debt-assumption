@@ -2,55 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "5e49af664b2e6c79b53d",
   "position": {
-    "x": 1062,
+    "x": 1062.0,
     "y": 144,
     "z": 0,
     "height": 280,
-    "width": 809.99999999999989,
+    "width": 809.9999999999999,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "gauge",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
-        "MaxValue": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "states"
-                    }
-                  },
-                  "Property": "Act quota"
-                }
-              },
-              "queryRef": "states.Act quota",
-              "nativeQueryRef": "Act quota",
-              "displayName": "Act quota"
-            }
-          ]
-        },
-        "TargetValue": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "states"
-                    }
-                  },
-                  "Property": "Act quota"
-                }
-              },
-              "queryRef": "states.Act quota",
-              "nativeQueryRef": "Act quota",
-              "displayName": "Act quota"
-            }
-          ]
-        },
         "Y": {
           "projections": [
             {
@@ -67,6 +30,25 @@
               "queryRef": "states.Assumed (final)",
               "nativeQueryRef": "Assumed (final)",
               "displayName": "Assumed (final)"
+            }
+          ]
+        },
+        "MaxValue": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "states"
+                    }
+                  },
+                  "Property": "Act quota"
+                }
+              },
+              "queryRef": "states.Act quota",
+              "nativeQueryRef": "Act quota",
+              "displayName": "Act quota"
             }
           ]
         }
@@ -160,6 +142,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Consolas'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "26D"
                 }
               }
             },
@@ -412,7 +401,6 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

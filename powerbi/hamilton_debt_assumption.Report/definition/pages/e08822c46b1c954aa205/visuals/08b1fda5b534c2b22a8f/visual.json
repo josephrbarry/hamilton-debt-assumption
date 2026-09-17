@@ -11,6 +11,7 @@
   },
   "visual": {
     "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -44,7 +45,6 @@
               },
               "queryRef": "states.region",
               "nativeQueryRef": "region",
-              "active": false,
               "displayName": "Region"
             },
             {
@@ -60,7 +60,6 @@
               },
               "queryRef": "states.position_1793",
               "nativeQueryRef": "position_1793",
-              "active": false,
               "displayName": "1793 position"
             },
             {
@@ -76,7 +75,6 @@
               },
               "queryRef": "states.Assumed (final)",
               "nativeQueryRef": "Assumed (final)",
-              "active": false,
               "displayName": "Assumed (final)"
             },
             {
@@ -92,7 +90,6 @@
               },
               "queryRef": "states.1793 settlement",
               "nativeQueryRef": "1793 settlement",
-              "active": false,
               "displayName": "1793 settlement"
             },
             {
@@ -108,7 +105,6 @@
               },
               "queryRef": "states.Net position",
               "nativeQueryRef": "Net position",
-              "active": false,
               "displayName": "Net position"
             },
             {
@@ -124,7 +120,6 @@
               },
               "queryRef": "states.Net position (2025 $)",
               "nativeQueryRef": "Net position (2025 $)",
-              "active": false,
               "displayName": "Net position (2025 $)"
             },
             {
@@ -140,7 +135,6 @@
               },
               "queryRef": "states.Net per head",
               "nativeQueryRef": "Net per head",
-              "active": false,
               "displayName": "Net per head"
             },
             {
@@ -156,7 +150,6 @@
               },
               "queryRef": "states.Net per head (2025 $)",
               "nativeQueryRef": "Net per head (2025 $)",
-              "active": false,
               "displayName": "Net per head (2025 $)"
             },
             {
@@ -172,7 +165,6 @@
               },
               "queryRef": "states.Pop. share %",
               "nativeQueryRef": "Pop. share %",
-              "active": false,
               "displayName": "Pop. share %"
             }
           ]
@@ -597,7 +589,6 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

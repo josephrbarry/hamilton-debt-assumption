@@ -207,7 +207,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Hamilton's defence was that the state debts were incurred for a common cause, so relieving them was rough justice. If so, states the 1793 audit found had over-paid should have received more relief. They did: $6.12 vs $2.67 per head (exact permutation p = 0.047; Spearman rho = 0.55).",
+                    "value": "Hamilton's defence was that the state debts were incurred for a common cause, so relieving them was rough justice. If so, states the 1793 audit found had over-paid should have received more relief. They did: $6.12 vs $2.67 per head (exact permutation p = 0.047, uncorrected; Spearman rho = 0.55 per head, 0.31 on raw dollars). Suggestive, not confirmatory - see Schedule H.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

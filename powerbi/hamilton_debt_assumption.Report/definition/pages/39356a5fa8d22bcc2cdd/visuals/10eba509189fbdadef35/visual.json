@@ -2,15 +2,16 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "10eba509189fbdadef35",
   "position": {
-    "x": 792,
-    "y": 677,
+    "x": 792.0,
+    "y": 677.0,
     "z": 0,
-    "height": 355,
-    "width": 1080,
+    "height": 355.0,
+    "width": 1080.0,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -44,7 +45,6 @@
               },
               "queryRef": "states.Hamilton estimate",
               "nativeQueryRef": "Hamilton estimate",
-              "active": false,
               "displayName": "Hamilton estimate"
             },
             {
@@ -60,7 +60,6 @@
               },
               "queryRef": "states.Act quota",
               "nativeQueryRef": "Act quota",
-              "active": false,
               "displayName": "Act quota"
             },
             {
@@ -76,7 +75,6 @@
               },
               "queryRef": "states.Assumed (final)",
               "nativeQueryRef": "Assumed (final)",
-              "active": false,
               "displayName": "Assumed (final)"
             },
             {
@@ -92,7 +90,6 @@
               },
               "queryRef": "states.1793 settlement",
               "nativeQueryRef": "1793 settlement",
-              "active": false,
               "displayName": "1793 settlement"
             },
             {
@@ -108,7 +105,6 @@
               },
               "queryRef": "states.Net position",
               "nativeQueryRef": "Net position",
-              "active": false,
               "displayName": "Net position"
             },
             {
@@ -124,7 +120,6 @@
               },
               "queryRef": "states.Net position (2025 $)",
               "nativeQueryRef": "Net position (2025 $)",
-              "active": false,
               "displayName": "Net position (2025 $)"
             }
           ]
@@ -549,7 +544,6 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }
