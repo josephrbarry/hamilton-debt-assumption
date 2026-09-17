@@ -548,20 +548,18 @@ def page_summary() -> str:
 
     opinion = [
         ("Opinion", 15, True, NAVY, HFONT),
-        ("On the method: not defensible as an apportionment. The quotas were set on returns from six "
-         "of thirteen states, cut by a quarter for the two largest claimants, and assigned by round "
-         "number to four states with nothing on file.", 11, False, INK),
-        ("On the outcome: defensible, and better than the method deserved. 85% of the authorized sum "
-         "was taken up; the states that over-subscribed were the ones Hamilton's own schedule said "
-         "owed the most; and the 1793 settlement independently found the largest recipients (MA, SC) "
-         "were the largest creditors of the Union. Relief tracked contribution.", 11, False, INK),
-        ("On Madison's objection: wrong on the facts for his own state. The audit he demanded found "
-         "Virginia a net debtor to the Union ($100,879).", 11, False, INK),
+        ("Method: not defensible. Six of thirteen states filed returns. The two largest were cut "
+         "by a quarter. Four states with no return got $3.1M by round number.", 11, False, INK),
+        ("Outcome: defensible. 85% of the quota was used. The states that over-subscribed were the "
+         "ones Hamilton said owed the most. The 1793 audit confirmed the biggest recipients (MA, SC) "
+         "were the biggest creditors. Relief tracked contribution.", 11, False, INK),
+        ("Madison: wrong on his own state. The audit he demanded found Virginia a net debtor, "
+         "$100,879.", 11, False, INK),
         ("Basis of preparation", 13, True, NAVY, HFONT),
-        ("Five primary ledgers, each footed to its own printed total before use (Schedule B). One does "
-         "not foot: a $500,000 line error in the 1792 subscription table, reconciled and disclosed. "
-         "Amounts are 1790 specie dollars; 2025 dollars at 36.3x (CPI). The $21.5M authorized was "
-         "about 11% of 1790 GDP - roughly $3.4 trillion of today's economy.", 10, False, GREY),
+        ("Five primary ledgers, each footed before use (Schedule B). One does not foot: a $500,000 "
+         "line error in the 1792 subscription table, reconciled and disclosed.", 10, False, GREY),
+        ("1790 specie dollars; 2025 dollars at 36.3x CPI. $21.5M was ~11% of 1790 GDP, about "
+         "$3.4 trillion in today's economy.", 10, False, GREY),
     ]
     vis = header(
         "p0", "A", "Was Hamilton's 1790 debt assumption fair?",
@@ -859,16 +857,14 @@ def page_stats_about() -> str:
 
     method = [
         ("Notes", H, True, NAVY, HFONT),
-        ("Foot first. Every table was tied to its printed totals before analysis (Schedule B).", B, False, INK),
-        ("Population, not sample. Thirteen states are the whole universe. Permutation tests ask 'how often would "
-         "random relabeling produce this gap?' - legitimate, but with 4-7 per group they have little power. "
-         "Effect sizes first, p-values second.", B, False, INK),
-        ("Three tests, same answer. Welch t, Mann-Whitney U and an exact permutation test agree on every comparison.", B, False, INK),
-        ("Dissimilarity index. Half the sum of absolute gaps as a percent of the total - the same construct as "
-         "budget-vs-benchmark variance.", B, False, INK),
-        ("Two dollar figures. 1790 specie dollars, with 2025 dollars at 36.3x (CPI, MeasuringWorth). The Federal "
-         "Reserve's series starts in 1800 and gives ~19x from that year. GDP share (159,000x) for scale.", B, False, INK),
-        ("Boundaries. Maine in Massachusetts, Kentucky in Virginia, as in 1790. Excluding them changes no ranking.", B, False, INK),
+        ("Foot first. Every table tied to its printed total before analysis (Schedule B).", B, False, INK),
+        ("Population, not sample. 13 states is the whole universe. With 4-7 per group, tests have "
+         "little power. Effect sizes lead; p-values follow.", B, False, INK),
+        ("Three tests, one answer. Welch t, Mann-Whitney U, exact permutation. All agree.", B, False, INK),
+        ("Dissimilarity index. Share of the total that would have to move to match the benchmark. "
+         "Same idea as budget variance.", B, False, INK),
+        ("Two dollar figures. 1790 $ and 2025 $ at 36.3x CPI (MeasuringWorth). GDP share for scale.", B, False, INK),
+        ("Boundaries. Maine in MA, Kentucky in VA, as in 1790. No ranking changes without them.", B, False, INK),
         ("Sources", H, True, NAVY, HFONT),
         ("Schedule E, Report Relative to a Provision for the Support of Public Credit, 9 Jan 1790 (Founders Online).", B, False, INK),
         ("An Act making provision for the Debt of the United States, 4 Aug 1790, 1 Stat. 138, sec. 14.", B, False, INK),

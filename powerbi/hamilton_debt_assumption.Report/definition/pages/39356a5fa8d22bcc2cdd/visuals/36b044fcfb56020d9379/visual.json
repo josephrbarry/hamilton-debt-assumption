@@ -251,7 +251,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "On the method: not defensible as an apportionment. The quotas were set on returns from six of thirteen states, cut by a quarter for the two largest claimants, and assigned by round number to four states with nothing on file.",
+                    "value": "Method: not defensible. Six of thirteen states filed returns. The two largest were cut by a quarter. Four states with no return got $3.1M by round number.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -273,7 +273,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "On the outcome: defensible, and better than the method deserved. 85% of the authorized sum was taken up; the states that over-subscribed were the ones Hamilton's own schedule said owed the most; and the 1793 settlement independently found the largest recipients (MA, SC) were the largest creditors of the Union. Relief tracked contribution.",
+                    "value": "Outcome: defensible. 85% of the quota was used. The states that over-subscribed were the ones Hamilton said owed the most. The 1793 audit confirmed the biggest recipients (MA, SC) were the biggest creditors. Relief tracked contribution.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -295,7 +295,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "On Madison's objection: wrong on the facts for his own state. The audit he demanded found Virginia a net debtor to the Union ($100,879).",
+                    "value": "Madison: wrong on his own state. The audit he demanded found Virginia a net debtor, $100,879.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -340,7 +340,29 @@
               {
                 "textRuns": [
                   {
-                    "value": "Five primary ledgers, each footed to its own printed total before use (Schedule B). One does not foot: a $500,000 line error in the 1792 subscription table, reconciled and disclosed. Amounts are 1790 specie dollars; 2025 dollars at 36.3x (CPI). The $21.5M authorized was about 11% of 1790 GDP - roughly $3.4 trillion of today's economy.",
+                    "value": "Five primary ledgers, each footed before use (Schedule B). One does not foot: a $500,000 line error in the 1792 subscription table, reconciled and disclosed.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#7A8290"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontSize": "6pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1790 specie dollars; 2025 dollars at 36.3x CPI. $21.5M was ~11% of 1790 GDP, about $3.4 trillion in today's economy.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

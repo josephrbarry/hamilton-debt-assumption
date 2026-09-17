@@ -251,7 +251,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Foot first. Every table was tied to its printed totals before analysis (Schedule B).",
+                    "value": "Foot first. Every table tied to its printed total before analysis (Schedule B).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -273,7 +273,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Population, not sample. Thirteen states are the whole universe. Permutation tests ask 'how often would random relabeling produce this gap?' - legitimate, but with 4-7 per group they have little power. Effect sizes first, p-values second.",
+                    "value": "Population, not sample. 13 states is the whole universe. With 4-7 per group, tests have little power. Effect sizes lead; p-values follow.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -295,7 +295,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Three tests, same answer. Welch t, Mann-Whitney U and an exact permutation test agree on every comparison.",
+                    "value": "Three tests, one answer. Welch t, Mann-Whitney U, exact permutation. All agree.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -317,7 +317,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Dissimilarity index. Half the sum of absolute gaps as a percent of the total - the same construct as budget-vs-benchmark variance.",
+                    "value": "Dissimilarity index. Share of the total that would have to move to match the benchmark. Same idea as budget variance.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -339,7 +339,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Two dollar figures. 1790 specie dollars, with 2025 dollars at 36.3x (CPI, MeasuringWorth). The Federal Reserve's series starts in 1800 and gives ~19x from that year. GDP share (159,000x) for scale.",
+                    "value": "Two dollar figures. 1790 $ and 2025 $ at 36.3x CPI (MeasuringWorth). GDP share for scale.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -361,7 +361,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Boundaries. Maine in Massachusetts, Kentucky in Virginia, as in 1790. Excluding them changes no ranking.",
+                    "value": "Boundaries. Maine in MA, Kentucky in VA, as in 1790. No ranking changes without them.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
