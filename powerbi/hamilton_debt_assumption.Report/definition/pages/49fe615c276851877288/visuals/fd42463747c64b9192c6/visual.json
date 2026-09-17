@@ -6,12 +6,11 @@
     "y": 144,
     "z": 0,
     "height": 535.68,
-    "width": 586.0799999999999,
+    "width": 586.07999999999993,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -45,6 +44,7 @@
               },
               "queryRef": "states.1793 settlement",
               "nativeQueryRef": "1793 settlement",
+              "active": false,
               "displayName": "Cr - due from state"
             },
             {
@@ -60,6 +60,7 @@
               },
               "queryRef": "states.1793 settlement (2025 $)",
               "nativeQueryRef": "1793 settlement (2025 $)",
+              "active": false,
               "displayName": "1793 settlement (2025 $)"
             },
             {
@@ -75,6 +76,7 @@
               },
               "queryRef": "states.Settlement per head",
               "nativeQueryRef": "Settlement per head",
+              "active": false,
               "displayName": "Settlement per head"
             }
           ]
@@ -381,7 +383,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cr  \u00b7  Debtor states: balances due FROM the state'"
+                  "Value": "'Cr  ·  Debtor states: balances due FROM the state'"
                 }
               }
             },
@@ -499,7 +501,8 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [

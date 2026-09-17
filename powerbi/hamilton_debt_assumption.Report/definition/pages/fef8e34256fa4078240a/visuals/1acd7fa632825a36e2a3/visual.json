@@ -194,7 +194,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Schedule G  \u00b7  7 of 8",
+                    "value": "Schedule G  ·  7 of 8",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -218,7 +218,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "1790 $ \u00b7 (2025 $ at 36.3x)",
+                    "value": "1790 $ · (2025 $ at 36.3x)",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

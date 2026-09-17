@@ -2,19 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "5e49af664b2e6c79b53d",
   "position": {
-    "x": 1062.0,
+    "x": 1062,
     "y": 144,
     "z": 0,
     "height": 280,
-    "width": 809.9999999999999,
+    "width": 809.99999999999989,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "gauge",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
-        "Y": {
+        "MaxValue": {
           "projections": [
             {
               "field": {
@@ -24,12 +23,12 @@
                       "Entity": "states"
                     }
                   },
-                  "Property": "Assumed (final)"
+                  "Property": "Act quota"
                 }
               },
-              "queryRef": "states.Assumed (final)",
-              "nativeQueryRef": "Assumed (final)",
-              "displayName": "Assumed (final)"
+              "queryRef": "states.Act quota",
+              "nativeQueryRef": "Act quota",
+              "displayName": "Act quota"
             }
           ]
         },
@@ -52,7 +51,7 @@
             }
           ]
         },
-        "MaxValue": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -62,12 +61,12 @@
                       "Entity": "states"
                     }
                   },
-                  "Property": "Act quota"
+                  "Property": "Assumed (final)"
                 }
               },
-              "queryRef": "states.Act quota",
-              "nativeQueryRef": "Act quota",
-              "displayName": "Act quota"
+              "queryRef": "states.Assumed (final)",
+              "nativeQueryRef": "Assumed (final)",
+              "displayName": "Assumed (final)"
             }
           ]
         }
@@ -161,13 +160,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'Consolas'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "26D"
                 }
               }
             },
@@ -420,6 +412,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

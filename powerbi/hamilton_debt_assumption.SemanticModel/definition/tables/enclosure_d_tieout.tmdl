@@ -1,6 +1,30 @@
 table enclosure_d_tieout
 	lineageTag: 10d35115-29c0-457b-84d1-83e4f55e04e8
 
+	measure 'ED quota' = SUM(enclosure_d_tieout[quota_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2c31d3c7-fd0e-4b92-8a02-a3741a81e57c
+
+	measure 'ED subscribed (as printed)' = SUM(enclosure_d_tieout[subscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 273b615c-13b2-4983-80be-70c26d0101a8
+
+	measure 'ED unsubscribed (as printed)' = SUM(enclosure_d_tieout[unsubscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 82354ac7-81c9-4f5b-badd-27aed44d69c4
+
+	measure 'ED unsubscribed (computed)' = SUM(enclosure_d_tieout[unsubscribed_computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8100d9d4-396c-4f4e-b10e-22136fb2b8bf
+
+	measure 'ED variance' = SUM(enclosure_d_tieout[variance_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a0d6746d-f34e-4b7b-8662-d98d77a05e5e
+
+	measure 'ED subscribed (reconciled)' = SUM(enclosure_d_tieout[subscribed_reconciled_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 28dec20c-6ab7-411b-93e7-14d21a6ed78e
+
 	column state
 		dataType: string
 		lineageTag: 420261a1-2f64-4f4d-8aa1-bcf2bfe5002c
@@ -90,30 +114,6 @@ table enclosure_d_tieout
 
 		annotation SummarizationSetBy = Automatic
 
-	measure 'ED quota' = SUM(enclosure_d_tieout[quota_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 2c31d3c7-fd0e-4b92-8a02-a3741a81e57c
-
-	measure 'ED subscribed (as printed)' = SUM(enclosure_d_tieout[subscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 273b615c-13b2-4983-80be-70c26d0101a8
-
-	measure 'ED unsubscribed (as printed)' = SUM(enclosure_d_tieout[unsubscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 82354ac7-81c9-4f5b-badd-27aed44d69c4
-
-	measure 'ED unsubscribed (computed)' = SUM(enclosure_d_tieout[unsubscribed_computed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 8100d9d4-396c-4f4e-b10e-22136fb2b8bf
-
-	measure 'ED variance' = SUM(enclosure_d_tieout[variance_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a0d6746d-f34e-4b7b-8662-d98d77a05e5e
-
-	measure 'ED subscribed (reconciled)' = SUM(enclosure_d_tieout[subscribed_reconciled_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 28dec20c-6ab7-411b-93e7-14d21a6ed78e
-
 	partition enclosure_d_tieout = m
 		mode: import
 		source =
@@ -125,3 +125,4 @@ table enclosure_d_tieout
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

@@ -1,6 +1,10 @@
 table waterfall
 	lineageTag: ee8e9a62-0927-41b8-80d6-06547950d3ca
 
+	measure 'WF 1790 $ millions' = SUM(waterfall[usd_1790_m])
+		formatString: #,0.00;(#,0.00);#,0.00
+		lineageTag: fb2e2c53-1ee5-4655-935f-f7327fd556b0
+
 	column step_order
 		dataType: int64
 		formatString: 0
@@ -55,10 +59,6 @@ table waterfall
 
 		annotation SummarizationSetBy = Automatic
 
-	measure 'WF 1790 $ millions' = SUM(waterfall[usd_1790_m])
-		formatString: #,0.00;(#,0.00);#,0.00
-		lineageTag: fb2e2c53-1ee5-4655-935f-f7327fd556b0
-
 	partition waterfall = m
 		mode: import
 		source =
@@ -70,3 +70,4 @@ table waterfall
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

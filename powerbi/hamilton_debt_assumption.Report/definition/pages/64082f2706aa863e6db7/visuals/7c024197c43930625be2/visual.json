@@ -11,9 +11,28 @@
   },
   "visual": {
     "visualType": "pivotTable",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ledger_long"
+                    }
+                  },
+                  "Property": "step"
+                }
+              },
+              "queryRef": "ledger_long.step",
+              "nativeQueryRef": "step",
+              "active": true,
+              "displayName": "Step"
+            }
+          ]
+        },
         "Rows": {
           "projections": [
             {
@@ -31,25 +50,6 @@
               "nativeQueryRef": "state",
               "active": true,
               "displayName": "State"
-            }
-          ]
-        },
-        "Columns": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "ledger_long"
-                    }
-                  },
-                  "Property": "step"
-                }
-              },
-              "queryRef": "ledger_long.step",
-              "nativeQueryRef": "step",
-              "displayName": "Step"
             }
           ]
         },
@@ -512,6 +512,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

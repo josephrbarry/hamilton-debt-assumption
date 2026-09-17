@@ -11,28 +11,8 @@
   },
   "visual": {
     "visualType": "treemap",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
-        "Group": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "states"
-                    }
-                  },
-                  "Property": "position_1793"
-                }
-              },
-              "queryRef": "states.position_1793",
-              "nativeQueryRef": "position_1793",
-              "displayName": "1793 position"
-            }
-          ]
-        },
         "Details": {
           "projections": [
             {
@@ -50,6 +30,26 @@
               "nativeQueryRef": "state",
               "active": true,
               "displayName": "State"
+            }
+          ]
+        },
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "states"
+                    }
+                  },
+                  "Property": "position_1793"
+                }
+              },
+              "queryRef": "states.position_1793",
+              "nativeQueryRef": "position_1793",
+              "active": true,
+              "displayName": "1793 position"
             }
           ]
         },
@@ -509,6 +509,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }
