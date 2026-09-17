@@ -29,7 +29,6 @@
               },
               "queryRef": "counterfactual.state",
               "nativeQueryRef": "state",
-              "active": true,
               "displayName": "State"
             }
           ]

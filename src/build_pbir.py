@@ -402,7 +402,7 @@ def gauge(name, x, y, w, h, *, value, target, maximum, title, subtitle=None) -> 
         roles={"Y": [value], "MaxValue": [maximum], **({"TargetValue": [target]} if target else {})},
         title=title, subtitle=subtitle,
         objects={"dataPoint": [{"properties": {"fill": color(GOLD), "target": color(NAVY)}}],
-                 "labels": data_labels(True, 0, "1000000D"),
+                 "labels": data_labels(True, 1, "1000000D"),
                  "calloutValue": [{"properties": {"fontFamily": lit(f"'{MONO}'"), "fontSize": lit("26D"),
                                                   "color": color(NAVY), "labelDisplayUnits": lit("1000000D"),
                                                   "labelPrecision": lit("2L")}}],
@@ -422,7 +422,7 @@ def filled_map(name, x, y, w, h, *, location, legend_field, legend_pairs, toolti
 
 
 def treemap(name, x, y, w, h, *, group, details, value, title, subtitle=None, colors=None) -> dict:
-    objects = {"labels": data_labels(True, 0, "1000000D"),
+    objects = {"labels": data_labels(True, 0, "1D"),
                "categoryLabels": [{"properties": {"show": lit("true"), "fontFamily": lit(f"'{FONT}'"),
                                                   "fontSize": lit("10D"), "color": color(WHITE)}}],
                "legend": legend(True, "Bottom")}
@@ -453,11 +453,17 @@ def scatter(name, x, y, w, h, *, category, xf, yf, title, subtitle=None, legend_
                   objects=objects)
 
 
-def slicer(name, x, y, w, h, *, field, title, single=False) -> dict:
+def slicer(name, x, y, w, h, *, field, title, single=False, default=None) -> dict:
+    """default = value pre-selected when the report opens (stored as a filter on the slicer)."""
+    entity = field["field"]["Column"]["Expression"]["SourceRef"]["Entity"]
+    prop = field["field"]["Column"]["Property"]
+    general = {"orientation": lit("0L")}
+    if default:   # the slicer's own selection state lives in general.filter, not in filterConfig
+        general["filter"] = {"filter": in_filter(entity, prop, [default], text=True)["filter"]}
     return visual(
         name, "slicer", x, y, w, h, roles={"Values": [field]}, title=title, title_color=GREY,
         objects={"data": [{"properties": {"mode": lit("'Basic'")}}],
-                 "general": [{"properties": {"orientation": lit("0L")}}],
+                 "general": [{"properties": general}],
                  "header": [{"properties": {"show": lit("false")}}],
                  "selection": [{"properties": {"singleSelect": lit("true" if single else "false"),
                                                "selectAllCheckboxEnabled": lit("false")}}],
@@ -509,7 +515,7 @@ def page(name: str, display: str, visuals: list[dict],
 
 
 # ---------------------------------------------------------------- shared fields
-STATE = proj_col("states", "state", active=True, display="State")
+STATE = proj_col("states", "state", display="State")
 REGION = proj_col("states", "region", display="Region")
 POSITION = proj_col("states", "position_1793", display="1793 position")
 QUOTA = proj_sum("states", "quota_usd", "Act quota")
@@ -714,7 +720,7 @@ def page_takeup() -> str:
                   category=STATE, series=[ASSUMED, UNUSED], colors=[GOLD, PALE], stacked=True,
                   title="Quota used and unused, by state, 1790 $",
                   subtitle="Bar length = Act quota. Gold = assumed; pale = left on the table.",
-                  sort_field=QUOTA["field"], labels=False, x_title="1790 $"),
+                  sort_field=ASSUMED["field"], labels=False, x_title="1790 $"),
         gauge("p3-gauge", rx, TOP, right_w, gauge_h,
               value=ASSUMED, target=None, maximum=QUOTA,
               title="Utilization: $18.27M assumed of $21.50M authorized ($663M of $780M in 2025 $)",
@@ -736,7 +742,7 @@ def page_settlement() -> str:
     t_w = (PAGE_W - 2 * M - 2 * GAP - map_w) / 2
     lx = M + map_w + GAP
     rx = lx + t_w + GAP
-    t_h = (h - GAP) * 0.62
+    t_h = 330
     bar_h = h - GAP - t_h
 
     creditors = [f for f in ["New Hampshire", "Massachusetts", "Rhode Island", "Connecticut",
@@ -820,10 +826,10 @@ def page_apportionment() -> str:
     left_w = (PAGE_W - 2 * M - GAP) * 0.6
     right_w = PAGE_W - 2 * M - GAP - left_w
     rx = M + left_w + GAP
-    slicer_h = 140
+    slicer_h = 190
 
     GAP_USD = proj_sum("counterfactual", "gap_usd", "Quota less per-head share")
-    CF_STATE = proj_col("counterfactual", "state", active=True, display="State")
+    CF_STATE = proj_col("counterfactual", "state", display="State")
     CF_REGION = proj_col("counterfactual", "region", display="Region")
     vis = header(
         "p6", "G", "Not proportional to population: one dollar in five sits in a different state than a per-head split would put it.",
@@ -838,7 +844,8 @@ def page_apportionment() -> str:
                   subtitle="Right of zero = more than its head-count share. Negatives in parentheses.",
                   labels=True, precision=0, x_title="1790 $"),
         slicer("p6-basis", rx, TOP, right_w, slicer_h,
-               field=proj_col("counterfactual", "basis"), title="Population basis", single=True),
+               field=proj_col("counterfactual", "basis"), title="Population basis (pick one)",
+               single=True, default="Total population"),
         table("p6-table", rx, TOP + slicer_h + GAP, right_w, h - slicer_h - GAP,
               values=[proj_col("counterfactual", "state", display="State"),
                       proj_sum("counterfactual", "quota_usd", "Act quota"),

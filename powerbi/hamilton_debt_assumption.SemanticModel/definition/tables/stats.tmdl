@@ -1,9 +1,9 @@
 table stats
-	lineageTag: 115568dd-0377-425a-b13d-afb9cf6bc54d
+	lineageTag: 8b8c0804-c1d0-45e4-a0b4-da2e3fcdec39
 
 	column group
 		dataType: string
-		lineageTag: 5fd1c225-d780-44fa-8c74-3a1689714f71
+		lineageTag: 218f3edc-6e92-45b5-a018-19d3150ae17f
 		summarizeBy: none
 		sourceColumn: group
 
@@ -11,7 +11,7 @@ table stats
 
 	column question
 		dataType: string
-		lineageTag: 99ca3039-a90c-4004-a231-0b1ba2230be7
+		lineageTag: 2fa17de0-9c33-4f28-8662-584902849f7b
 		summarizeBy: none
 		sourceColumn: question
 
@@ -19,7 +19,7 @@ table stats
 
 	column test
 		dataType: string
-		lineageTag: 72d744c9-c7a2-4ba6-8770-a29e7b48be6b
+		lineageTag: cc56d410-c7c9-464a-bdd8-e0ac4ae0c5f6
 		summarizeBy: none
 		sourceColumn: test
 		sortByColumn: test_order
@@ -28,7 +28,7 @@ table stats
 
 	column statistic
 		dataType: string
-		lineageTag: c9dd6e78-644a-475e-87f8-46cdcd9152ea
+		lineageTag: 7b4ccd72-31cd-461b-9c40-d699c8500fa0
 		summarizeBy: none
 		sourceColumn: statistic
 
@@ -37,7 +37,7 @@ table stats
 	column p_value
 		dataType: double
 		formatString: 0.000
-		lineageTag: 048df9ae-e293-4d53-a5dd-05704ea7452a
+		lineageTag: 9146559a-c95f-4f64-ad65-ea23c92a068a
 		summarizeBy: none
 		sourceColumn: p_value
 
@@ -45,7 +45,7 @@ table stats
 
 	column read
 		dataType: string
-		lineageTag: e232c8c1-52dd-4608-b662-1cc2e1303db6
+		lineageTag: bd40c654-6438-4dac-acf7-343078a32d58
 		summarizeBy: none
 		sourceColumn: read
 
@@ -54,7 +54,7 @@ table stats
 	column test_order
 		dataType: int64
 		formatString: 0
-		lineageTag: c80eab23-fc2e-4df5-834d-a093feaa1408
+		lineageTag: 598cbf9f-662b-472a-8481-521930d7c30d
 		summarizeBy: none
 		sourceColumn: test_order
 
@@ -62,7 +62,7 @@ table stats
 
 	measure 'p-value' = AVERAGE(stats[p_value])
 		formatString: 0.000
-		lineageTag: 96f26de9-76dd-49d6-9ba2-4fca2b47ef96
+		lineageTag: 8f8df9b1-8081-452d-858d-f5ae244a6036
 
 	partition stats = m
 		mode: import

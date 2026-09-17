@@ -29,7 +29,6 @@
               },
               "queryRef": "states.state",
               "nativeQueryRef": "state",
-              "active": true,
               "displayName": "State"
             }
           ]

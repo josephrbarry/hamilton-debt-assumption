@@ -29,7 +29,6 @@
               },
               "queryRef": "states.state",
               "nativeQueryRef": "state",
-              "active": true,
               "displayName": "State"
             }
           ]
@@ -79,7 +78,7 @@
                     "Entity": "states"
                   }
                 },
-                "Property": "Act quota"
+                "Property": "Assumed (final)"
               }
             },
             "direction": "Descending"

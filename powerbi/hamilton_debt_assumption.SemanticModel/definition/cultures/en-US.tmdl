@@ -109,7 +109,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Dr - due to state": {
+			          "Dr - due from state": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -119,7 +119,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Cr - due from state": {
+			          "Cr - due to state": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

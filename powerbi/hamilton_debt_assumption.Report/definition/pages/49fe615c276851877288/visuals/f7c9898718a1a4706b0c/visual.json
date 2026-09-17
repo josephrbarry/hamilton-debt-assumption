@@ -3,9 +3,9 @@
   "name": "f7c9898718a1a4706b0c",
   "position": {
     "x": 675.84,
-    "y": 703.68,
+    "y": 498,
     "z": 0,
-    "height": 328.32000000000005,
+    "height": 534,
     "width": 1196.1599999999999,
     "tabOrder": 0
   },
@@ -29,7 +29,6 @@
               },
               "queryRef": "states.state",
               "nativeQueryRef": "state",
-              "active": true,
               "displayName": "State"
             }
           ]

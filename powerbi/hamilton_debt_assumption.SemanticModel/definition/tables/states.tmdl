@@ -1,9 +1,9 @@
 table states
-	lineageTag: 7df3f014-388a-472f-a188-bd1b8291cce6
+	lineageTag: fc7c1712-e60b-4618-9d33-745e81118b31
 
 	column state
 		dataType: string
-		lineageTag: 616b1f31-b538-492b-a02f-5fbb8dc3df87
+		lineageTag: 50b1a7dc-ff0a-40fa-8166-99be2eb04fff
 		summarizeBy: none
 		sourceColumn: state
 		dataCategory: StateOrProvince
@@ -12,7 +12,7 @@ table states
 
 	column region
 		dataType: string
-		lineageTag: e829a712-391f-4a59-a65a-462565968b98
+		lineageTag: 69b75dd2-87ba-412f-9a92-eb687f7913bb
 		summarizeBy: none
 		sourceColumn: region
 
@@ -20,7 +20,7 @@ table states
 
 	column position_1793
 		dataType: string
-		lineageTag: ceb5b2da-1915-48fb-9a0a-43bc3bf8fdbe
+		lineageTag: dcb4bd7e-25f7-4640-9fb1-128131c0d1a3
 		summarizeBy: none
 		sourceColumn: position_1793
 
@@ -29,7 +29,7 @@ table states
 	column pop_total_1790
 		dataType: int64
 		formatString: #,0
-		lineageTag: e5012846-2192-48f3-bcd5-a92520a1553a
+		lineageTag: 84261a6a-395e-4b2f-a015-333495a60d06
 		summarizeBy: none
 		sourceColumn: pop_total_1790
 
@@ -38,7 +38,7 @@ table states
 	column pop_enslaved_1790
 		dataType: int64
 		formatString: #,0
-		lineageTag: 097fb42e-8abe-44af-9bcb-b995d66383a5
+		lineageTag: a5d7e911-33de-4b14-a49d-e0cbe4f36648
 		summarizeBy: none
 		sourceColumn: pop_enslaved_1790
 
@@ -47,7 +47,7 @@ table states
 	column pop_free_1790
 		dataType: int64
 		formatString: #,0
-		lineageTag: 8124a379-5970-4f8b-8d1a-1500a783d023
+		lineageTag: d5a99080-8ca5-41f8-8b9c-0f88cc92adbf
 		summarizeBy: none
 		sourceColumn: pop_free_1790
 
@@ -56,7 +56,7 @@ table states
 	column pop_share_pct
 		dataType: double
 		formatString: 0.0
-		lineageTag: 4884d27f-ea3b-4e89-a766-2cb30350ae04
+		lineageTag: 7a69bde5-2753-4e64-a547-6b4546b4cd7d
 		summarizeBy: none
 		sourceColumn: pop_share_pct
 
@@ -65,7 +65,7 @@ table states
 	column estimate_1790_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 39c9d58d-9f23-48e4-b822-d58e5976d3b9
+		lineageTag: 2354f68a-2fd6-4796-ac02-2b89c0767798
 		summarizeBy: none
 		sourceColumn: estimate_1790_usd
 
@@ -73,7 +73,7 @@ table states
 
 	column estimate_basis
 		dataType: string
-		lineageTag: b0a866c3-460b-4c17-bfe9-88f190494c34
+		lineageTag: 7e835570-632c-41e6-9b46-2770491e9f94
 		summarizeBy: none
 		sourceColumn: estimate_basis
 
@@ -82,7 +82,7 @@ table states
 	column quota_usd
 		dataType: int64
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 795e3530-b971-446c-8289-600512930a5b
+		lineageTag: bd7dd7cc-9b6f-4b5e-a895-b5cd0faa46e7
 		summarizeBy: none
 		sourceColumn: quota_usd
 
@@ -91,7 +91,7 @@ table states
 	column quota_share_pct
 		dataType: double
 		formatString: 0.0
-		lineageTag: 2ae9298e-f284-4297-8b77-eaceeffe236d
+		lineageTag: f3375b19-351f-4a12-94da-f9e32a3b9825
 		summarizeBy: none
 		sourceColumn: quota_share_pct
 
@@ -100,7 +100,7 @@ table states
 	column quota_vs_estimate_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 0c583f32-a476-463f-a37a-73f699ca8f9d
+		lineageTag: 21194bd3-24b5-4481-a480-727a9a07720d
 		summarizeBy: none
 		sourceColumn: quota_vs_estimate_usd
 
@@ -109,7 +109,7 @@ table states
 	column subscribed_1792_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 2cf49325-60d7-4343-8947-e3944d12ded5
+		lineageTag: 18d639f9-1b97-4ae6-a4dd-727a29e78008
 		summarizeBy: none
 		sourceColumn: subscribed_1792_usd
 
@@ -118,7 +118,7 @@ table states
 	column assumed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 51fa829b-32a0-4cbe-a61d-406d7b8c38be
+		lineageTag: 2053c24a-76a3-44a6-bfcf-94675372a950
 		summarizeBy: none
 		sourceColumn: assumed_usd
 
@@ -127,7 +127,7 @@ table states
 	column takeup_pct
 		dataType: double
 		formatString: 0.0
-		lineageTag: b0e847ab-0217-4cee-b187-6f484e014577
+		lineageTag: 6f8be3e1-e7ef-40ad-b749-b6e5635c1038
 		summarizeBy: none
 		sourceColumn: takeup_pct
 
@@ -136,7 +136,7 @@ table states
 	column quota_unused_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 7399fb6b-f7d1-4959-8b18-0b350c38326e
+		lineageTag: 2ea8fbe5-28e5-4f8f-903b-6a59a809b2c1
 		summarizeBy: none
 		sourceColumn: quota_unused_usd
 
@@ -145,7 +145,7 @@ table states
 	column remaining_state_debt_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 59a51660-bae8-440c-99b1-fc00feed46ee
+		lineageTag: 874e3808-11ca-4934-bf14-15e1d4ffe375
 		summarizeBy: none
 		sourceColumn: remaining_state_debt_usd
 
@@ -154,7 +154,7 @@ table states
 	column settlement_usd
 		dataType: int64
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 07365925-efe8-45b5-b340-c211d753ca0b
+		lineageTag: 4a45ea18-0849-488d-9ae8-c6ee31457687
 		summarizeBy: none
 		sourceColumn: settlement_usd
 
@@ -163,7 +163,7 @@ table states
 	column net_position_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 7ffb8d79-e7e8-4658-91bc-2196bbbc625f
+		lineageTag: 2fc5eeac-a3d2-418d-baa4-46ee82194671
 		summarizeBy: none
 		sourceColumn: net_position_usd
 
@@ -172,7 +172,7 @@ table states
 	column quota_per_capita
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 6e5c65ed-b5c4-4c8c-b364-1aef13b06a4e
+		lineageTag: 7382662f-6c3e-456e-9f1f-155b5c7435c7
 		summarizeBy: none
 		sourceColumn: quota_per_capita
 
@@ -181,7 +181,7 @@ table states
 	column assumed_per_capita
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: a40a5c60-c4d4-4069-b824-1bd002856595
+		lineageTag: 50bd25b7-a0b6-414e-acc9-be56f19d8672
 		summarizeBy: none
 		sourceColumn: assumed_per_capita
 
@@ -190,7 +190,7 @@ table states
 	column settlement_per_capita
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 82c0fc58-df32-4a67-acf3-95ce4a0e5d7b
+		lineageTag: 03f85f46-5fc6-45f4-83cb-c915dc3db487
 		summarizeBy: none
 		sourceColumn: settlement_per_capita
 
@@ -199,7 +199,7 @@ table states
 	column net_position_per_capita
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 7ac472bb-348e-415f-9b24-26a3ecfb9375
+		lineageTag: 14237123-147d-4ef5-9c2a-61d1b6f3a92b
 		summarizeBy: none
 		sourceColumn: net_position_per_capita
 
@@ -208,7 +208,7 @@ table states
 	column quota_per_free_person
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 6b546178-5169-47e5-bcc8-11456c0d4aca
+		lineageTag: 0f77657e-4845-4ca3-b03d-d24e24893195
 		summarizeBy: none
 		sourceColumn: quota_per_free_person
 
@@ -217,7 +217,7 @@ table states
 	column quota_z_score
 		dataType: double
 		formatString: #,0.00
-		lineageTag: 7c4a13c3-1b05-43a8-8fad-6b22c1643b75
+		lineageTag: 11b7e50b-0537-4e1a-a7c4-40c5d9821b9b
 		summarizeBy: none
 		sourceColumn: quota_z_score
 
@@ -226,7 +226,7 @@ table states
 	column quota_gap_vs_population_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a377d1b9-4306-431f-8d54-423d9a923760
+		lineageTag: 9664ea1c-060b-4790-a699-00691a62f63c
 		summarizeBy: none
 		sourceColumn: quota_gap_vs_population_usd
 
@@ -235,7 +235,7 @@ table states
 	column settlement_abs_usd
 		dataType: int64
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: c1cadaf9-8ab6-4a51-891a-edcc267ec760
+		lineageTag: 4625757e-8d7e-4cea-b72a-deb07a318c19
 		summarizeBy: none
 		sourceColumn: settlement_abs_usd
 
@@ -244,7 +244,7 @@ table states
 	column estimate_1790_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: c562e42f-1531-4bad-b72e-26819d5a3ea9
+		lineageTag: 58aba421-671f-4c28-9d68-9c639b3ffee6
 		summarizeBy: none
 		sourceColumn: estimate_1790_usd_2025
 
@@ -253,7 +253,7 @@ table states
 	column quota_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: d87c58ab-223b-4ac4-afa1-f5b7bafe0ede
+		lineageTag: 5128d49f-03ac-4159-a59a-693cdc0e6f61
 		summarizeBy: none
 		sourceColumn: quota_usd_2025
 
@@ -262,7 +262,7 @@ table states
 	column quota_vs_estimate_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 4067b5dd-7977-4894-91b2-930ce5561cb2
+		lineageTag: be9bfa01-75f7-4f7d-8790-d9e5b98d5b9d
 		summarizeBy: none
 		sourceColumn: quota_vs_estimate_usd_2025
 
@@ -271,7 +271,7 @@ table states
 	column subscribed_1792_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: ccb239bb-3c4e-426e-968b-76ea167e3d57
+		lineageTag: 7b583e71-c6ec-42b5-a1e1-94fff05bd706
 		summarizeBy: none
 		sourceColumn: subscribed_1792_usd_2025
 
@@ -280,7 +280,7 @@ table states
 	column assumed_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: ebb623ed-082b-4946-a98d-9d1d3315652a
+		lineageTag: e6862b81-2e69-4202-8602-e6f612232e67
 		summarizeBy: none
 		sourceColumn: assumed_usd_2025
 
@@ -289,7 +289,7 @@ table states
 	column quota_unused_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 2dbc1136-8b8d-49cf-bed8-19683947bb40
+		lineageTag: 4e89c60b-79fa-4cab-9676-703edd0f6d17
 		summarizeBy: none
 		sourceColumn: quota_unused_usd_2025
 
@@ -298,7 +298,7 @@ table states
 	column remaining_state_debt_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: cc79bd41-1cb3-4d08-8170-47b50d4893c9
+		lineageTag: 83c750e4-cfcb-439a-b24d-7baa8bf4c14b
 		summarizeBy: none
 		sourceColumn: remaining_state_debt_usd_2025
 
@@ -307,7 +307,7 @@ table states
 	column settlement_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: d46924b9-6377-42bb-8a91-4107b837ecee
+		lineageTag: bda8757a-9671-4a7c-b9b3-26f06e8042f0
 		summarizeBy: none
 		sourceColumn: settlement_usd_2025
 
@@ -316,7 +316,7 @@ table states
 	column net_position_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 32df72eb-29fe-4641-8c46-8f2f6bf533cf
+		lineageTag: 0d7b5a11-4ac5-4b98-b2f5-145340bc07db
 		summarizeBy: none
 		sourceColumn: net_position_usd_2025
 
@@ -325,7 +325,7 @@ table states
 	column quota_per_capita_2025
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 5f571c40-5564-41c9-96be-500d814af74b
+		lineageTag: 9e8f596f-1f6a-408f-9b61-b76f0a43beac
 		summarizeBy: none
 		sourceColumn: quota_per_capita_2025
 
@@ -334,7 +334,7 @@ table states
 	column assumed_per_capita_2025
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 6e78c572-bb0c-4a4c-a16a-ab1c8fe51abb
+		lineageTag: c26a1416-7e80-49f4-9d8c-3d23a119df6f
 		summarizeBy: none
 		sourceColumn: assumed_per_capita_2025
 
@@ -343,7 +343,7 @@ table states
 	column settlement_per_capita_2025
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: a45e7852-1ab7-41b7-8f7f-89f8a6081b8b
+		lineageTag: fb3a5282-1192-4166-9cb9-b2b464e4a204
 		summarizeBy: none
 		sourceColumn: settlement_per_capita_2025
 
@@ -352,7 +352,7 @@ table states
 	column net_position_per_capita_2025
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 05026334-888d-45b5-850e-750b0e0a015e
+		lineageTag: f8fc1e9c-06cf-4fc1-890d-870124d2cce9
 		summarizeBy: none
 		sourceColumn: net_position_per_capita_2025
 
@@ -361,7 +361,7 @@ table states
 	column quota_per_free_person_2025
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 98a04410-ff73-4ad2-9ec6-f370633604a0
+		lineageTag: 5d3314e4-a166-4513-a5fe-1862bde21039
 		summarizeBy: none
 		sourceColumn: quota_per_free_person_2025
 
@@ -370,7 +370,7 @@ table states
 	column quota_gap_vs_population_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 0904f128-658b-4772-8fc2-3aaf7301e457
+		lineageTag: c832c039-eb53-4424-8894-5847a7b7ec93
 		summarizeBy: none
 		sourceColumn: quota_gap_vs_population_usd_2025
 
@@ -379,7 +379,7 @@ table states
 	column settlement_abs_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 86b0904b-a31a-442c-9dba-7ad318922fb3
+		lineageTag: 58fc3512-6157-4cf4-be16-2d3b43a1c43d
 		summarizeBy: none
 		sourceColumn: settlement_abs_usd_2025
 
@@ -388,7 +388,7 @@ table states
 	column quota_rank
 		dataType: int64
 		formatString: 0
-		lineageTag: b2fb80aa-7c9b-448b-96d5-9398ab4ec850
+		lineageTag: b0be2c09-e7e8-491a-a733-0afe64cf0984
 		summarizeBy: none
 		sourceColumn: quota_rank
 
@@ -396,95 +396,95 @@ table states
 
 	measure 'Hamilton estimate' = SUM(states[estimate_1790_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: e431bc11-4554-41db-ae77-49cd06fd04b9
+		lineageTag: fd2fda9d-f9c4-449b-afcb-6f5f028f9c2b
 
 	measure 'Act quota' = SUM(states[quota_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 15cc0094-45da-45aa-acfd-75adeb2aad74
+		lineageTag: 024fd58c-29f4-4bbe-9744-e30179327660
 
 	measure 'Act quota (2025 $)' = SUM(states[quota_usd_2025])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 29290eac-f858-4dde-b361-f33b3046f64a
+		lineageTag: 1be8ef55-95b9-4950-aa23-b24e805d67d8
 
 	measure 'Quota less estimate' = SUM(states[quota_vs_estimate_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 4960b7a9-f207-4f0d-b9e6-2bc8fa7b693a
+		lineageTag: f2f20108-3f87-4a7f-93db-764309c00846
 
 	measure 'Subscribed Jan 1792' = SUM(states[subscribed_1792_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: d9d54bb6-eab0-4159-971f-e7c0b50ff45c
+		lineageTag: 36d30965-2913-411a-9a47-8ecb940de400
 
 	measure 'Assumed (final)' = SUM(states[assumed_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: c5ef0fdb-8e77-4507-8f80-41232b290b16
+		lineageTag: f9036213-d883-44a6-a802-9511f4835424
 
 	measure 'Assumed (2025 $)' = SUM(states[assumed_usd_2025])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 426e2ea3-1f16-4ccd-9bf5-5b324ca2c7e1
+		lineageTag: 6838997b-2c06-4a59-9a58-4c15dd739674
 
 	measure 'Unused quota' = SUM(states[quota_unused_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a63364d2-347a-4c91-9b60-cebf380e87c9
+		lineageTag: 74be8511-7cae-4215-9f11-096ff971651f
 
 	measure 'Take-up %' = DIVIDE(SUM(states[assumed_usd]), SUM(states[quota_usd])) * 100
 		formatString: 0.0
-		lineageTag: 3a00c7f3-34ee-45fe-9c85-90f6e9a6fde8
+		lineageTag: 3e12643b-4ec5-4d25-8f67-8f952a18610b
 
 	measure '1793 settlement' = SUM(states[settlement_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 6f4b2ee4-e3b9-460f-ae51-973796d42a1c
+		lineageTag: c9de9454-ef1b-430b-87e2-62287650a3fb
 
 	measure '1793 settlement (2025 $)' = SUM(states[settlement_usd_2025])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a0594abe-33be-4c78-b558-2b81d380c343
+		lineageTag: 4afb2a15-becd-42fc-97e4-9a2c730c0129
 
 	measure 'Settlement (absolute)' = SUM(states[settlement_abs_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: c530793e-34c2-4902-b014-b3cf5829dd84
+		lineageTag: 2989ddc3-fda2-4e25-841f-dcd2984200e3
 
 	measure 'Net position' = SUM(states[net_position_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: bd4a2beb-7c03-4099-b37c-b6c6a511b49f
+		lineageTag: 207354eb-eed6-4de5-91b8-f97daa1fd386
 
 	measure 'Net position (2025 $)' = SUM(states[net_position_usd_2025])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: cf3d7a9d-bf47-4f31-a2c9-52e52c605cbb
+		lineageTag: 9c18f9c1-644a-4afe-8eda-628a210d980d
 
 	measure 'Population 1790' = SUM(states[pop_total_1790])
 		formatString: #,0
-		lineageTag: 925787b3-e510-4208-bb06-864b29252fd7
+		lineageTag: 0aa188b4-41db-42da-917e-40b6e33d06e8
 
 	measure 'Pop. share %' = SUM(states[pop_share_pct])
 		formatString: 0.0
-		lineageTag: 2d93f492-2194-450b-9be3-5ec88ddc2297
+		lineageTag: 4c586f91-4c7f-4abe-8a14-74357c59ce37
 
 	measure 'Quota share %' = SUM(states[quota_share_pct])
 		formatString: 0.0
-		lineageTag: d41cdd64-52d4-49d4-be93-0bd371bd7ab2
+		lineageTag: 25eef520-a06e-42ca-8b81-947a9695e848
 
 	measure 'Quota per head' = DIVIDE(SUM(states[quota_usd]), SUM(states[pop_total_1790]))
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 383d5958-5972-45b0-8704-f5d79b6e247f
+		lineageTag: 86336d49-efa4-4063-97ab-985de6bfbb90
 
 	measure 'Relief per head' = DIVIDE(SUM(states[assumed_usd]), SUM(states[pop_total_1790]))
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 102eab0b-fb76-4afc-acd9-2477a18a9d71
+		lineageTag: 131f9016-e7db-40bd-b959-4b0383fa7e1f
 
 	measure 'Settlement per head' = DIVIDE(SUM(states[settlement_usd]), SUM(states[pop_total_1790]))
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 1660e8c5-aa67-4c0f-b8d5-9ced3542a67c
+		lineageTag: 439331be-3ecd-4f6f-91b8-18a1355fce3e
 
 	measure 'Settlement per head (2025 $)' = DIVIDE(SUM(states[settlement_usd_2025]), SUM(states[pop_total_1790]))
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 5369e040-60b5-406c-9bcf-21a633bd04a6
+		lineageTag: 301f2059-792e-4312-9819-3819343d17ab
 
 	measure 'Net per head' = DIVIDE(SUM(states[net_position_usd]), SUM(states[pop_total_1790]))
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 8c22b1e8-3dfd-4d55-af65-c7125575d192
+		lineageTag: be06417d-b9ed-4b7e-b58d-e7e9f2f4cbbe
 
 	measure 'Net per head (2025 $)' = DIVIDE(SUM(states[net_position_usd_2025]), SUM(states[pop_total_1790]))
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 1e097e74-0929-46f4-a1fe-ed798a04b8a9
+		lineageTag: 3a09e8fc-d59d-4d04-8128-8515da3e0bec
 
 	partition states = m
 		mode: import

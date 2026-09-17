@@ -9,6 +9,8 @@ and the 1793 settlement of war accounts - and asks whether the split was defensi
 > **Status:** Complete. Five primary-source ledgers compiled, footed and reconciled;
 > statistical tests run; opinion written; eight-schedule Power BI report built from code.
 > Full results in [`output/summary.md`](output/summary.md).
+> **View the report:** [Power BI report as PDF](powerbi/hamilton_debt_assumption.pdf) (8 schedules) ·
+> [screenshots](docs/screenshots/)
 
 ## Dollars
 
@@ -150,6 +152,30 @@ parentheses, and both dollar bases side by side.
 | F · Fairness test | Relief vs. settlement scatter, net position | scatter |
 | G · Apportionment | Quota minus per-head share, population-basis slicer | diverging bars |
 | H · Statistics & sources | Test schedule, notes, sources | table |
+
+**Schedule A - Summary & opinion.** Six KPIs, the opinion, the bridge from $21.5M
+authorized to $18.27M assumed, a roll-forward that foots, and the summary ledger.
+
+![Schedule A](docs/screenshots/A-summary.png)
+
+**Schedule B - Tie-out.** Every source document footed to its printed total. The 1792
+subscription table has two line errors; correcting them closes the Treasury's own gap
+to zero.
+
+![Schedule B](docs/screenshots/B-tieout.png)
+
+**Schedule E - The 1793 T-account.** Debtor states on the debit side, creditor states
+on the credit side, both footing to $3,517,584, with the two sides drawn to scale.
+
+![Schedule E](docs/screenshots/E-taccount.png)
+
+**Schedule F - The fairness test.** Relief per head against the 1793 settlement per
+head, and each state's net position.
+
+![Schedule F](docs/screenshots/F-fairness.png)
+
+All eight schedules are in the [PDF](powerbi/hamilton_debt_assumption.pdf) and in
+[`docs/screenshots/`](docs/screenshots/).
 
 The report is a Power BI project (`powerbi/hamilton_debt_assumption.pbip`). The
 semantic model (tables, DAX measures, relationships) and every page and visual are

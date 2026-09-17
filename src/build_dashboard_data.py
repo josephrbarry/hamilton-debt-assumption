@@ -66,12 +66,12 @@ s.to_csv(OUT / "states.csv", index=False)
 
 # ---------------------------------------------------------------- ledger (long)
 STEPS = [  # order, label, column
-    (1, "1. Hamilton estimate, Jan 1790", "debt_estimate_1790_usd"),
-    (2, "2. Act quota, Aug 1790", "quota_usd"),
-    (3, "3. Subscribed, 1st window, Jan 1792", "subscribed_usd"),
-    (4, "4. Finally assumed, to 1793", "assumed_usd"),
-    (5, "5. Settlement balance, Jun 1793", "settlement_balance_usd"),
-    (6, "6. Net position (4 + 5)", "net_position_usd"),
+    (1, "1. Estimate 1790", "debt_estimate_1790_usd"),
+    (2, "2. Quota 1790", "quota_usd"),
+    (3, "3. Subscribed 1792", "subscribed_usd"),
+    (4, "4. Assumed (final)", "assumed_usd"),
+    (5, "5. Settlement 1793", "settlement_balance_usd"),
+    (6, "6. Net (4 + 5)", "net_position_usd"),
 ]
 rows = []
 for order, label, colname in STEPS:

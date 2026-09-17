@@ -48,7 +48,6 @@
               },
               "queryRef": "states.state",
               "nativeQueryRef": "state",
-              "active": true,
               "displayName": "State"
             }
           ]
@@ -120,7 +119,7 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1000000D"
+                  "Value": "1D"
                 }
               }
             }
