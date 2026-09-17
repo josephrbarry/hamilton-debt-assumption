@@ -556,9 +556,10 @@ def page_summary() -> str:
         ("Opinion", 15, True, NAVY, HFONT),
         ("I side with Hamilton. The question wasn't whether the allocation was tidy; it was whether "
          "the new federal government could take a $21.5 million problem off thirteen balance sheets "
-         "and make it one credible obligation. It did: 85% of the authorized sum was taken up, the "
-         "states that brought in more than their quota were the ones Hamilton's own schedule said "
-         "owed the most, and within three years the country had a settled debt and working credit.", 11, False, INK),
+         "and make it one credible obligation. It did: 85% of the authorized sum was taken up; two of "
+         "the three states that came in over quota (MA, SC) were the two Hamilton's schedule ranked as "
+         "owing the most; and within three years the debt was funded and, despite the 1792 panic, "
+         "U.S. bonds traded near or above par.", 11, False, INK),
         ("The method was rough, and I'd say so in the workpapers. Six of thirteen states filed "
          "returns; four got quotas by round number; MA and SC were cut by a quarter. But Hamilton "
          "was allocating with the data that existed in January 1790, and he said so.", 11, False, INK),
@@ -568,7 +569,8 @@ def page_summary() -> str:
          "receiving $2.9M of relief.", 11, False, INK),
         ("Where I'd push back: the claim that federal bonds would bind creditors to the new government "
          "can't be tested at the state level, and I don't assume it. What the numbers do show is a "
-         "fair outcome, reconciled within three years.", 11, False, INK),
+         "fair outcome, reconciled in about three and a half years (Jan 1790 report to Jun 1793 "
+         "settlement) - faster than Puerto Rico (~6 yrs), Greece (8) or Argentina (15).", 11, False, INK),
         ("Basis of preparation", 13, True, NAVY, HFONT),
         ("Five primary ledgers, each footed before use (Schedule B). One does not foot: two line "
          "errors in the 1792 subscription table ($500,000 and $30,000), reconciled and disclosed.", 10, False, GREY),
@@ -639,9 +641,10 @@ def page_tieout() -> str:
          "document ties.", 10, True, TEAL),
     ]
     vis = header(
-        "p1", "B", "Tie-out: four of five source documents foot. One has two line errors.",
+        "p1", "B", "Tie-out: three documents foot to the penny, one to Hamilton's own rounding, one has two line errors.",
         "Each table was footed against its own printed total before any analysis. Ties = variance under $1. "
-        "Ties (rounded) = under $5,000 and explained. Does not foot = investigated and disclosed below.", 2,
+        "Ties (rounded) = Schedule E, $1,206 against Hamilton's 'about twenty-one millions and a half'. "
+        "Does not foot = investigated and disclosed below.", 2,
     ) + [
         table("p1-tieout", M, TOP, left_w, top_h,
               values=[proj_col("tieout", "document", display="Document"),

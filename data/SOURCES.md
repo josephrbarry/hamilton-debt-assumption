@@ -6,13 +6,19 @@
 amount of each state's debt the federal government would assume.
 Total: $21,500,000. Only about $18.3M was ultimately subscribed - not every state
 filled its quota - so this column is the *authorized ceiling*, not cash paid.
-- Text: https://founders.archives.gov (search the Act title) or
-  https://www.loc.gov/law/help/statutes-at-large/1st-congress/c1.pdf (p. 138-144)
+- Text: https://www.govinfo.gov/content/pkg/STATUTE-1/pdf/STATUTE-1-Pg138.pdf
+  (Statutes at Large, vol. 1, pp. 138-144; sec. 14 on p. 142). The Library of Congress
+  copy at loc.gov/law/help/statutes-at-large/1st-congress/c1.pdf sits behind a
+  bot-check and may not open from a script. Section 14 is also reproduced in the
+  Wikipedia article "Funding Act of 1790", which is where the figures were first read.
 
 ## pop_total_1790, pop_enslaved_1790
 "Return of the Whole Number of Persons within the Several Districts of the
-United States" (First Census, 1790). Published by the U.S. Census Bureau:
+United States" (First Census, 1790). Authoritative publication, U.S. Census Bureau:
 https://www.census.gov/library/publications/1793/dec/number-of-persons.html
+Figures were first read from the Wikipedia article "1790 United States census",
+which reproduces the Census Bureau return, and then verified against the Census
+Bureau publication in the independent data audit. All thirteen matched.
 
 Boundary decisions (the debts belonged to the states as they existed in 1790):
 - Massachusetts includes the District of Maine (96,540, no enslaved persons).
@@ -35,8 +41,10 @@ Dollar conversions are his (e.g. MA at 6s/dollar, NY at 8s, SC at 4s 8d).
 
 ## subscriptions_1792.csv - what creditors actually turned in
 Enclosure D, "Statement of Subscriptions to the Loan payable in Certificates or
-Notes issued by the respective States," Treasury Dept, 25 Jan 1792, signed by
-Hamilton (with the Report on the Public Debt and Loans, 23 Jan 1792).
+Notes issued by the respective States," Treasury Department, 25 Jan 1792, issued
+under Hamilton as an enclosure to his Report on the Public Debt and Loans (23 Jan
+1792); the statement itself was prepared in the Register's office (Joseph Nourse),
+as was usual for Treasury tabular statements.
 https://founders.archives.gov/documents/Hamilton/01-10-02-0124-0005
 Covers the first subscription window, 1 Oct 1790 - 30 Sep 1791. Three states
 (MA, RI, SC) subscribed more than their quota in this window; the quota was a

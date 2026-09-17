@@ -251,7 +251,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "I side with Hamilton. The question wasn't whether the allocation was tidy; it was whether the new federal government could take a $21.5 million problem off thirteen balance sheets and make it one credible obligation. It did: 85% of the authorized sum was taken up, the states that brought in more than their quota were the ones Hamilton's own schedule said owed the most, and within three years the country had a settled debt and working credit.",
+                    "value": "I side with Hamilton. The question wasn't whether the allocation was tidy; it was whether the new federal government could take a $21.5 million problem off thirteen balance sheets and make it one credible obligation. It did: 85% of the authorized sum was taken up; two of the three states that came in over quota (MA, SC) were the two Hamilton's schedule ranked as owing the most; and within three years the debt was funded and, despite the 1792 panic, U.S. bonds traded near or above par.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -317,7 +317,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Where I'd push back: the claim that federal bonds would bind creditors to the new government can't be tested at the state level, and I don't assume it. What the numbers do show is a fair outcome, reconciled within three years.",
+                    "value": "Where I'd push back: the claim that federal bonds would bind creditors to the new government can't be tested at the state level, and I don't assume it. What the numbers do show is a fair outcome, reconciled in about three and a half years (Jan 1790 report to Jun 1793 settlement) - faster than Puerto Rico (~6 yrs), Greece (8) or Argentina (15).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
