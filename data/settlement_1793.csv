@@ -1,0 +1,14 @@
+state,settlement_balance_usd,position
+New Hampshire,75055,creditor
+Massachusetts,1248801,creditor
+Rhode Island,299611,creditor
+Connecticut,619121,creditor
+New York,-2074846,debtor
+New Jersey,49030,creditor
+Pennsylvania,-76709,debtor
+Delaware,-612428,debtor
+Maryland,-151640,debtor
+Virginia,-100879,debtor
+North Carolina,-501082,debtor
+South Carolina,1205978,creditor
+Georgia,19988,creditor

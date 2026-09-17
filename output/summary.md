@@ -1,72 +1,139 @@
-# Hamilton's 1790 Debt Assumption - analysis summary
+# Hamilton's 1790 Debt Assumption - an accountant's reconciliation
 
-Total authorized assumption: $21,500,000 across 13 states.
+Every figure below is from a document Hamilton wrote or received. See `data/SOURCES.md`.
 
-## Per-capita assumption (authorized $ / 1790 total population)
+**Dollars are shown as 1790 $ (2025 $ in parentheses)**, converted at 36.3x by CPI (MeasuringWorth; the Federal Reserve's series starts in 1800 and gives ~19x from that year). CPI understates the scale of these sums. The $21.5M authorized was about 11% of 1790 GDP; the same share of the 2025 economy is $3.4 trillion.
 
-- Mean: $5.31   Median: $4.26   Std dev: $3.69
-- Min: $2.11 (New Hampshire)   Max: $16.06 (South Carolina)
-- Coefficient of variation: 0.70 (std dev as a fraction of the mean - a 'how unequal is this' number)
-- Skew: 2.33
+## 0. Tie-out: do the source documents foot?
 
-| State | Region | Assumed $ | Pop (1790) | $ per capita | $ per free person | z-score |
-|---|---|---:|---:|---:|---:|---:|
-| South Carolina | Southern | 4,000,000 | 249,073 | 16.06 | 28.17 | +2.91 |
-| Massachusetts | New England | 4,000,000 | 475,327 | 8.42 | 8.42 | +0.84 |
-| Connecticut | New England | 1,600,000 | 237,946 | 6.72 | 6.80 | +0.38 |
-| North Carolina | Southern | 2,400,000 | 393,751 | 6.10 | 8.19 | +0.21 |
-| Pennsylvania | Middle | 2,200,000 | 434,373 | 5.06 | 5.11 | -0.07 |
-| New Jersey | Middle | 800,000 | 184,139 | 4.34 | 4.63 | -0.26 |
-| Virginia | Southern | 3,500,000 | 821,287 | 4.26 | 6.78 | -0.28 |
-| Georgia | Southern | 300,000 | 82,548 | 3.63 | 5.63 | -0.45 |
-| New York | Middle | 1,200,000 | 340,120 | 3.53 | 3.76 | -0.48 |
-| Delaware | Middle | 200,000 | 59,094 | 3.38 | 3.98 | -0.52 |
-| Rhode Island | New England | 200,000 | 68,825 | 2.91 | 2.95 | -0.65 |
-| Maryland | Southern | 800,000 | 319,728 | 2.50 | 3.69 | -0.76 |
-| New Hampshire | New England | 300,000 | 141,885 | 2.11 | 2.12 | -0.87 |
+Before analyzing, each table was footed against its own printed totals.
 
-IQR-rule outliers (1.5xIQR): ['South Carolina']. States with |z| > 1.5: ['South Carolina']
+- Funding Act quotas sum to $21,500,000 ($780,450,000) - ties to the Act's $21.5M.
+- 1793 settlement: creditors $3,517,584 ($127,688,299), debtors $3,517,584 ($127,688,299) - ties to Jefferson's pencilled total of $3,517,584 and nets to zero.
+- Enclosure D (1792 subscriptions): **does not foot as printed.** The subscribed column sums to $17,798,186 against a stated $18,328,186. Row-level tie-out (quota - subscribed = unsubscribed) isolates a $500,000 error in the North Carolina line; the reconciled figure $1,666,355.57 is used here. A $30 Maryland difference and a $30,000 residual against the printed total remain unexplained. The printed *totals* are internally consistent (quota - unsubscribed + oversubscribed = $18,328,186), so the error is in one line, not the arithmetic. See `data/SOURCES.md`.
+- Schedule E: Hamilton's nine known states sum to $21,501,206; he wrote 'about twenty-one millions and a half'. Ties.
 
-## Regional comparison: New England vs. Southern
+## 1. Opening balance: what Hamilton knew (Schedule E, 9 Jan 1790)
 
-- New England: n=4, mean $5.04, median $4.82
-- Middle: n=4, mean $4.08, median $3.94
-- Southern: n=5, mean $6.51, median $4.26
+- Returns or estimates for **9 of 13 states**, totaling $21,501,206 ($780,493,764). Hamilton rounded this to 'about twenty-one millions and a half' and guessed $25M including the four states with no data.
+- No data at all for: North Carolina, Georgia, Delaware, Rhode Island. Three more (NH, PA, MD) were Hamilton's own round-number estimates, not state returns.
+- Audit note: the quotas Congress wrote into the Act were set on a balance sheet that was one-third estimate and one-third blank. Any fairness verdict inherits that.
 
-- Observed difference in means (NE - South): $-1.47
-- Welch t-test: t = -0.51, p = 0.627
-- Mann-Whitney U: U = 9, p = 0.905
-- Exact permutation test (all 126 relabelings): p = 0.778
+## 2. Setting the quota: variance between the Act and Hamilton's estimate
 
-**Interpretation caveat.** These 13 states are the entire population of interest, not a sample from a larger one, so a p-value here answers a narrower question: 'if the regional labels were shuffled at random, how often would a gap this big appear?' With n=4 vs n=5 the tests have little power, so a non-significant result is weak evidence of 'no regional tilt', not proof of it. The effect size (the dollar gap) is the more honest headline.
+| State | Hamilton est. (Jan 1790) | Act quota (Aug 1790) | Variance | % |
+|---|---:|---:|---:|---:|
+| South Carolina | 5.39M (196M) | 4.00M (145M) | -1.39M (50M) | -26% |
+| Massachusetts | 5.23M (190M) | 4.00M (145M) | -1.23M (45M) | -23% |
+| Connecticut | 1.95M (71M) | 1.60M (58M) | -0.35M (13M) | -18% |
+| Virginia | 3.68M (134M) | 3.50M (127M) | -0.18M (7M) | -5% |
+| Pennsylvania | 2.20M (80M) | 2.20M (80M) | +0.00M (0M) | +0% |
+| Maryland | 0.80M (29M) | 0.80M (29M) | +0.00M (0M) | +0% |
+| New Hampshire | 0.30M (11M) | 0.30M (11M) | +0.00M (0M) | +0% |
+| New Jersey | 0.79M (29M) | 0.80M (29M) | +0.01M (0M) | +1% |
+| New York | 1.17M (42M) | 1.20M (44M) | +0.03M (1M) | +3% |
+| North Carolina | (none) | 2.40M (87M) | n/a | n/a |
+| Georgia | (none) | 0.30M (11M) | n/a | n/a |
+| Delaware | (none) | 0.20M (7M) | n/a | n/a |
+| Rhode Island | (none) | 0.20M (7M) | n/a | n/a |
 
-## Allocation gap: actual quota vs. population-proportional quota
+- Congress cut **$3,144,950 ($114,161,674)** from Hamilton's estimates, almost all from Massachusetts and South Carolina (each capped at $4.0M against estimates of $5.2M and $5.4M). The three states Hamilton estimated (NH, PA, MD) were written into the Act at exactly his round numbers.
+- The four blank states were assigned $5.1M between them (RI 0.2, DE 0.2, NC 2.4, GA 0.3) with no return on file. North Carolina's $2.4M is the largest number in the Act with nothing behind it.
 
-If the $21.5M had been split like congressional apportionment, each state's quota would be its population share x $21.5M. Positive gap = state got more than a per-head split would give it.
+## 3. Take-up: quota vs. what creditors actually subscribed (Enclosure D, Jan 1792)
 
-| State | Actual $ | If by total pop | Gap | If by free pop | Gap | If by 3/5 rule | Gap |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| South Carolina | 4.00M | 1.41M | +2.59M | 0.98M | +3.02M | 1.26M | +2.74M |
-| Massachusetts | 4.00M | 2.68M | +1.32M | 3.28M | +0.72M | 2.89M | +1.11M |
-| Connecticut | 1.60M | 1.34M | +0.26M | 1.62M | -0.02M | 1.44M | +0.16M |
-| North Carolina | 2.40M | 2.22M | +0.18M | 2.02M | +0.38M | 2.15M | +0.25M |
-| Delaware | 0.20M | 0.33M | -0.13M | 0.35M | -0.15M | 0.34M | -0.14M |
-| Georgia | 0.30M | 0.47M | -0.17M | 0.37M | -0.07M | 0.43M | -0.13M |
-| Rhode Island | 0.20M | 0.39M | -0.19M | 0.47M | -0.27M | 0.42M | -0.22M |
-| New Jersey | 0.80M | 1.04M | -0.24M | 1.19M | -0.39M | 1.09M | -0.29M |
-| Pennsylvania | 2.20M | 2.45M | -0.25M | 2.97M | -0.77M | 2.64M | -0.44M |
-| New Hampshire | 0.30M | 0.80M | -0.50M | 0.98M | -0.68M | 0.86M | -0.56M |
-| New York | 1.20M | 1.92M | -0.72M | 2.20M | -1.00M | 2.02M | -0.82M |
-| Maryland | 0.80M | 1.81M | -1.01M | 1.50M | -0.70M | 1.70M | -0.90M |
-| Virginia | 3.50M | 4.64M | -1.14M | 3.56M | -0.06M | 4.26M | -0.76M |
+Assumption was a *ceiling*. Creditors had to bring state paper to a federal loan office and swap it. Utilization tells you whether the quota matched real outstanding debt.
 
-- vs total population: chi2 = 72.0, p = 1.35e-10; 20.2% of the total would have to move between states to match this basis.
-- vs free population: chi2 = 113.4, p = 1.28e-18; 19.1% of the total would have to move between states to match this basis.
-- vs three-fifths basis: chi2 = 81.3, p = 2.31e-12; 19.8% of the total would have to move between states to match this basis.
+| State | Quota | Subscribed, 1st window (Jan 1792) | Final assumed (Bayley) | Take-up | Unused quota | Remaining state debt (Hamilton est.) |
+|---|---:|---:|---:|---:|---:|---:|
+| Connecticut | 1.60M (58M) | 1.46M (53M) | 1.60M (58M) | 100% | 0.00M (0M) | 0.46M (17M) |
+| Rhode Island | 0.20M (7M) | 0.34M (12M) | 0.20M (7M) | 100% | 0.00M (0M) | 0.35M (13M) |
+| South Carolina | 4.00M (145M) | 4.63M (168M) | 4.00M (145M) | 100% | 0.00M (0M) | 1.97M (71M) |
+| Massachusetts | 4.00M (145M) | 4.45M (161M) | 3.98M (145M) | 100% | 0.02M (1M) | 1.84M (67M) |
+| New York | 1.20M (44M) | 1.03M (37M) | 1.18M (43M) | 99% | 0.02M (1M) | 0.20M (7M) |
+| New Hampshire | 0.30M (11M) | 0.24M (9M) | 0.28M (10M) | 94% | 0.02M (1M) | 0.10M (4M) |
+| New Jersey | 0.80M (29M) | 0.60M (22M) | 0.70M (25M) | 87% | 0.10M (4M) | 0.21M (8M) |
+| Virginia | 3.50M (127M) | 2.55M (93M) | 2.93M (107M) | 84% | 0.57M (21M) | 1.17M (43M) |
+| Georgia | 0.30M (11M) | 0.30M (11M) | 0.25M (9M) | 82% | 0.05M (2M) | 0.40M (15M) |
+| North Carolina | 2.40M (87M) | 1.67M (60M) | 1.79M (65M) | 75% | 0.61M (22M) | 0.71M (26M) |
+| Maryland | 0.80M (29M) | 0.30M (11M) | 0.52M (19M) | 65% | 0.28M (10M) | 0.43M (16M) |
+| Pennsylvania | 2.20M (80M) | 0.68M (25M) | 0.78M (28M) | 35% | 1.42M (52M) | 0.50M (18M) |
+| Delaware | 0.20M (7M) | 0.05M (2M) | 0.06M (2M) | 30% | 0.14M (5M) | 0.00M (0M) |
 
-The 'share that would have to move' figure (half the sum of absolute gaps, as a % of the total) is a dissimilarity index - the same idea used to measure how far a budget is from a benchmark allocation.
+- Total: 21.50M (780M) authorized; 18.30M (664M) subscribed in the first window; **18.27M (663M) finally assumed** after the window was extended to 1793 and the three over-subscribed states were scaled back to quota. Overall utilization 85%.
+- 3.23M (117M) of quota went unused. Pennsylvania alone left 1.42M (52M) on the table (35% take-up). Lowest utilization: Delaware (30%), Pennsylvania (35%), Maryland (65%).
+- The extension mattered: Pennsylvania's subscriptions rose from 0.68M (25M) to 0.78M (28M), Maryland's from 0.30M (11M) to 0.52M (19M), North Carolina's from 1.67M (60M) to 1.79M (65M). Virginia's rose from 2.55M (93M) to 2.93M (107M), still 84% of quota.
+- Massachusetts, Rhode Island, and South Carolina brought in *more* than their quota - their real debt exceeded the Act. Hamilton's Schedule E had said so for MA and SC; Congress capped them anyway.
+- Hamilton estimated the states still owed 8.33M (302M) after assumption. So the Act absorbed roughly two-thirds of state debt, not all of it.
 
-## Concentration
+## 4. The true-up: final settlement of war accounts (Commissioners, 29 Jun 1793)
 
-- Top 3 states by dollars (South Carolina, Massachusetts, Virginia) hold 53.5% of the assumption with 40.6% of the population.
-- Spearman rank correlation, population vs. assumed $: rho = 0.85 (p = 0.000). Bigger states got more, but far from proportionally.
+This is the ledger Madison wanted *before* assumption: each state's war spending, netted against its fair share of the common cost. Creditor states had over-contributed.
+
+| Creditor states (Union owes them) | Balance | per capita | | Debtor states (owe the Union) | Balance | per capita |
+|---|---:|---:|---|---|---:|---:|
+| Massachusetts | $1,248,801 ($45,331,476) | $2.63 ($95) | | New York | $-2,074,846 ($-75,316,910) | $-6.10 ($-221) |
+| South Carolina | $1,205,978 ($43,777,001) | $4.84 ($176) | | Delaware | $-612,428 ($-22,231,136) | $-10.36 ($-376) |
+| Connecticut | $619,121 ($22,474,092) | $2.60 ($94) | | North Carolina | $-501,082 ($-18,189,277) | $-1.27 ($-46) |
+| Rhode Island | $299,611 ($10,875,879) | $4.35 ($158) | | Maryland | $-151,640 ($-5,504,532) | $-0.47 ($-17) |
+| New Hampshire | $75,055 ($2,724,496) | $0.53 ($19) | | Virginia | $-100,879 ($-3,661,908) | $-0.12 ($-4) |
+| New Jersey | $49,030 ($1,779,789) | $0.27 ($10) | | Pennsylvania | $-76,709 ($-2,784,537) | $-0.18 ($-6) |
+| Georgia | $19,988 ($725,564) | $0.24 ($9) | |  |  |  |
+
+- Creditors total $3,517,584 ($127,688,299); debtors the same. The settlement was designed to net to zero.
+- **Virginia was a debtor state.** The commissioners found Virginia owed the Union $100,879 ($3,661,908). Madison's 1790 argument was that Virginia had over-paid for the war and deserved credit. The audit three years later said the opposite.
+- New York was the largest debtor by a wide margin (-$2.07M, or -$6.10 per head, about -$221 per head today) *and* was under-allocated in the Act. It got the worst of both.
+
+## 5. The fairness test: did assumption relief track war contribution?
+
+Hamilton's defense of assumption was that the state debts were incurred for a common cause, so relieving them was rough justice. If that's true, states that over-contributed (creditor states) should have received more relief per head. Test it.
+
+- Spearman rank correlation, relief per capita vs. settlement balance per capita: rho = 0.55 (p = 0.052). Pearson r = 0.54.
+- Creditor states (n=7) received a mean **$6.12 ($222)** of relief per head; debtor states (n=6) received **$2.67 ($97)**. Exact permutation test, one-sided, p = 0.047.
+- Read: the states the 1793 audit later found had over-paid for the war are, on the whole, the states assumption relieved most. The relationship is moderate and sits right at the conventional p = 0.05 line; with 13 observations the effect size (creditor states got about 2.3x the relief per head) is the more reliable statement. The Act didn't have the settlement numbers, but it landed on the right side of them.
+
+## 6. Net federal position per state (relief received + settlement balance)
+
+Both numbers are dollars the state came out ahead by. Adding them gives each state's net gain from the whole 1790-93 fiscal settlement.
+
+| State | Relief (assumed) | Settlement | Net position | Net per capita | Population share | Share of net gains |
+|---|---:|---:|---:|---:|---:|---:|
+| South Carolina | 4.00M (145M) | $1,205,978 ($43,777,001) | $5,205,630 ($188,964,359) | $20.90 ($759) | 6.5% | 26.4% |
+| Massachusetts | 3.98M (145M) | $1,248,801 ($45,331,476) | $5,230,534 ($189,868,386) | $11.00 ($399) | 12.5% | 26.5% |
+| Connecticut | 1.60M (58M) | $619,121 ($22,474,092) | $2,219,121 ($80,554,092) | $9.33 ($339) | 6.2% | 11.3% |
+| Rhode Island | 0.20M (7M) | $299,611 ($10,875,879) | $499,611 ($18,135,879) | $7.26 ($264) | 1.8% | 2.5% |
+| New Jersey | 0.70M (25M) | $49,030 ($1,779,789) | $744,233 ($27,015,647) | $4.04 ($147) | 4.8% | 3.8% |
+| Virginia | 2.93M (107M) | $-100,879 ($-3,661,908) | $2,833,537 ($102,857,393) | $3.45 ($125) | 21.6% | 14.4% |
+| North Carolina | 1.79M (65M) | $-501,082 ($-18,189,277) | $1,292,722 ($46,925,803) | $3.28 ($119) | 10.3% | 6.6% |
+| Georgia | 0.25M (9M) | $19,988 ($725,564) | $266,019 ($9,656,480) | $3.22 ($117) | 2.2% | 1.3% |
+| New Hampshire | 0.28M (10M) | $75,055 ($2,724,496) | $357,651 ($12,982,714) | $2.52 ($92) | 3.7% | 1.8% |
+| Pennsylvania | 0.78M (28M) | $-76,709 ($-2,784,537) | $701,274 ($25,456,264) | $1.61 ($59) | 11.4% | 3.6% |
+| Maryland | 0.52M (19M) | $-151,640 ($-5,504,532) | $365,851 ($13,280,394) | $1.14 ($42) | 8.4% | 1.9% |
+| New York | 1.18M (43M) | $-2,074,846 ($-75,316,910) | $-891,129 ($-32,347,994) | $-2.62 ($-95) | 8.9% | -4.5% |
+| Delaware | 0.06M (2M) | $-612,428 ($-22,231,136) | $-553,266 ($-20,083,569) | $-9.36 ($-340) | 1.6% | -2.8% |
+
+- Eleven of thirteen states came out ahead. New York's net was $-891,129 ($-32,347,994) or $-2.62 ($-95) per head: $1.18M of relief against a $2.07M settlement debit. Delaware was worse per head ($-9.36 ($-340)): almost no relief taken up and a $612K settlement debit on 59,000 people.
+- South Carolina: $20.90 ($759) per head, 26% of all net gains with 6.5% of the population. Still the outlier, and the settlement says it earned it - SC was the second-largest creditor state.
+
+## 7. Allocation benchmark: quota vs. a per-head split
+
+- Quota per capita: mean $5.31 ($193), median $4.26 ($155), std dev $3.69, CV 0.70. Outlier (1.5xIQR): ['South Carolina'].
+- vs total population: 20.2% of the total would have to move between states to match (chi2 = 72, p = 1.3e-10).
+- vs free population: 19.1% of the total would have to move between states to match (chi2 = 113, p = 1.3e-18).
+- vs three-fifths basis: 19.8% of the total would have to move between states to match (chi2 = 81, p = 2.3e-12).
+- New England vs. Southern quota per head: $5.04 vs $6.51, exact permutation p = 0.78. No regional tilt; South Carolina alone drives the Southern mean.
+
+## 8. Sensitivity: boundary and denominator choices
+
+- Excluding Maine from MA and Kentucky from VA: MA quota per head $8.42 -> $10.56; VA $4.26 -> $4.68. Rank order unchanged; SC remains the sole outlier.
+- Per free person instead of per capita: Virginia moves from $4.26 to $6.78, SC from $16.06 to $28.17. The denominator choice flatters Southern quotas; it does not change any conclusion above.
+
+## 9. Opinion
+
+**On the allocation method:** not defensible as an apportionment. The quotas were set on incomplete returns, cut arbitrarily for the two largest claimants, and assigned by round number to four states with no data. One dollar in five sits in the wrong state against any population base.
+
+**On the outcome:** defensible, and better than the method deserved. Utilization was 85%, the states that over-subscribed were exactly the ones Hamilton's Schedule E said had the most debt, and the 1793 settlement independently confirmed that the biggest recipients (MA, SC) were the biggest creditors of the Union. Relief tracked contribution.
+
+**On Madison's objection:** wrong on the facts for his own state. Virginia's debt was 'already paid down' only in the sense that it had *not been reported*: the 1791 House of Delegates estimate put $1.17M still outstanding after assumption, and the commissioners found Virginia a net debtor to the Union. The Compromise of 1790 that raised Virginia's quota was a political price, not an accounting correction.
+
+**On Hamilton's rationale:** the 'bind the creditors to the federal government' argument was about who *held* the paper, not which state issued it. This dataset can't test that - it would need subscriber-level records. What it can say is that the state-level allocation was rough, honest about its own gaps, and reconciled within three years.
