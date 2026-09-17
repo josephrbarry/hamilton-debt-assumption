@@ -132,10 +132,27 @@ Both numbers are dollars the state came out ahead by. Adding them gives each sta
 
 ## 9. Opinion
 
-**On the allocation method:** not defensible as an apportionment. The quotas were set on incomplete returns, cut arbitrarily for the two largest claimants, and assigned by round number to four states with no data. One dollar in five sits in the wrong state against any population base.
+**I side with Hamilton.** The question wasn't whether the allocation was tidy; it was
+whether the new federal government could take a $21.5 million problem off thirteen
+balance sheets and make it one credible obligation. It did. 85% of the authorized sum
+was taken up, the states that brought in more than their quota were exactly the ones
+Hamilton's own schedule said owed the most, and within three years the country had a
+settled national debt and working credit.
 
-**On the outcome:** defensible, and better than the method deserved. Utilization was 85%, the states that over-subscribed were exactly the ones Hamilton's Schedule E said had the most debt, and the 1793 settlement independently confirmed that the biggest recipients (MA, SC) were the biggest creditors of the Union. Relief tracked contribution.
+**The method was rough, and I'd say so in the workpapers.** Six of thirteen states filed
+returns. Four got quotas by round number. Massachusetts and South Carolina were cut by a
+quarter. If I were auditing the allocation itself, I'd write it up. But Hamilton wasn't
+allocating with good data; he was allocating with the data that existed in January 1790,
+and he said so in the report.
 
-**On Madison's objection:** wrong on the facts for his own state. Virginia's debt was 'already paid down' only in the sense that it had *not been reported*: the 1791 House of Delegates estimate put $1.17M still outstanding after assumption, and the commissioners found Virginia a net debtor to the Union. The Compromise of 1790 set Virginia's quota at $3.5M - about what Virginia would pay in federal taxes, so it would 'neither gain nor lose' - which was a political settlement, not an accounting one; it was below Hamilton's own $3.68M estimate.
+**The 1793 settlement vindicated him.** The audit Madison demanded found that the biggest
+recipients, Massachusetts and South Carolina, were also the biggest creditors of the Union.
+Relief tracked contribution. Madison's own Virginia, which he said had already paid its
+share, turned out to owe the Union $100,879 - about 12 cents a head, which is to say it
+broke even, exactly as the Compromise of 1790 intended, while receiving $2.9 million of
+relief. His objection had no grievance the numbers supported.
 
-**On Hamilton's rationale:** the 'bind the creditors to the federal government' argument was about who *held* the paper, not which state issued it. This dataset can't test that - it would need subscriber-level records. What it can say is that the state-level allocation was rough, honest about its own gaps, and reconciled within three years.
+**Where I'd push back on Hamilton:** the argument that federal bonds would bind wealthy
+creditors to the new government can't be tested with state-level data, and I don't assume
+it. What I can defend is narrower and, I think, more useful: the outcome was fair on the
+numbers, and it was reconciled faster than most modern restructurings.

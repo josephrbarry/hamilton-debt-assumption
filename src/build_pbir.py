@@ -554,13 +554,21 @@ def page_summary() -> str:
 
     opinion = [
         ("Opinion", 15, True, NAVY, HFONT),
-        ("Method: not defensible. Six of thirteen states filed returns. The two largest were cut "
-         "by a quarter. Four states with no return got $3.1M by round number.", 11, False, INK),
-        ("Outcome: defensible. 85% of the quota was used. The states that over-subscribed were the "
-         "ones Hamilton said owed the most. The 1793 audit confirmed the biggest recipients (MA, SC) "
-         "were the biggest creditors. Relief tracked contribution.", 11, False, INK),
-        ("Madison: wrong on his own state. The audit he demanded found Virginia a net debtor, "
-         "$100,879.", 11, False, INK),
+        ("I side with Hamilton. The question wasn't whether the allocation was tidy; it was whether "
+         "the new federal government could take a $21.5 million problem off thirteen balance sheets "
+         "and make it one credible obligation. It did: 85% of the authorized sum was taken up, the "
+         "states that brought in more than their quota were the ones Hamilton's own schedule said "
+         "owed the most, and within three years the country had a settled debt and working credit.", 11, False, INK),
+        ("The method was rough, and I'd say so in the workpapers. Six of thirteen states filed "
+         "returns; four got quotas by round number; MA and SC were cut by a quarter. But Hamilton "
+         "was allocating with the data that existed in January 1790, and he said so.", 11, False, INK),
+        ("The 1793 settlement vindicated him. The audit Madison demanded found the biggest recipients "
+         "(MA, SC) were also the biggest creditors of the Union. Madison's own Virginia turned out to "
+         "owe the Union $100,879 - 12 cents a head, break-even as the Compromise intended - while "
+         "receiving $2.9M of relief.", 11, False, INK),
+        ("Where I'd push back: the claim that federal bonds would bind creditors to the new government "
+         "can't be tested at the state level, and I don't assume it. What the numbers do show is a "
+         "fair outcome, reconciled within three years.", 11, False, INK),
         ("Basis of preparation", 13, True, NAVY, HFONT),
         ("Five primary ledgers, each footed before use (Schedule B). One does not foot: two line "
          "errors in the 1792 subscription table ($500,000 and $30,000), reconciled and disclosed.", 10, False, GREY),
@@ -867,15 +875,6 @@ def page_stats_about() -> str:
     H, B = 12, 10
 
     method = [
-        ("Notes", H, True, NAVY, HFONT),
-        ("Foot first. Every table tied to its printed total before analysis (Schedule B).", B, False, INK),
-        ("Population, not sample. 13 states is the whole universe. With 4-7 per group, tests have "
-         "little power. Effect sizes lead; p-values follow.", B, False, INK),
-        ("Three tests, one answer. Welch t, Mann-Whitney U, exact permutation. All agree.", B, False, INK),
-        ("Dissimilarity index. Share of the total that would have to move to match the benchmark. "
-         "Same idea as budget variance.", B, False, INK),
-        ("Two dollar figures. 1790 $ and 2025 $ at 36.3x CPI (MeasuringWorth). GDP share for scale.", B, False, INK),
-        ("Boundaries. Maine in MA, Kentucky in VA, as in 1790. No ranking changes without them.", B, False, INK),
         ("Sources", H, True, NAVY, HFONT),
         ("Schedule E, Report Relative to a Provision for the Support of Public Credit, 9 Jan 1790 (Founders Online).", B, False, INK),
         ("An Act making provision for the Debt of the United States, 4 Aug 1790, 1 Stat. 138, sec. 14.", B, False, INK),
@@ -891,9 +890,9 @@ def page_stats_about() -> str:
         ("github.com/josephrbarry/hamilton-debt-assumption", B, True, NAVY),
     ]
     vis = header(
-        "p7", "H", "Statistics, method and sources",
-        "Every test in the write-up with its statistic, p-value and a plain-English reading. "
-        "Prepared by Ryan Barry as an accounting portfolio project.", 8,
+        "p7", "H", "Statistics and sources",
+        "Every test in the write-up with its statistic, p-value and a plain-English reading, "
+        "with sources. Prepared by Ryan Barry as an accounting portfolio project.", 8,
     ) + [
         table("p7-stats", M, TOP, table_w, h,
               values=[proj_col("stats", "question", display="Question"),

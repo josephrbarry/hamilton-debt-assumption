@@ -1,14 +1,10 @@
 table waterfall
-	lineageTag: bb19c713-cec2-45b6-8674-215bd4090e15
-
-	measure 'WF 1790 $ millions' = SUM(waterfall[usd_1790_m])
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 6dad451a-3287-4086-92f2-cf1ed3fa4214
+	lineageTag: f84d75a1-601e-41ef-ac61-76a11fdedfa3
 
 	column step_order
 		dataType: int64
 		formatString: 0
-		lineageTag: db27a1e8-3927-4275-a29f-0d750d23adff
+		lineageTag: 20377419-8aec-44e4-835b-9808c60b1d97
 		summarizeBy: none
 		sourceColumn: step_order
 
@@ -16,7 +12,7 @@ table waterfall
 
 	column step
 		dataType: string
-		lineageTag: 9256b11c-b0dd-43a7-b1c2-ff194e09e75b
+		lineageTag: 31f0e0a5-864f-4040-a794-24e37ec85543
 		summarizeBy: none
 		sourceColumn: step
 		sortByColumn: step_order
@@ -26,7 +22,7 @@ table waterfall
 	column usd_1790
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 7172e8d6-f402-4c8a-906d-e23a658ddb02
+		lineageTag: 0bd62db2-2952-401c-a366-73ec2be12683
 		summarizeBy: none
 		sourceColumn: usd_1790
 
@@ -35,7 +31,7 @@ table waterfall
 	column usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: c6089925-fc99-4a7e-926d-036914cbc47e
+		lineageTag: 213b21a0-da11-4224-8f8c-8499af3e24f4
 		summarizeBy: none
 		sourceColumn: usd_2025
 
@@ -44,7 +40,7 @@ table waterfall
 	column usd_1790_m
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 1f38697d-390f-43fa-88d7-648b24a65a9b
+		lineageTag: e78442f2-e5e9-4e87-ab74-da7b5f6f6b95
 		summarizeBy: none
 		sourceColumn: usd_1790_m
 
@@ -53,11 +49,15 @@ table waterfall
 	column usd_2025_m
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: ec6c807a-3686-4681-a1fd-1ea461df40a1
+		lineageTag: 8dcc5716-11ec-48ce-ae55-aae3152e34fb
 		summarizeBy: none
 		sourceColumn: usd_2025_m
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'WF 1790 $ millions' = SUM(waterfall[usd_1790_m])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 43bfdb79-88c2-4026-9a57-7023100f65aa
 
 	partition waterfall = m
 		mode: import
@@ -70,4 +70,3 @@ table waterfall
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
-

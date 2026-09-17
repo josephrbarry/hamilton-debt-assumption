@@ -194,7 +194,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Statistics, method and sources",
+                    "value": "Statistics and sources",
                     "textStyle": {
                       "fontFamily": "Georgia",
                       "fontSize": "18pt",
@@ -207,7 +207,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Every test in the write-up with its statistic, p-value and a plain-English reading. Prepared by Ryan Barry as an accounting portfolio project.",
+                    "value": "Every test in the write-up with its statistic, p-value and a plain-English reading, with sources. Prepared by Ryan Barry as an accounting portfolio project.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

@@ -11,6 +11,7 @@
   },
   "visual": {
     "visualType": "clusteredBarChart",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -28,27 +29,7 @@
               },
               "queryRef": "states.state",
               "nativeQueryRef": "state",
-              "active": true,
               "displayName": "State"
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "states"
-                    }
-                  },
-                  "Property": "position_1793"
-                }
-              },
-              "queryRef": "states.position_1793",
-              "nativeQueryRef": "position_1793",
-              "displayName": "1793 position"
             }
           ]
         },
@@ -68,6 +49,25 @@
               "queryRef": "states.Settlement per head",
               "nativeQueryRef": "Settlement per head",
               "displayName": "Settlement per head"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "states"
+                    }
+                  },
+                  "Property": "position_1793"
+                }
+              },
+              "queryRef": "states.position_1793",
+              "nativeQueryRef": "position_1793",
+              "displayName": "1793 position"
             }
           ]
         }
@@ -643,7 +643,6 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

@@ -1,41 +1,9 @@
 table enclosure_d_tieout
-	lineageTag: a6070950-d49c-417c-9811-ae3efd05fae5
-
-	measure 'ED quota' = SUM(enclosure_d_tieout[quota_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: ad5c8677-c934-429a-8787-3fa208ba3d1b
-
-	measure 'ED subscribed (as printed)' = SUM(enclosure_d_tieout[subscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: eef5e726-fec6-427e-aa72-cbe10234aa63
-
-	measure 'ED unsubscribed (as printed)' = SUM(enclosure_d_tieout[unsubscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: ab356885-aa2e-4aca-9517-9dc5ba84c142
-
-	measure 'ED unsubscribed (computed)' = SUM(enclosure_d_tieout[unsubscribed_computed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 1469c5d5-2b5d-48a6-a292-d01508797c36
-
-	measure 'ED over-subscribed (as printed)' = SUM(enclosure_d_tieout[oversubscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 982a15a9-7c34-435b-84ae-abbc2005b23c
-
-	measure 'ED over-subscribed (computed)' = SUM(enclosure_d_tieout[oversubscribed_computed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 0e180d0e-68f0-4508-b853-33ea8bf487ba
-
-	measure 'ED variance' = SUM(enclosure_d_tieout[variance_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: fe6cdab3-6b67-4fb0-874f-1e18d52ae465
-
-	measure 'ED subscribed (reconciled)' = SUM(enclosure_d_tieout[subscribed_reconciled_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: b8cf3029-6305-47be-afa1-7a27a13e37d0
+	lineageTag: b9da5de5-a07a-4514-be8a-e0bc486e708e
 
 	column state
 		dataType: string
-		lineageTag: 5fd861f7-a88b-44fe-95d3-a629039b8eed
+		lineageTag: e89e3995-3074-470a-8086-c64dcb1ce9e2
 		summarizeBy: none
 		sourceColumn: state
 		sortByColumn: line_order
@@ -45,7 +13,7 @@ table enclosure_d_tieout
 	column quota_usd
 		dataType: int64
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 41e2820a-322c-4c94-8b9c-804abbb12a2d
+		lineageTag: c8a60c53-8a0f-4d28-ac19-204129f6344f
 		summarizeBy: none
 		sourceColumn: quota_usd
 
@@ -54,7 +22,7 @@ table enclosure_d_tieout
 	column subscribed_printed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a619f577-67b1-4ab2-8028-c3111a49bcae
+		lineageTag: 74014209-96f0-4d46-86bc-71abe97ca487
 		summarizeBy: none
 		sourceColumn: subscribed_printed_usd
 
@@ -63,7 +31,7 @@ table enclosure_d_tieout
 	column unsubscribed_printed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: d683feba-2485-47ba-8092-e5f53b19f533
+		lineageTag: 4b6dd8e2-b466-4dab-8bf5-8d0d6d92a7b3
 		summarizeBy: none
 		sourceColumn: unsubscribed_printed_usd
 
@@ -72,7 +40,7 @@ table enclosure_d_tieout
 	column oversubscribed_printed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: d6178547-e31e-496b-9a9e-258165b4c940
+		lineageTag: ee24c21a-d6be-481c-b82c-b1a7c948d529
 		summarizeBy: none
 		sourceColumn: oversubscribed_printed_usd
 
@@ -81,7 +49,7 @@ table enclosure_d_tieout
 	column unsubscribed_computed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 3a974d81-63de-4568-93ea-12a44d437c26
+		lineageTag: db236da8-24c2-47a5-a2c0-f81be8e07848
 		summarizeBy: none
 		sourceColumn: unsubscribed_computed_usd
 
@@ -90,7 +58,7 @@ table enclosure_d_tieout
 	column oversubscribed_computed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 6ab87b81-7674-4f6e-ba58-9db07442ef61
+		lineageTag: 3814d5f7-2d5b-4f50-a05d-f84e91b707b3
 		summarizeBy: none
 		sourceColumn: oversubscribed_computed_usd
 
@@ -99,7 +67,7 @@ table enclosure_d_tieout
 	column variance_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 954a61ca-5f3b-41aa-ac71-3ad0a43b9a75
+		lineageTag: aaafc0d8-fd25-472c-8f4a-f8a7ebcded66
 		summarizeBy: none
 		sourceColumn: variance_usd
 
@@ -107,7 +75,7 @@ table enclosure_d_tieout
 
 	column status
 		dataType: string
-		lineageTag: 2bef7764-f1a8-45ce-ae2b-015a2c5b3f4d
+		lineageTag: cfb0b3ec-0587-4cb6-92b2-b695e4873c47
 		summarizeBy: none
 		sourceColumn: status
 
@@ -116,7 +84,7 @@ table enclosure_d_tieout
 	column subscribed_reconciled_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 2ed7b61c-9bbb-4635-82cd-01baa54f2011
+		lineageTag: 533a71ed-d87e-491e-89a4-29656e434e71
 		summarizeBy: none
 		sourceColumn: subscribed_reconciled_usd
 
@@ -125,11 +93,43 @@ table enclosure_d_tieout
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 4beaec10-924b-4394-9e8a-3753fd5f971a
+		lineageTag: 56c435aa-b592-4fe6-9d5a-b688a05dc87b
 		summarizeBy: none
 		sourceColumn: line_order
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'ED quota' = SUM(enclosure_d_tieout[quota_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 150f1b11-3fcc-4678-bfb2-3c80887ada1e
+
+	measure 'ED subscribed (as printed)' = SUM(enclosure_d_tieout[subscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 97325b77-7ade-4368-9a04-020df749eece
+
+	measure 'ED unsubscribed (as printed)' = SUM(enclosure_d_tieout[unsubscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 6692a611-2279-4df2-9938-589e2795d3e6
+
+	measure 'ED unsubscribed (computed)' = SUM(enclosure_d_tieout[unsubscribed_computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 82641802-71dc-4c9f-8cf1-7dbbda46cf32
+
+	measure 'ED over-subscribed (as printed)' = SUM(enclosure_d_tieout[oversubscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7d71058b-bc73-4aa3-b847-6dc053b177d9
+
+	measure 'ED over-subscribed (computed)' = SUM(enclosure_d_tieout[oversubscribed_computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ebe531f3-f495-49ef-8c7b-d6224c529fc3
+
+	measure 'ED variance' = SUM(enclosure_d_tieout[variance_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ed2b529a-0370-4abe-b66b-49bc38f0d8fb
+
+	measure 'ED subscribed (reconciled)' = SUM(enclosure_d_tieout[subscribed_reconciled_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c4696698-432c-4750-8a68-dcd49af38550
 
 	partition enclosure_d_tieout = m
 		mode: import
@@ -142,4 +142,3 @@ table enclosure_d_tieout
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
-

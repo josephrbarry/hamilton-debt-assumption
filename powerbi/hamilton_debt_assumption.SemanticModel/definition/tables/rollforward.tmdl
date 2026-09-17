@@ -1,18 +1,10 @@
 table rollforward
-	lineageTag: 4ecec3dc-633d-4f90-b879-7fec065b809f
-
-	measure 'RF 1790 $' = SUM(rollforward[usd_1790])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 08816072-b16a-4e79-9b81-5eeb0457b815
-
-	measure 'RF 2025 $' = SUM(rollforward[usd_2025])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 2eb5ad27-f20e-425a-a07f-08b929fcbf40
+	lineageTag: 1fba1664-34eb-4e4a-b774-93ff58b656aa
 
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 53d6e75a-0b07-4f86-bb60-3866216442af
+		lineageTag: 86cefbe7-fc42-4d0f-aa7c-f62a6a07a1ff
 		summarizeBy: none
 		sourceColumn: line_order
 
@@ -20,7 +12,7 @@ table rollforward
 
 	column line
 		dataType: string
-		lineageTag: 47191f89-a0c3-42f0-94ed-ec283c8911cd
+		lineageTag: 159e44e4-27f0-47df-9024-8a7c68cf8874
 		summarizeBy: none
 		sourceColumn: line
 		sortByColumn: line_order
@@ -30,7 +22,7 @@ table rollforward
 	column usd_1790
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 01b5a372-cf1b-4f25-9578-d9ac56189333
+		lineageTag: 16e7c63c-69b3-4974-acf0-96c51288f3cb
 		summarizeBy: none
 		sourceColumn: usd_1790
 
@@ -39,7 +31,7 @@ table rollforward
 	column usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: c2a391ae-a296-4274-9a85-31e9556fcc4c
+		lineageTag: 6e9ffe23-f285-4732-aa37-050fa7dbc910
 		summarizeBy: none
 		sourceColumn: usd_2025
 
@@ -48,7 +40,7 @@ table rollforward
 	column running_usd_1790
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a8335a44-96bc-4dcc-a9bb-778fe3eba297
+		lineageTag: 5a0b11d1-3ccf-454d-a9ee-1e1646555e5a
 		summarizeBy: none
 		sourceColumn: running_usd_1790
 
@@ -57,11 +49,19 @@ table rollforward
 	column running_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: e1e12cd9-d7af-452a-b0f9-1dea8d2750ee
+		lineageTag: e602417e-c625-48a0-885c-b75f392fe168
 		summarizeBy: none
 		sourceColumn: running_usd_2025
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'RF 1790 $' = SUM(rollforward[usd_1790])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 98acff5e-c288-467d-b3c8-fb0837f01045
+
+	measure 'RF 2025 $' = SUM(rollforward[usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5024e568-558e-4083-bc44-b15745d2f6ee
 
 	partition rollforward = m
 		mode: import
@@ -74,4 +74,3 @@ table rollforward
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
-

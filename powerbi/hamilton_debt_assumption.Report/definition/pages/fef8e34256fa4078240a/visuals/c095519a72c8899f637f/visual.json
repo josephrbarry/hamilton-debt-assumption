@@ -6,11 +6,12 @@
     "y": 144,
     "z": 0,
     "height": 888,
-    "width": 1080,
+    "width": 1080.0,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "clusteredBarChart",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -28,27 +29,7 @@
               },
               "queryRef": "counterfactual.state",
               "nativeQueryRef": "state",
-              "active": true,
               "displayName": "State"
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "counterfactual"
-                    }
-                  },
-                  "Property": "region"
-                }
-              },
-              "queryRef": "counterfactual.region",
-              "nativeQueryRef": "region",
-              "displayName": "Region"
             }
           ]
         },
@@ -68,6 +49,25 @@
               "queryRef": "counterfactual.CF quota less share",
               "nativeQueryRef": "CF quota less share",
               "displayName": "Quota less per-head share"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "counterfactual"
+                    }
+                  },
+                  "Property": "region"
+                }
+              },
+              "queryRef": "counterfactual.region",
+              "nativeQueryRef": "region",
+              "displayName": "Region"
             }
           ]
         }
@@ -684,7 +684,6 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

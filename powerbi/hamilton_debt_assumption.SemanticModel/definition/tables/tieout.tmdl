@@ -1,21 +1,9 @@
 table tieout
-	lineageTag: 2b4eb931-060d-4a57-b3ec-8bf533db8e57
-
-	measure Stated = SUM(tieout[stated_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 50796108-8499-4542-8413-f52a29f305bc
-
-	measure Computed = SUM(tieout[computed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 24ad1d94-ac14-4d71-bc16-2babb2b0151a
-
-	measure Variance = SUM(tieout[variance_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: f6941305-c7f8-4c1b-8120-13d5d3efafe1
+	lineageTag: 27538e59-cd74-4a63-aa5d-475341930266
 
 	column document
 		dataType: string
-		lineageTag: 76236687-88c2-4c96-891f-45102903a816
+		lineageTag: 4b41f554-0f76-46f8-80e4-8cefc81977c4
 		summarizeBy: none
 		sourceColumn: document
 
@@ -23,7 +11,7 @@ table tieout
 
 	column line
 		dataType: string
-		lineageTag: 01923c9d-8f6c-4a0a-b788-a3b033edc08f
+		lineageTag: ace6b1f2-9cb6-4152-b3f9-a94bce7519b8
 		summarizeBy: none
 		sourceColumn: line
 		sortByColumn: line_order
@@ -33,7 +21,7 @@ table tieout
 	column stated_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: fa18e2cb-a785-48c0-a9ac-289a4b6bc927
+		lineageTag: 83b70f48-4307-47d1-833c-e3d98b1105a6
 		summarizeBy: none
 		sourceColumn: stated_usd
 
@@ -42,7 +30,7 @@ table tieout
 	column computed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: dfaada7d-03dd-495e-a85e-40ee9910edb7
+		lineageTag: 0e88745b-ada3-4445-b097-5c96ab4d7061
 		summarizeBy: none
 		sourceColumn: computed_usd
 
@@ -51,7 +39,7 @@ table tieout
 	column variance_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: d8026e26-b12a-43ec-aa4a-d6db937fa57b
+		lineageTag: b4440543-2d28-4644-bacf-c28d4fcce1cb
 		summarizeBy: none
 		sourceColumn: variance_usd
 
@@ -59,7 +47,7 @@ table tieout
 
 	column status
 		dataType: string
-		lineageTag: 0e668dfa-a12b-4143-8aaf-45bb7f304286
+		lineageTag: 487dd825-1cbc-4aff-a22b-fefda97bb0a1
 		summarizeBy: none
 		sourceColumn: status
 
@@ -68,11 +56,23 @@ table tieout
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: bb9be4bc-2e3e-4ef7-a2f5-9205c50f1e3b
+		lineageTag: fadcbbd8-4b53-46c1-a7ef-617c8974eec0
 		summarizeBy: none
 		sourceColumn: line_order
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'Stated' = SUM(tieout[stated_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1714bd44-1b70-4a3c-9380-e04b49ac2392
+
+	measure 'Computed' = SUM(tieout[computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9629f257-0991-403c-a546-b4b7123354f7
+
+	measure 'Variance' = SUM(tieout[variance_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 238f0ce0-b3e0-4214-9230-1b1fb7890642
 
 	partition tieout = m
 		mode: import
@@ -85,4 +85,3 @@ table tieout
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
-

@@ -102,39 +102,30 @@ under-allocated in the Act *and* debtors in the settlement.
 
 ## Opinion
 
-**On the method:** not defensible as an apportionment. Incomplete returns, arbitrary
-caps on the largest claimants, round numbers for states with no data.
+**I side with Hamilton.** The question wasn't whether the allocation was tidy; it was
+whether the new federal government could take a $21.5 million problem off thirteen
+balance sheets and make it one credible obligation. It did. 85% of the authorized sum
+was taken up, the states that brought in more than their quota were exactly the ones
+Hamilton's own schedule said owed the most, and within three years the country had a
+settled national debt and working credit.
 
-**On the outcome:** defensible, and better than the method deserved. The states that got
-the most relief were the states that had the most debt *and* the states the 1793 audit
-found had over-contributed to the war. Rough justice, reconciled within three years.
+**The method was rough, and I'd say so in the workpapers.** Six of thirteen states filed
+returns. Four got quotas by round number. Massachusetts and South Carolina were cut by a
+quarter. If I were auditing the allocation itself, I'd write it up. But Hamilton wasn't
+allocating with good data; he was allocating with the data that existed in January 1790,
+and he said so in the report.
 
-**On Madison:** wrong on the facts for his own state.
+**The 1793 settlement vindicated him.** The audit Madison demanded found that the biggest
+recipients, Massachusetts and South Carolina, were also the biggest creditors of the Union.
+Relief tracked contribution. Madison's own Virginia, which he said had already paid its
+share, turned out to owe the Union $100,879 - about 12 cents a head, which is to say it
+broke even, exactly as the Compromise of 1790 intended, while receiving $2.9 million of
+relief. His objection had no grievance the numbers supported.
 
-**On Hamilton's "bind the creditors to the Union" rationale:** untestable at the state
-level - it's about who held the paper, which needs subscriber-level records.
-
-## Notes
-
-- **Foot first.** Every table was tied to its own printed totals before analysis. One
-  didn't tie. That finding is in the write-up, not hidden.
-- **Population, not sample.** Thirteen states are the whole universe. Permutation tests
-  answer "how often would random labeling produce this gap?" - a legitimate question -
-  but with n = 4 to 7 per group they have little power. Effect sizes are reported first.
-- **Three tests, same answer.** Welch t, Mann-Whitney, and exact permutation agree on
-  every comparison. Cheap insurance against "did you check normality?"
-- **No chi-square.** A goodness-of-fit test assumes counts and its value depends on the
-  unit chosen, so it isn't valid on dollar amounts. The dissimilarity index carries the
-  apportionment finding on its own.
-- **Multiple comparisons disclosed.** Seven tests are reported, uncorrected. The one
-  borderline result (p = 0.047) was the single pre-specified directional test; it's
-  labelled suggestive.
-- **Dissimilarity index.** "Share that would have to move" is half the sum of absolute
-  gaps as a percent of the total - the same construct as budget-vs-benchmark variance.
-- **The denominator is a choice.** Per capita by total vs. free population reorders the
-  states. Both are shown; neither changes a conclusion.
-- **Two dollar figures, always.** 1790 $ with 2025 $ beside it. CPI for purchasing power;
-  GDP share for scale.
+**Where I'd push back on Hamilton:** the argument that federal bonds would bind wealthy
+creditors to the new government can't be tested with state-level data, and I don't assume
+it. What I can defend is narrower and, I think, more useful: the outcome was fair on the
+numbers, and it was reconciled faster than most modern restructurings.
 
 ## The Power BI report
 

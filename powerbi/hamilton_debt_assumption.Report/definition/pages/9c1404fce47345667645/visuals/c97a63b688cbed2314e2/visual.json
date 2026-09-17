@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "c97a63b688cbed2314e2",
   "position": {
-    "x": 1280,
+    "x": 1280.0,
     "y": 144,
     "z": 0,
     "height": 888,
-    "width": 592,
+    "width": 592.0,
     "tabOrder": 0
   },
   "visual": {
@@ -225,161 +225,6 @@
         {
           "properties": {
             "paragraphs": [
-              {
-                "textRuns": [
-                  {
-                    "value": "Notes",
-                    "textStyle": {
-                      "fontFamily": "Georgia",
-                      "fontSize": "12pt",
-                      "color": "#1F3A5F",
-                      "fontWeight": "bold"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": " ",
-                    "textStyle": {
-                      "fontSize": "6pt"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Foot first. Every table tied to its printed total before analysis (Schedule B).",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
-                      "color": "#22262B"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": " ",
-                    "textStyle": {
-                      "fontSize": "6pt"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Population, not sample. 13 states is the whole universe. With 4-7 per group, tests have little power. Effect sizes lead; p-values follow.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
-                      "color": "#22262B"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": " ",
-                    "textStyle": {
-                      "fontSize": "6pt"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Three tests, one answer. Welch t, Mann-Whitney U, exact permutation. All agree.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
-                      "color": "#22262B"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": " ",
-                    "textStyle": {
-                      "fontSize": "6pt"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Dissimilarity index. Share of the total that would have to move to match the benchmark. Same idea as budget variance.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
-                      "color": "#22262B"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": " ",
-                    "textStyle": {
-                      "fontSize": "6pt"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Two dollar figures. 1790 $ and 2025 $ at 36.3x CPI (MeasuringWorth). GDP share for scale.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
-                      "color": "#22262B"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": " ",
-                    "textStyle": {
-                      "fontSize": "6pt"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Boundaries. Maine in MA, Kentucky in VA, as in 1790. No ranking changes without them.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
-                      "color": "#22262B"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": " ",
-                    "textStyle": {
-                      "fontSize": "6pt"
-                    }
-                  }
-                ]
-              },
               {
                 "textRuns": [
                   {

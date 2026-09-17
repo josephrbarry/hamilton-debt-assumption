@@ -6,7 +6,7 @@
     "y": 298,
     "z": 0,
     "height": 734,
-    "width": 720,
+    "width": 720.0,
     "tabOrder": 0
   },
   "visual": {
@@ -251,7 +251,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Method: not defensible. Six of thirteen states filed returns. The two largest were cut by a quarter. Four states with no return got $3.1M by round number.",
+                    "value": "I side with Hamilton. The question wasn't whether the allocation was tidy; it was whether the new federal government could take a $21.5 million problem off thirteen balance sheets and make it one credible obligation. It did: 85% of the authorized sum was taken up, the states that brought in more than their quota were the ones Hamilton's own schedule said owed the most, and within three years the country had a settled debt and working credit.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -273,7 +273,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Outcome: defensible. 85% of the quota was used. The states that over-subscribed were the ones Hamilton said owed the most. The 1793 audit confirmed the biggest recipients (MA, SC) were the biggest creditors. Relief tracked contribution.",
+                    "value": "The method was rough, and I'd say so in the workpapers. Six of thirteen states filed returns; four got quotas by round number; MA and SC were cut by a quarter. But Hamilton was allocating with the data that existed in January 1790, and he said so.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -295,7 +295,29 @@
               {
                 "textRuns": [
                   {
-                    "value": "Madison: wrong on his own state. The audit he demanded found Virginia a net debtor, $100,879.",
+                    "value": "The 1793 settlement vindicated him. The audit Madison demanded found the biggest recipients (MA, SC) were also the biggest creditors of the Union. Madison's own Virginia turned out to owe the Union $100,879 - 12 cents a head, break-even as the Compromise intended - while receiving $2.9M of relief.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11pt",
+                      "color": "#22262B"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontSize": "6pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Where I'd push back: the claim that federal bonds would bind creditors to the new government can't be tested at the state level, and I don't assume it. What the numbers do show is a fair outcome, reconciled within three years.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
