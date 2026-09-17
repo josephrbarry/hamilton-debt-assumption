@@ -51,7 +51,7 @@ Carolina line. Found before any analysis was run; reconciled figure used through
 
 **The quotas were set on a balance sheet that was one-third estimate and one-third
 blank.** Six states sent returns. Hamilton estimated three by round number. Four (RI, DE,
-NC, GA) had nothing on file and were assigned $5.1M between them anyway - North
+NC, GA) had nothing on file and were assigned $3.1M between them anyway - North
 Carolina's $2.4M is the largest figure in the Act with no return behind it.
 
 **Congress cut the two biggest claimants by a quarter.** Massachusetts and South

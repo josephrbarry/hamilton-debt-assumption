@@ -159,7 +159,7 @@ w(f"- Congress cut **{usd(-cut.quota_vs_estimate_usd.sum())}** from Hamilton's e
   f"almost all from Massachusetts and South Carolina (each capped at $4.0M against "
   f"estimates of $5.2M and $5.4M). The three states Hamilton estimated (NH, PA, MD) were "
   "written into the Act at exactly his round numbers.")
-w("- The four blank states were assigned $5.1M between them (RI 0.2, DE 0.2, NC 2.4, GA 0.3) "
+w("- The four blank states were assigned $3.1M between them (RI 0.2, DE 0.2, NC 2.4, GA 0.3) "
   "with no return on file. North Carolina's $2.4M is the largest number in the Act with "
   "nothing behind it.\n")
 

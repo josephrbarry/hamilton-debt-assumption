@@ -1,2 +1,6 @@
 .venv/
 __pycache__/
+# Power BI project: per-user/local state and data cache (Microsoft says to exclude)
+powerbi/**/.pbi/
+*.pbix.bak
+~$*.pbix

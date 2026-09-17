@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "hamilton_debt_assumption"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8b903f6d-4278-4fc4-9125-eb0d0518ba4a"
+  }
+}

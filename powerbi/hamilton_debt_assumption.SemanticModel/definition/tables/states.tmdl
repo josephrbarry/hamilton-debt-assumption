@@ -1,0 +1,389 @@
+table states
+	lineageTag: cd37e8f0-8c88-4273-92f5-878999a0aeee
+
+	column state
+		dataType: string
+		lineageTag: 6d1b80b2-a673-4f5b-bb0f-058dd500e969
+		summarizeBy: none
+		sourceColumn: state
+		dataCategory: StateOrProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 43975074-7f3b-4d0c-98ae-8d8358f73887
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_1793
+		dataType: string
+		lineageTag: 352f08dd-8263-40ae-bb51-43419ee98eed
+		summarizeBy: none
+		sourceColumn: position_1793
+
+		annotation SummarizationSetBy = Automatic
+
+	column pop_total_1790
+		dataType: int64
+		formatString: #,0
+		lineageTag: 541f2373-ecd7-48ee-aa5e-06bfe07fddd3
+		summarizeBy: none
+		sourceColumn: pop_total_1790
+
+		annotation SummarizationSetBy = Automatic
+
+	column pop_enslaved_1790
+		dataType: int64
+		formatString: #,0
+		lineageTag: f400c4b9-dc05-4ff5-99b1-2eed296f8c46
+		summarizeBy: none
+		sourceColumn: pop_enslaved_1790
+
+		annotation SummarizationSetBy = Automatic
+
+	column pop_free_1790
+		dataType: int64
+		formatString: #,0
+		lineageTag: a28c251a-e226-4c83-b7d5-1ba2f2bfca03
+		summarizeBy: none
+		sourceColumn: pop_free_1790
+
+		annotation SummarizationSetBy = Automatic
+
+	column pop_share_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: c1ff4b05-bc51-4c40-ad68-2fb143491b07
+		summarizeBy: none
+		sourceColumn: pop_share_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimate_1790_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: eaa4f0a8-01e5-40c9-bee7-fbc3de203514
+		summarizeBy: none
+		sourceColumn: estimate_1790_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimate_basis
+		dataType: string
+		lineageTag: dd76f61e-802b-434c-808b-b21a1bdfe338
+		summarizeBy: none
+		sourceColumn: estimate_basis
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_usd
+		dataType: int64
+		formatString: $#,0;($#,0)
+		lineageTag: ff5f8b42-deed-40e7-a4dc-46d595b22db6
+		summarizeBy: none
+		sourceColumn: quota_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_share_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: e0af90e7-dc66-430c-8544-92b6b1694ca8
+		summarizeBy: none
+		sourceColumn: quota_share_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_vs_estimate_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 69d3bf89-00f3-4a32-9308-479598191673
+		summarizeBy: none
+		sourceColumn: quota_vs_estimate_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column subscribed_1792_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 8f2ccd83-67f2-48d7-a85b-51653099ce22
+		summarizeBy: none
+		sourceColumn: subscribed_1792_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column assumed_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: d8c1bfe5-9aea-4b87-ad8e-e0eab0a391fd
+		summarizeBy: none
+		sourceColumn: assumed_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column takeup_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: 78894dd2-fb49-4d57-8694-1d58f99e75f9
+		summarizeBy: none
+		sourceColumn: takeup_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_unused_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 4beaa5a6-0688-471c-b1d3-1aa500ffd8c0
+		summarizeBy: none
+		sourceColumn: quota_unused_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column remaining_state_debt_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 8691f027-3025-48e7-bb92-f5dabe38370f
+		summarizeBy: none
+		sourceColumn: remaining_state_debt_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column settlement_usd
+		dataType: int64
+		formatString: $#,0;($#,0)
+		lineageTag: 64521c84-d976-4154-a41a-4b6ba6881815
+		summarizeBy: none
+		sourceColumn: settlement_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column net_position_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 5339fc31-9f9f-490e-a198-688d4468538d
+		summarizeBy: none
+		sourceColumn: net_position_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_per_capita
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: 3d72c942-6be9-4e6a-a9d2-5cf7993e0bd4
+		summarizeBy: none
+		sourceColumn: quota_per_capita
+
+		annotation SummarizationSetBy = Automatic
+
+	column assumed_per_capita
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: a6279d75-0daa-4657-bc91-01a163f869c5
+		summarizeBy: none
+		sourceColumn: assumed_per_capita
+
+		annotation SummarizationSetBy = Automatic
+
+	column settlement_per_capita
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: 38d35035-3167-4a76-b89c-dba5a7a2f3b3
+		summarizeBy: none
+		sourceColumn: settlement_per_capita
+
+		annotation SummarizationSetBy = Automatic
+
+	column net_position_per_capita
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: 60b3d8cf-ebc3-45cc-bea2-21fca38396b1
+		summarizeBy: none
+		sourceColumn: net_position_per_capita
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_per_free_person
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: 5d9a3b6d-0113-4753-9d06-196d3e48955a
+		summarizeBy: none
+		sourceColumn: quota_per_free_person
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_z_score
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 25fa2906-c8d0-48ec-826a-9e4f6d3ecbb1
+		summarizeBy: none
+		sourceColumn: quota_z_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_gap_vs_population_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 46d9b02c-1eea-4a53-910b-eaced1ed9431
+		summarizeBy: none
+		sourceColumn: quota_gap_vs_population_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimate_1790_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: d39f39c8-1f12-4fc5-9f5f-2ee2c44df89b
+		summarizeBy: none
+		sourceColumn: estimate_1790_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: fb0e6a4a-c01c-43ea-aa2a-cea8b3cb0c7a
+		summarizeBy: none
+		sourceColumn: quota_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_vs_estimate_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: ff6502a2-8a9b-4a12-95e5-e6808749e81f
+		summarizeBy: none
+		sourceColumn: quota_vs_estimate_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column subscribed_1792_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 85259cb5-26a4-4be5-b31f-67c97af4b826
+		summarizeBy: none
+		sourceColumn: subscribed_1792_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column assumed_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 7a289241-b439-442c-9f98-cf531669adeb
+		summarizeBy: none
+		sourceColumn: assumed_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_unused_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 4653f455-1780-4d5e-b4ec-2f8acb75cde0
+		summarizeBy: none
+		sourceColumn: quota_unused_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column remaining_state_debt_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: e2aa5374-291a-4833-b63d-90ce0c4e6df5
+		summarizeBy: none
+		sourceColumn: remaining_state_debt_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column settlement_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 6f847d76-3b4e-459d-bc54-9002f940a67c
+		summarizeBy: none
+		sourceColumn: settlement_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column net_position_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 5ed64427-4373-4d81-81f6-1a9d6357c018
+		summarizeBy: none
+		sourceColumn: net_position_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_per_capita_2025
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: ab708c79-0c41-4e66-ab30-fd932fcc1a41
+		summarizeBy: none
+		sourceColumn: quota_per_capita_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column assumed_per_capita_2025
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: c759fa3c-89f2-4b2c-afd0-ee1404636a9a
+		summarizeBy: none
+		sourceColumn: assumed_per_capita_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column settlement_per_capita_2025
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: 3375a151-aed6-400e-ac75-da7f96f2ccf0
+		summarizeBy: none
+		sourceColumn: settlement_per_capita_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column net_position_per_capita_2025
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: 17ecb3b5-7036-4673-bae6-14c7711e40e0
+		summarizeBy: none
+		sourceColumn: net_position_per_capita_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_per_free_person_2025
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: 31119d49-8844-49a1-9c6c-c785aa115228
+		summarizeBy: none
+		sourceColumn: quota_per_free_person_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_gap_vs_population_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 045e8801-a547-4699-98f0-533fbf538ac3
+		summarizeBy: none
+		sourceColumn: quota_gap_vs_population_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: b861399d-b8d0-455f-ab51-2bcb4e45d7c3
+		summarizeBy: none
+		sourceColumn: quota_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition states = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Claude_Projects\hamilton-debt-assumption\powerbi\data\states.csv"), [Delimiter = ",", Columns = 42, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"state", type text}, {"region", type text}, {"position_1793", type text}, {"pop_total_1790", Int64.Type}, {"pop_enslaved_1790", Int64.Type}, {"pop_free_1790", Int64.Type}, {"pop_share_pct", type number}, {"estimate_1790_usd", type number}, {"estimate_basis", type text}, {"quota_usd", Int64.Type}, {"quota_share_pct", type number}, {"quota_vs_estimate_usd", type number}, {"subscribed_1792_usd", type number}, {"assumed_usd", type number}, {"takeup_pct", type number}, {"quota_unused_usd", type number}, {"remaining_state_debt_usd", type number}, {"settlement_usd", Int64.Type}, {"net_position_usd", type number}, {"quota_per_capita", type number}, {"assumed_per_capita", type number}, {"settlement_per_capita", type number}, {"net_position_per_capita", type number}, {"quota_per_free_person", type number}, {"quota_z_score", type number}, {"quota_gap_vs_population_usd", type number}, {"estimate_1790_usd_2025", type number}, {"quota_usd_2025", type number}, {"quota_vs_estimate_usd_2025", type number}, {"subscribed_1792_usd_2025", type number}, {"assumed_usd_2025", type number}, {"quota_unused_usd_2025", type number}, {"remaining_state_debt_usd_2025", type number}, {"settlement_usd_2025", type number}, {"net_position_usd_2025", type number}, {"quota_per_capita_2025", type number}, {"assumed_per_capita_2025", type number}, {"settlement_per_capita_2025", type number}, {"net_position_per_capita_2025", type number}, {"quota_per_free_person_2025", type number}, {"quota_gap_vs_population_usd_2025", type number}, {"quota_rank", Int64.Type}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

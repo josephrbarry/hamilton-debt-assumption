@@ -1,0 +1,68 @@
+table rollforward
+	lineageTag: 9b5fbd1d-51a2-4fad-ba1f-417025c78a59
+
+	column line_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f087ee0-08a8-44df-967b-75c784a61ce4
+		summarizeBy: none
+		sourceColumn: line_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column line
+		dataType: string
+		lineageTag: 3e69ac1b-6548-48f5-ae27-1dbe046dd79f
+		summarizeBy: none
+		sourceColumn: line
+		sortByColumn: line_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column usd_1790
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 2c60e7d4-0679-4341-85c3-ea2c4e22dfa1
+		summarizeBy: none
+		sourceColumn: usd_1790
+
+		annotation SummarizationSetBy = Automatic
+
+	column usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 69cb6836-f05a-4a69-adff-c0e553b7d114
+		summarizeBy: none
+		sourceColumn: usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column running_usd_1790
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: fa6eea53-e53e-47a2-99d1-fa822acaa88c
+		summarizeBy: none
+		sourceColumn: running_usd_1790
+
+		annotation SummarizationSetBy = Automatic
+
+	column running_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: e2d7dba5-3b8e-443d-a537-db4e2d6f9ed9
+		summarizeBy: none
+		sourceColumn: running_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rollforward = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Claude_Projects\hamilton-debt-assumption\powerbi\data\rollforward.csv"), [Delimiter = ",", Columns = 6, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"line_order", Int64.Type}, {"line", type text}, {"usd_1790", type number}, {"usd_2025", type number}, {"running_usd_1790", type number}, {"running_usd_2025", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

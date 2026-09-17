@@ -1,0 +1,10 @@
+group,question,test,statistic,p_value,read,test_order
+A,Regional tilt,"Welch t-test, NE vs South quota per head",t = -0.51,0.6272475165612831,NE $5.04 vs South $6.51 per head. No detectable regional tilt.,1
+A,Regional tilt,"Mann-Whitney U, NE vs South",U = 9,0.9047619047619049,Rank-based version of the same comparison; agrees.,2
+A,Regional tilt,"Exact permutation, NE vs South (126 relabelings)",diff = $-1.47,0.7777777777777778,Every possible relabeling of 9 states as 4 NE / 5 South. South Carolina alone drives the Southern mean.,3
+B,Relief vs contribution,"Spearman rho, relief per head vs 1793 settlement per head",rho = 0.55,0.05177062555916278,Moderate positive rank correlation: states the audit found had over-paid got more relief.,4
+B,Relief vs contribution,"Pearson r, same variables",r = 0.54,0.055941553962612134,Linear version; agrees in size.,5
+B,Relief vs contribution,"Exact permutation, creditor vs debtor states, one-sided",$6.12 vs $2.67,0.0472027972027972,Creditor states received 2.3x the relief per head of debtor states.,6
+C,Proportional to population?,Chi-square goodness of fit vs total population,chi2 = 72,1.3485909528776496e-10,20.2% of the $21.5M would have to move between states to match this basis.,7
+C,Proportional to population?,Chi-square goodness of fit vs free population,chi2 = 113,1.27674283147653e-18,19.1% of the $21.5M would have to move between states to match this basis.,8
+C,Proportional to population?,Chi-square goodness of fit vs three-fifths basis,chi2 = 81,2.310181396786308e-12,19.8% of the $21.5M would have to move between states to match this basis.,9

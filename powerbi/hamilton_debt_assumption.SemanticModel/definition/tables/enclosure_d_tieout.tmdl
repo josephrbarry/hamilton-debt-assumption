@@ -1,0 +1,103 @@
+table enclosure_d_tieout
+	lineageTag: 0108f68e-cc8e-4082-acba-8afea5d9c58f
+
+	column state
+		dataType: string
+		lineageTag: f72d316a-56be-4d2b-8b4a-298bd58ab8b1
+		summarizeBy: none
+		sourceColumn: state
+		sortByColumn: line_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_usd
+		dataType: int64
+		formatString: $#,0;($#,0)
+		lineageTag: 75c353b1-9f46-40b8-94ff-724a8dc53613
+		summarizeBy: none
+		sourceColumn: quota_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column subscribed_printed_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 4bd471ea-4b04-4825-9393-d37b338cc83c
+		summarizeBy: none
+		sourceColumn: subscribed_printed_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column unsubscribed_printed_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 01942ac8-589f-401e-864f-c52e08d6745e
+		summarizeBy: none
+		sourceColumn: unsubscribed_printed_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column oversubscribed_printed_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 4d4ad445-e7c1-42d1-bdb8-c94a80b8be60
+		summarizeBy: none
+		sourceColumn: oversubscribed_printed_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column unsubscribed_computed_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 6bb534e7-559b-4152-8e27-ff4c55091d86
+		summarizeBy: none
+		sourceColumn: unsubscribed_computed_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column variance_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 91f306f9-8e46-432d-bf28-e8cb453ade1f
+		summarizeBy: none
+		sourceColumn: variance_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: a949d3f2-7466-43ce-8e3d-c6a5de8e280b
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column subscribed_reconciled_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: f7d30bdb-3bbc-4cf5-9f73-a60e4b742a91
+		summarizeBy: none
+		sourceColumn: subscribed_reconciled_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_order
+		dataType: int64
+		formatString: 0
+		lineageTag: e42c946f-29b8-449d-8720-b0bd8e52a7c9
+		summarizeBy: none
+		sourceColumn: line_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enclosure_d_tieout = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Claude_Projects\hamilton-debt-assumption\powerbi\data\enclosure_d_tieout.csv"), [Delimiter = ",", Columns = 10, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"state", type text}, {"quota_usd", Int64.Type}, {"subscribed_printed_usd", type number}, {"unsubscribed_printed_usd", type number}, {"oversubscribed_printed_usd", type number}, {"unsubscribed_computed_usd", type number}, {"variance_usd", type number}, {"status", type text}, {"subscribed_reconciled_usd", type number}, {"line_order", Int64.Type}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

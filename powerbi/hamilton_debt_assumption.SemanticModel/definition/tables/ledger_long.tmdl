@@ -1,0 +1,85 @@
+table ledger_long
+	lineageTag: 66ea93af-248a-4fa8-b6ff-25b48141e86e
+
+	column state
+		dataType: string
+		lineageTag: 94c87980-31a9-49e6-b28d-b1b543df4370
+		summarizeBy: none
+		sourceColumn: state
+		dataCategory: StateOrProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: db12f9ab-040b-455d-bef4-84c8c4d1264f
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column step_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 567ee445-315b-4fbd-901f-f2529fa29cdf
+		summarizeBy: none
+		sourceColumn: step_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column step
+		dataType: string
+		lineageTag: 247dd3e8-e31e-4b95-a0da-a2d7fe34e21d
+		summarizeBy: none
+		sourceColumn: step
+		sortByColumn: step_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column usd_1790
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 3aefc16e-c025-42dd-8d42-8c5c802b3708
+		summarizeBy: none
+		sourceColumn: usd_1790
+
+		annotation SummarizationSetBy = Automatic
+
+	column usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: a30afc6f-0cff-48c3-abae-628a79c2b3df
+		summarizeBy: none
+		sourceColumn: usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column per_capita_1790
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: 7640ea70-d5ab-403b-80ef-26b48ceff0c4
+		summarizeBy: none
+		sourceColumn: per_capita_1790
+
+		annotation SummarizationSetBy = Automatic
+
+	column per_capita_2025
+		dataType: double
+		formatString: $#,0.00;($#,0.00)
+		lineageTag: 7b25b9b6-c67c-49a0-87cb-2924f11332ff
+		summarizeBy: none
+		sourceColumn: per_capita_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ledger_long = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Claude_Projects\hamilton-debt-assumption\powerbi\data\ledger_long.csv"), [Delimiter = ",", Columns = 8, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"state", type text}, {"region", type text}, {"step_order", Int64.Type}, {"step", type text}, {"usd_1790", type number}, {"usd_2025", type number}, {"per_capita_1790", type number}, {"per_capita_2025", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,68 @@
+table waterfall
+	lineageTag: 63c9b992-1f1d-481b-b3b7-62ee9279ad48
+
+	column step_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 93f12966-7052-4d29-8b30-f8bfeb510a26
+		summarizeBy: none
+		sourceColumn: step_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column step
+		dataType: string
+		lineageTag: 17ccdf20-75a0-4dc6-a222-98b136ccd752
+		summarizeBy: none
+		sourceColumn: step
+		sortByColumn: step_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column usd_1790
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: d8426177-171f-47a7-862b-672a361a4fc1
+		summarizeBy: none
+		sourceColumn: usd_1790
+
+		annotation SummarizationSetBy = Automatic
+
+	column usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: abdfa7e6-3754-431a-95fe-303c41a126ea
+		summarizeBy: none
+		sourceColumn: usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column usd_1790_m
+		dataType: double
+		formatString: #,0.00;(#,0.00)
+		lineageTag: 1be3cbdc-b041-4e27-948d-96df5c8935e6
+		summarizeBy: none
+		sourceColumn: usd_1790_m
+
+		annotation SummarizationSetBy = Automatic
+
+	column usd_2025_m
+		dataType: double
+		formatString: #,0.00;(#,0.00)
+		lineageTag: dca51659-1434-494a-91c8-f72d1d319d1b
+		summarizeBy: none
+		sourceColumn: usd_2025_m
+
+		annotation SummarizationSetBy = Automatic
+
+	partition waterfall = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Claude_Projects\hamilton-debt-assumption\powerbi\data\waterfall.csv"), [Delimiter = ",", Columns = 6, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"step_order", Int64.Type}, {"step", type text}, {"usd_1790", type number}, {"usd_2025", type number}, {"usd_1790_m", type number}, {"usd_2025_m", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

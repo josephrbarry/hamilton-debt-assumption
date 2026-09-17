@@ -1,0 +1,73 @@
+table stats
+	lineageTag: ab937564-0653-48c3-a69f-e0803bf8b221
+
+	column group
+		dataType: string
+		lineageTag: e87998af-363b-457c-89c7-eccb69913a43
+		summarizeBy: none
+		sourceColumn: group
+
+		annotation SummarizationSetBy = Automatic
+
+	column question
+		dataType: string
+		lineageTag: edf5801b-fb26-4e68-893f-d78d752e00ca
+		summarizeBy: none
+		sourceColumn: question
+
+		annotation SummarizationSetBy = Automatic
+
+	column test
+		dataType: string
+		lineageTag: 9e709d92-702c-4340-9a3e-8b39455666cc
+		summarizeBy: none
+		sourceColumn: test
+		sortByColumn: test_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column statistic
+		dataType: string
+		lineageTag: 99741751-4312-473e-b2d9-a65ab5df44f4
+		summarizeBy: none
+		sourceColumn: statistic
+
+		annotation SummarizationSetBy = Automatic
+
+	column p_value
+		dataType: double
+		formatString: 0.000
+		lineageTag: 9996a20d-c389-4d1b-932c-b884b410cac6
+		summarizeBy: none
+		sourceColumn: p_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column read
+		dataType: string
+		lineageTag: ecccf40d-d73f-4fb8-aa5c-990047f2869a
+		summarizeBy: none
+		sourceColumn: read
+
+		annotation SummarizationSetBy = Automatic
+
+	column test_order
+		dataType: int64
+		formatString: 0
+		lineageTag: cc58605a-a48c-4c6e-a214-fd99b4cb2095
+		summarizeBy: none
+		sourceColumn: test_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition stats = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Claude_Projects\hamilton-debt-assumption\powerbi\data\stats.csv"), [Delimiter = ",", Columns = 7, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"group", type text}, {"question", type text}, {"test", type text}, {"statistic", type text}, {"p_value", type number}, {"read", type text}, {"test_order", Int64.Type}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table

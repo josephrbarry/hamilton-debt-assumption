@@ -1,0 +1,111 @@
+table counterfactual
+	lineageTag: 7959dcce-da94-4623-9b0d-6e8cd5d2c1c1
+
+	column state
+		dataType: string
+		lineageTag: cd887537-2f28-4d74-8d17-191e3eab1f85
+		summarizeBy: none
+		sourceColumn: state
+		dataCategory: StateOrProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: afc05202-a946-4971-9156-39cba152f7b1
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column basis
+		dataType: string
+		lineageTag: fef027c9-1d83-490f-b3f5-8fe0a2115f2f
+		summarizeBy: none
+		sourceColumn: basis
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_usd
+		dataType: int64
+		formatString: $#,0;($#,0)
+		lineageTag: eaaa5fb9-1858-4c93-ab8f-4ca1fb38f5d6
+		summarizeBy: none
+		sourceColumn: quota_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column proportional_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: fa46b2ff-ce21-4c5c-b9f2-8163d8250da9
+		summarizeBy: none
+		sourceColumn: proportional_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column gap_usd
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 4eebe224-4630-4c81-b137-f8b770d79be2
+		summarizeBy: none
+		sourceColumn: gap_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 097a9679-8669-4f33-b898-19314a2ea109
+		summarizeBy: none
+		sourceColumn: quota_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column gap_usd_2025
+		dataType: double
+		formatString: $#,0;($#,0)
+		lineageTag: 8e0e749d-afe5-48e0-a603-198df4f46b1a
+		summarizeBy: none
+		sourceColumn: gap_usd_2025
+
+		annotation SummarizationSetBy = Automatic
+
+	column quota_m
+		dataType: double
+		formatString: #,0.00;(#,0.00)
+		lineageTag: ca60bfbe-599c-4af0-a768-a5a8ce0a8748
+		summarizeBy: none
+		sourceColumn: quota_m
+
+		annotation SummarizationSetBy = Automatic
+
+	column proportional_m
+		dataType: double
+		formatString: #,0.00;(#,0.00)
+		lineageTag: 8999d87d-d54e-42b3-88a6-913f838c0267
+		summarizeBy: none
+		sourceColumn: proportional_m
+
+		annotation SummarizationSetBy = Automatic
+
+	column gap_m
+		dataType: double
+		formatString: #,0.00;(#,0.00)
+		lineageTag: d6e33945-224a-47e4-bee6-19fdded57029
+		summarizeBy: none
+		sourceColumn: gap_m
+
+		annotation SummarizationSetBy = Automatic
+
+	partition counterfactual = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Claude_Projects\hamilton-debt-assumption\powerbi\data\counterfactual.csv"), [Delimiter = ",", Columns = 11, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"state", type text}, {"region", type text}, {"basis", type text}, {"quota_usd", Int64.Type}, {"proportional_usd", type number}, {"gap_usd", type number}, {"quota_usd_2025", type number}, {"gap_usd_2025", type number}, {"quota_m", type number}, {"proportional_m", type number}, {"gap_m", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
