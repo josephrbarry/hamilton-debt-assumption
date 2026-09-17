@@ -1,9 +1,9 @@
 table ledger_long
-	lineageTag: 66ea93af-248a-4fa8-b6ff-25b48141e86e
+	lineageTag: 820df60e-9001-4005-8e77-35eb86e9c17b
 
 	column state
 		dataType: string
-		lineageTag: 94c87980-31a9-49e6-b28d-b1b543df4370
+		lineageTag: 8d704f0d-5473-4aa5-9d29-6afd3b64535d
 		summarizeBy: none
 		sourceColumn: state
 		dataCategory: StateOrProvince
@@ -12,7 +12,7 @@ table ledger_long
 
 	column region
 		dataType: string
-		lineageTag: db12f9ab-040b-455d-bef4-84c8c4d1264f
+		lineageTag: 0f9ceadf-18d1-4202-96df-8fa6e0a1c1fb
 		summarizeBy: none
 		sourceColumn: region
 
@@ -21,7 +21,7 @@ table ledger_long
 	column step_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 567ee445-315b-4fbd-901f-f2529fa29cdf
+		lineageTag: 01bd8f29-2ace-483f-bb53-fcc2a158300b
 		summarizeBy: none
 		sourceColumn: step_order
 
@@ -29,7 +29,7 @@ table ledger_long
 
 	column step
 		dataType: string
-		lineageTag: 247dd3e8-e31e-4b95-a0da-a2d7fe34e21d
+		lineageTag: 57fdde6e-7a25-40d0-8efc-6b08581e41d3
 		summarizeBy: none
 		sourceColumn: step
 		sortByColumn: step_order
@@ -38,8 +38,8 @@ table ledger_long
 
 	column usd_1790
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 3aefc16e-c025-42dd-8d42-8c5c802b3708
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 64b8472a-71f3-4520-9cc0-12fde24376bb
 		summarizeBy: none
 		sourceColumn: usd_1790
 
@@ -47,8 +47,8 @@ table ledger_long
 
 	column usd_2025
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: a30afc6f-0cff-48c3-abae-628a79c2b3df
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a80f4563-aa82-4cc6-a26b-353631ba9ee0
 		summarizeBy: none
 		sourceColumn: usd_2025
 
@@ -56,8 +56,8 @@ table ledger_long
 
 	column per_capita_1790
 		dataType: double
-		formatString: $#,0.00;($#,0.00)
-		lineageTag: 7640ea70-d5ab-403b-80ef-26b48ceff0c4
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 3e4a39fe-c438-4435-9813-c9261ac7b98c
 		summarizeBy: none
 		sourceColumn: per_capita_1790
 
@@ -65,8 +65,8 @@ table ledger_long
 
 	column per_capita_2025
 		dataType: double
-		formatString: $#,0.00;($#,0.00)
-		lineageTag: 7b25b9b6-c67c-49a0-87cb-2924f11332ff
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 3ff1ac88-c6e1-4c7d-b015-478d484fd915
 		summarizeBy: none
 		sourceColumn: per_capita_2025
 

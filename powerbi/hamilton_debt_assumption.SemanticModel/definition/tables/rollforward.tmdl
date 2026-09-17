@@ -1,10 +1,10 @@
 table rollforward
-	lineageTag: 9b5fbd1d-51a2-4fad-ba1f-417025c78a59
+	lineageTag: 4300f7b8-8121-4797-ac4c-0f14a929babc
 
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 1f087ee0-08a8-44df-967b-75c784a61ce4
+		lineageTag: 0ad78754-7f3f-4009-8502-f6bdb9e70dea
 		summarizeBy: none
 		sourceColumn: line_order
 
@@ -12,7 +12,7 @@ table rollforward
 
 	column line
 		dataType: string
-		lineageTag: 3e69ac1b-6548-48f5-ae27-1dbe046dd79f
+		lineageTag: 5d4dc82b-b444-4b6a-b82d-18bebdf79e23
 		summarizeBy: none
 		sourceColumn: line
 		sortByColumn: line_order
@@ -21,8 +21,8 @@ table rollforward
 
 	column usd_1790
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 2c60e7d4-0679-4341-85c3-ea2c4e22dfa1
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9b31953a-c8d2-4960-86d9-36575dff0241
 		summarizeBy: none
 		sourceColumn: usd_1790
 
@@ -30,8 +30,8 @@ table rollforward
 
 	column usd_2025
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 69cb6836-f05a-4a69-adff-c0e553b7d114
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8a544d08-18ba-4b2b-a621-962f174653f4
 		summarizeBy: none
 		sourceColumn: usd_2025
 
@@ -39,8 +39,8 @@ table rollforward
 
 	column running_usd_1790
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: fa6eea53-e53e-47a2-99d1-fa822acaa88c
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ca0c6a1f-b101-41de-b66c-cf76c2b08581
 		summarizeBy: none
 		sourceColumn: running_usd_1790
 
@@ -48,8 +48,8 @@ table rollforward
 
 	column running_usd_2025
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: e2d7dba5-3b8e-443d-a537-db4e2d6f9ed9
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 77686656-2f44-4ca7-97d3-aef87019486e
 		summarizeBy: none
 		sourceColumn: running_usd_2025
 

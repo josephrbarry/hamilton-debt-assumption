@@ -50,10 +50,11 @@ def fmt_for(name: str, series: pd.Series) -> str:
     # Accounting convention: negatives in parentheses, never a minus sign.
     if name.endswith("_m"):
         return "#,0.00;(#,0.00)"
+    # Desktop writes currency formats with the dollar sign escaped and three sections.
     if "per_capita" in name or "per_free_person" in name:
-        return "$#,0.00;($#,0.00)"
+        return r"\$#,0.00;(\$#,0.00);\$#,0.00"
     if "usd" in name:
-        return "$#,0;($#,0)"
+        return r"\$#,0;(\$#,0);\$#,0"
     if name.endswith("_order") or name.endswith("_rank"):
         return "0"
     if pd.api.types.is_integer_dtype(series):
@@ -131,7 +132,8 @@ def scaffold() -> None:
         MODEL / "definition.pbism": json.dumps({"version": "4.2", "settings": {}}, indent=2),
         MODEL / "definition" / "database.tmdl": "database\n\tcompatibilityLevel: 1606\n",
         MODEL / "definition" / "cultures" / "en-US.tmdl":
-            'cultureInfo en-US\n\n\tlinguisticMetadata =\n\t\t\t{"Version": "2.0.0", "Language": "en-US"}\n',
+            'cultureInfo en-US\n\n\tlinguisticMetadata =\n\t\t\t{\n\t\t\t  "Version": "2.0.0",\n'
+            '\t\t\t  "Language": "en-US"\n\t\t\t}\n\t\tcontentType: json\n\n',
         MODEL / ".pbi" / "editorSettings.json": json.dumps({
             "version": "1.0", "autodetectRelationships": False, "parallelQueryLoading": False,
             "typeDetectionEnabled": True, "relationshipImportEnabled": True,

@@ -1,9 +1,9 @@
 table stats
-	lineageTag: ab937564-0653-48c3-a69f-e0803bf8b221
+	lineageTag: e77e93eb-a279-4f12-8e5c-6f5687aefdff
 
 	column group
 		dataType: string
-		lineageTag: e87998af-363b-457c-89c7-eccb69913a43
+		lineageTag: bd01c374-8be5-4ec9-8658-c7d30b5662d7
 		summarizeBy: none
 		sourceColumn: group
 
@@ -11,7 +11,7 @@ table stats
 
 	column question
 		dataType: string
-		lineageTag: edf5801b-fb26-4e68-893f-d78d752e00ca
+		lineageTag: ddecd7f3-fe96-4cbb-986b-0cde67aaaf9b
 		summarizeBy: none
 		sourceColumn: question
 
@@ -19,7 +19,7 @@ table stats
 
 	column test
 		dataType: string
-		lineageTag: 9e709d92-702c-4340-9a3e-8b39455666cc
+		lineageTag: 463a9d65-a877-4646-9ea1-f10b3f10d565
 		summarizeBy: none
 		sourceColumn: test
 		sortByColumn: test_order
@@ -28,7 +28,7 @@ table stats
 
 	column statistic
 		dataType: string
-		lineageTag: 99741751-4312-473e-b2d9-a65ab5df44f4
+		lineageTag: de1cecc3-b823-4c7c-9227-87505dbf7f91
 		summarizeBy: none
 		sourceColumn: statistic
 
@@ -37,7 +37,7 @@ table stats
 	column p_value
 		dataType: double
 		formatString: 0.000
-		lineageTag: 9996a20d-c389-4d1b-932c-b884b410cac6
+		lineageTag: 827b9e27-e384-46ea-9d5b-3160059bb392
 		summarizeBy: none
 		sourceColumn: p_value
 
@@ -45,7 +45,7 @@ table stats
 
 	column read
 		dataType: string
-		lineageTag: ecccf40d-d73f-4fb8-aa5c-990047f2869a
+		lineageTag: 689fd58f-16cb-471f-b955-969ca27419d2
 		summarizeBy: none
 		sourceColumn: read
 
@@ -54,7 +54,7 @@ table stats
 	column test_order
 		dataType: int64
 		formatString: 0
-		lineageTag: cc58605a-a48c-4c6e-a214-fd99b4cb2095
+		lineageTag: edf2a75f-abdf-4872-b098-74d099a984a7
 		summarizeBy: none
 		sourceColumn: test_order
 

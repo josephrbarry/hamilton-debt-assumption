@@ -1,9 +1,9 @@
 table counterfactual
-	lineageTag: 7959dcce-da94-4623-9b0d-6e8cd5d2c1c1
+	lineageTag: 3bb0696b-11e3-47dd-af87-b15a9aa52209
 
 	column state
 		dataType: string
-		lineageTag: cd887537-2f28-4d74-8d17-191e3eab1f85
+		lineageTag: 2ae41ec6-b87b-4e1d-86f2-fb93b8b80a0c
 		summarizeBy: none
 		sourceColumn: state
 		dataCategory: StateOrProvince
@@ -12,7 +12,7 @@ table counterfactual
 
 	column region
 		dataType: string
-		lineageTag: afc05202-a946-4971-9156-39cba152f7b1
+		lineageTag: c10a0214-c5a0-4ae3-aecc-f99e14b9779e
 		summarizeBy: none
 		sourceColumn: region
 
@@ -20,7 +20,7 @@ table counterfactual
 
 	column basis
 		dataType: string
-		lineageTag: fef027c9-1d83-490f-b3f5-8fe0a2115f2f
+		lineageTag: cb6b8275-a666-4c36-b229-e2660fc32d2c
 		summarizeBy: none
 		sourceColumn: basis
 
@@ -28,8 +28,8 @@ table counterfactual
 
 	column quota_usd
 		dataType: int64
-		formatString: $#,0;($#,0)
-		lineageTag: eaaa5fb9-1858-4c93-ab8f-4ca1fb38f5d6
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: cfa55618-ad1c-4a78-9e45-c3511e51d403
 		summarizeBy: none
 		sourceColumn: quota_usd
 
@@ -37,8 +37,8 @@ table counterfactual
 
 	column proportional_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: fa46b2ff-ce21-4c5c-b9f2-8163d8250da9
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 591140bb-3af1-4f84-aad4-972dad924abf
 		summarizeBy: none
 		sourceColumn: proportional_usd
 
@@ -46,8 +46,8 @@ table counterfactual
 
 	column gap_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 4eebe224-4630-4c81-b137-f8b770d79be2
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d4c01bdf-e53b-4bbb-b4ee-2a2ebdefdf10
 		summarizeBy: none
 		sourceColumn: gap_usd
 
@@ -55,8 +55,8 @@ table counterfactual
 
 	column quota_usd_2025
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 097a9679-8669-4f33-b898-19314a2ea109
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 942c65f8-d7c0-476a-8ee9-baee1eeda8d3
 		summarizeBy: none
 		sourceColumn: quota_usd_2025
 
@@ -64,8 +64,8 @@ table counterfactual
 
 	column gap_usd_2025
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 8e0e749d-afe5-48e0-a603-198df4f46b1a
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7fb9a936-6665-4b49-b461-ff99adf09230
 		summarizeBy: none
 		sourceColumn: gap_usd_2025
 
@@ -74,7 +74,7 @@ table counterfactual
 	column quota_m
 		dataType: double
 		formatString: #,0.00;(#,0.00)
-		lineageTag: ca60bfbe-599c-4af0-a768-a5a8ce0a8748
+		lineageTag: 735d4817-3a9b-4e12-a445-a54bbac7dead
 		summarizeBy: none
 		sourceColumn: quota_m
 
@@ -83,7 +83,7 @@ table counterfactual
 	column proportional_m
 		dataType: double
 		formatString: #,0.00;(#,0.00)
-		lineageTag: 8999d87d-d54e-42b3-88a6-913f838c0267
+		lineageTag: c57f6395-fef4-4e52-9e3b-faa78250e24e
 		summarizeBy: none
 		sourceColumn: proportional_m
 
@@ -92,7 +92,7 @@ table counterfactual
 	column gap_m
 		dataType: double
 		formatString: #,0.00;(#,0.00)
-		lineageTag: d6e33945-224a-47e4-bee6-19fdded57029
+		lineageTag: fdbb929d-0a14-4d2b-94c0-f774add336f4
 		summarizeBy: none
 		sourceColumn: gap_m
 

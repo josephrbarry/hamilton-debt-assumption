@@ -1,9 +1,9 @@
 table enclosure_d_tieout
-	lineageTag: 0108f68e-cc8e-4082-acba-8afea5d9c58f
+	lineageTag: df12e1ae-6cbc-48dc-b7d1-47a5fe2460c8
 
 	column state
 		dataType: string
-		lineageTag: f72d316a-56be-4d2b-8b4a-298bd58ab8b1
+		lineageTag: 327f678c-7152-4e0e-9cf2-e7246c9dc62c
 		summarizeBy: none
 		sourceColumn: state
 		sortByColumn: line_order
@@ -12,8 +12,8 @@ table enclosure_d_tieout
 
 	column quota_usd
 		dataType: int64
-		formatString: $#,0;($#,0)
-		lineageTag: 75c353b1-9f46-40b8-94ff-724a8dc53613
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e971a9e5-d759-4f4c-9e97-63ff1af7db6b
 		summarizeBy: none
 		sourceColumn: quota_usd
 
@@ -21,8 +21,8 @@ table enclosure_d_tieout
 
 	column subscribed_printed_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 4bd471ea-4b04-4825-9393-d37b338cc83c
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b9bdb28c-a3e0-4b0e-bbe9-61a194f82b81
 		summarizeBy: none
 		sourceColumn: subscribed_printed_usd
 
@@ -30,8 +30,8 @@ table enclosure_d_tieout
 
 	column unsubscribed_printed_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 01942ac8-589f-401e-864f-c52e08d6745e
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 36de07b1-62c2-433c-99d4-c978392c7412
 		summarizeBy: none
 		sourceColumn: unsubscribed_printed_usd
 
@@ -39,8 +39,8 @@ table enclosure_d_tieout
 
 	column oversubscribed_printed_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 4d4ad445-e7c1-42d1-bdb8-c94a80b8be60
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 0422e65a-a869-4aa7-9370-9286119ce42e
 		summarizeBy: none
 		sourceColumn: oversubscribed_printed_usd
 
@@ -48,8 +48,8 @@ table enclosure_d_tieout
 
 	column unsubscribed_computed_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 6bb534e7-559b-4152-8e27-ff4c55091d86
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c3cf33d8-5c47-46ac-8e97-302027e2d5d5
 		summarizeBy: none
 		sourceColumn: unsubscribed_computed_usd
 
@@ -57,8 +57,8 @@ table enclosure_d_tieout
 
 	column variance_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 91f306f9-8e46-432d-bf28-e8cb453ade1f
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 707b9474-fdf7-42bd-9874-b78fa9929d3d
 		summarizeBy: none
 		sourceColumn: variance_usd
 
@@ -66,7 +66,7 @@ table enclosure_d_tieout
 
 	column status
 		dataType: string
-		lineageTag: a949d3f2-7466-43ce-8e3d-c6a5de8e280b
+		lineageTag: 465cb4eb-b7f7-440d-9936-f277024bbb97
 		summarizeBy: none
 		sourceColumn: status
 
@@ -74,8 +74,8 @@ table enclosure_d_tieout
 
 	column subscribed_reconciled_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: f7d30bdb-3bbc-4cf5-9f73-a60e4b742a91
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 3cbb1a15-18f8-42e6-96b8-31e014a5e8f9
 		summarizeBy: none
 		sourceColumn: subscribed_reconciled_usd
 
@@ -84,7 +84,7 @@ table enclosure_d_tieout
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: e42c946f-29b8-449d-8720-b0bd8e52a7c9
+		lineageTag: 8bfba37e-1a33-4c89-95bd-f9edd9052c44
 		summarizeBy: none
 		sourceColumn: line_order
 

@@ -1,9 +1,9 @@
 table tieout
-	lineageTag: 0b5ba1f8-0244-412d-819e-c6e8e98a77f5
+	lineageTag: 50518503-b539-42c9-b4f4-fa036071c470
 
 	column document
 		dataType: string
-		lineageTag: 00637e92-72f3-4584-b51e-9d62eaeb3b3e
+		lineageTag: 6cea032b-983e-4d4a-a831-648762bafcd6
 		summarizeBy: none
 		sourceColumn: document
 
@@ -11,7 +11,7 @@ table tieout
 
 	column line
 		dataType: string
-		lineageTag: fed263e4-560d-4786-b35c-a82be6694224
+		lineageTag: fdc55883-c8b0-4344-bb75-e83d79e1c395
 		summarizeBy: none
 		sourceColumn: line
 		sortByColumn: line_order
@@ -20,8 +20,8 @@ table tieout
 
 	column stated_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: 042718a5-23db-479a-87e4-c20e4bfb348b
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2974459d-ed27-46d3-83a2-5d4be0f36f56
 		summarizeBy: none
 		sourceColumn: stated_usd
 
@@ -29,8 +29,8 @@ table tieout
 
 	column computed_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: b1496c92-cac3-4e52-93fc-1752bd6f4439
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 83cc2703-9af6-44b9-8da4-fd64b1a65211
 		summarizeBy: none
 		sourceColumn: computed_usd
 
@@ -38,8 +38,8 @@ table tieout
 
 	column variance_usd
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: ff78e644-0777-4ed9-86cd-8635ed4dd224
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b39f470b-998e-4cf6-9001-55fac4f093d8
 		summarizeBy: none
 		sourceColumn: variance_usd
 
@@ -47,7 +47,7 @@ table tieout
 
 	column status
 		dataType: string
-		lineageTag: b23770a1-0bbd-40ef-88d9-b9134bd0140d
+		lineageTag: 35515ab0-8b55-4631-8683-1723e9725963
 		summarizeBy: none
 		sourceColumn: status
 
@@ -56,7 +56,7 @@ table tieout
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: ce5f9fd4-fb75-404e-8ebf-e5b8184c50f7
+		lineageTag: f24f1fff-9649-4622-bfaa-0ee5506c43ed
 		summarizeBy: none
 		sourceColumn: line_order
 

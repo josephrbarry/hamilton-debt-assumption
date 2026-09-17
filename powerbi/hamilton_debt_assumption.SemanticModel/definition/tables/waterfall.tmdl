@@ -1,10 +1,10 @@
 table waterfall
-	lineageTag: 63c9b992-1f1d-481b-b3b7-62ee9279ad48
+	lineageTag: 3db1795c-1eed-4e65-b3fa-45d4f4ec1e5a
 
 	column step_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 93f12966-7052-4d29-8b30-f8bfeb510a26
+		lineageTag: 4a6a9c9f-2531-4177-8c52-af66f07b6e5b
 		summarizeBy: none
 		sourceColumn: step_order
 
@@ -12,7 +12,7 @@ table waterfall
 
 	column step
 		dataType: string
-		lineageTag: 17ccdf20-75a0-4dc6-a222-98b136ccd752
+		lineageTag: e640d8f5-bb3c-4264-8f69-bf9e90903749
 		summarizeBy: none
 		sourceColumn: step
 		sortByColumn: step_order
@@ -21,8 +21,8 @@ table waterfall
 
 	column usd_1790
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: d8426177-171f-47a7-862b-672a361a4fc1
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 83093fe2-6c11-4e37-b7bf-5d28d06e5c73
 		summarizeBy: none
 		sourceColumn: usd_1790
 
@@ -30,8 +30,8 @@ table waterfall
 
 	column usd_2025
 		dataType: double
-		formatString: $#,0;($#,0)
-		lineageTag: abdfa7e6-3754-431a-95fe-303c41a126ea
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 506d4a11-425a-4a2c-a4fb-4b5a456cce81
 		summarizeBy: none
 		sourceColumn: usd_2025
 
@@ -40,7 +40,7 @@ table waterfall
 	column usd_1790_m
 		dataType: double
 		formatString: #,0.00;(#,0.00)
-		lineageTag: 1be3cbdc-b041-4e27-948d-96df5c8935e6
+		lineageTag: 62ace483-11b3-42a8-8e73-919de7addad7
 		summarizeBy: none
 		sourceColumn: usd_1790_m
 
@@ -49,7 +49,7 @@ table waterfall
 	column usd_2025_m
 		dataType: double
 		formatString: #,0.00;(#,0.00)
-		lineageTag: dca51659-1434-494a-91c8-f72d1d319d1b
+		lineageTag: c9330141-ebd8-4259-95e7-8276a7c6be75
 		summarizeBy: none
 		sourceColumn: usd_2025_m
 
