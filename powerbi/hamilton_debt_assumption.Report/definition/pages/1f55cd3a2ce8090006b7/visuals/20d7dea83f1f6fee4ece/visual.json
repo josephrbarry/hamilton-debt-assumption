@@ -6,12 +6,11 @@
     "y": 144,
     "z": 0,
     "height": 888,
-    "width": 990.0000000000001,
+    "width": 990.00000000000011,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "barChart",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -29,6 +28,7 @@
               },
               "queryRef": "states.state",
               "nativeQueryRef": "state",
+              "active": true,
               "displayName": "State"
             }
           ]
@@ -593,6 +593,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

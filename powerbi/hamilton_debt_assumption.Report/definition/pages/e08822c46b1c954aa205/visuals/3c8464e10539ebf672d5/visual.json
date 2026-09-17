@@ -6,12 +6,11 @@
     "y": 144,
     "z": 0,
     "height": 475.20000000000005,
-    "width": 900.0,
+    "width": 900,
     "tabOrder": 0
   },
   "visual": {
     "visualType": "scatterChart",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -29,7 +28,27 @@
               },
               "queryRef": "states.state",
               "nativeQueryRef": "state",
+              "active": true,
               "displayName": "State"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "states"
+                    }
+                  },
+                  "Property": "position_1793"
+                }
+              },
+              "queryRef": "states.position_1793",
+              "nativeQueryRef": "position_1793",
+              "displayName": "1793 position"
             }
           ]
         },
@@ -48,6 +67,7 @@
               },
               "queryRef": "states.Relief per head",
               "nativeQueryRef": "Relief per head",
+              "active": true,
               "displayName": "Relief per head"
             }
           ]
@@ -68,25 +88,6 @@
               "queryRef": "states.Settlement per head",
               "nativeQueryRef": "Settlement per head",
               "displayName": "Settlement per head"
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "states"
-                    }
-                  },
-                  "Property": "position_1793"
-                }
-              },
-              "queryRef": "states.position_1793",
-              "nativeQueryRef": "position_1793",
-              "displayName": "1793 position"
             }
           ]
         }
@@ -675,6 +676,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

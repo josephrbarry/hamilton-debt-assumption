@@ -1,12 +1,20 @@
 table ledger_long
 	lineageTag: 91c195cd-c9bc-43d0-955f-2233bacd57c8
 
+	measure 'GL 1790 $' = SUM(ledger_long[usd_1790])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d65ea6d1-fe09-4a93-b88c-f6cc752470fc
+
+	measure 'GL 2025 $' = SUM(ledger_long[usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a2b8deea-4257-416d-9415-ae0bd57d4a71
+
 	column state
 		dataType: string
 		lineageTag: 4b897d51-0fa3-4407-b0ce-ee674023034a
+		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: state
-		dataCategory: StateOrProvince
 
 		annotation SummarizationSetBy = Automatic
 
@@ -72,14 +80,6 @@ table ledger_long
 
 		annotation SummarizationSetBy = Automatic
 
-	measure 'GL 1790 $' = SUM(ledger_long[usd_1790])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: d65ea6d1-fe09-4a93-b88c-f6cc752470fc
-
-	measure 'GL 2025 $' = SUM(ledger_long[usd_2025])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: a2b8deea-4257-416d-9415-ae0bd57d4a71
-
 	partition ledger_long = m
 		mode: import
 		source =
@@ -91,3 +91,4 @@ table ledger_long
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

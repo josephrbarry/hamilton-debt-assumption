@@ -1,6 +1,38 @@
 table enclosure_d_tieout
 	lineageTag: a6070950-d49c-417c-9811-ae3efd05fae5
 
+	measure 'ED quota' = SUM(enclosure_d_tieout[quota_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ad5c8677-c934-429a-8787-3fa208ba3d1b
+
+	measure 'ED subscribed (as printed)' = SUM(enclosure_d_tieout[subscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: eef5e726-fec6-427e-aa72-cbe10234aa63
+
+	measure 'ED unsubscribed (as printed)' = SUM(enclosure_d_tieout[unsubscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ab356885-aa2e-4aca-9517-9dc5ba84c142
+
+	measure 'ED unsubscribed (computed)' = SUM(enclosure_d_tieout[unsubscribed_computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1469c5d5-2b5d-48a6-a292-d01508797c36
+
+	measure 'ED over-subscribed (as printed)' = SUM(enclosure_d_tieout[oversubscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 982a15a9-7c34-435b-84ae-abbc2005b23c
+
+	measure 'ED over-subscribed (computed)' = SUM(enclosure_d_tieout[oversubscribed_computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 0e180d0e-68f0-4508-b853-33ea8bf487ba
+
+	measure 'ED variance' = SUM(enclosure_d_tieout[variance_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: fe6cdab3-6b67-4fb0-874f-1e18d52ae465
+
+	measure 'ED subscribed (reconciled)' = SUM(enclosure_d_tieout[subscribed_reconciled_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b8cf3029-6305-47be-afa1-7a27a13e37d0
+
 	column state
 		dataType: string
 		lineageTag: 5fd861f7-a88b-44fe-95d3-a629039b8eed
@@ -99,38 +131,6 @@ table enclosure_d_tieout
 
 		annotation SummarizationSetBy = Automatic
 
-	measure 'ED quota' = SUM(enclosure_d_tieout[quota_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: ad5c8677-c934-429a-8787-3fa208ba3d1b
-
-	measure 'ED subscribed (as printed)' = SUM(enclosure_d_tieout[subscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: eef5e726-fec6-427e-aa72-cbe10234aa63
-
-	measure 'ED unsubscribed (as printed)' = SUM(enclosure_d_tieout[unsubscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: ab356885-aa2e-4aca-9517-9dc5ba84c142
-
-	measure 'ED unsubscribed (computed)' = SUM(enclosure_d_tieout[unsubscribed_computed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 1469c5d5-2b5d-48a6-a292-d01508797c36
-
-	measure 'ED over-subscribed (as printed)' = SUM(enclosure_d_tieout[oversubscribed_printed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 982a15a9-7c34-435b-84ae-abbc2005b23c
-
-	measure 'ED over-subscribed (computed)' = SUM(enclosure_d_tieout[oversubscribed_computed_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 0e180d0e-68f0-4508-b853-33ea8bf487ba
-
-	measure 'ED variance' = SUM(enclosure_d_tieout[variance_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: fe6cdab3-6b67-4fb0-874f-1e18d52ae465
-
-	measure 'ED subscribed (reconciled)' = SUM(enclosure_d_tieout[subscribed_reconciled_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: b8cf3029-6305-47be-afa1-7a27a13e37d0
-
 	partition enclosure_d_tieout = m
 		mode: import
 		source =
@@ -142,3 +142,4 @@ table enclosure_d_tieout
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+

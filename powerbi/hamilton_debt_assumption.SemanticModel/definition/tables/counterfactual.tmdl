@@ -1,12 +1,28 @@
 table counterfactual
 	lineageTag: 783d92ed-7bc2-4a43-aef6-53d7d960cee9
 
+	measure 'CF Act quota' = SUM(counterfactual[quota_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 4d255b9e-edee-46b0-8fc3-7cbc07e4bfc2
+
+	measure 'CF per-head share' = SUM(counterfactual[proportional_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: cafff1d0-d08b-46c3-ab44-38d0ac0b0134
+
+	measure 'CF quota less share' = SUM(counterfactual[gap_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d3f8e9ce-728a-4d83-bed4-2e2c8fd007c5
+
+	measure 'CF quota less share (2025 $)' = SUM(counterfactual[gap_usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1f53b617-0755-44db-8502-87964a1b55d1
+
 	column state
 		dataType: string
 		lineageTag: e7152dad-819a-473b-8152-206de9e1cb25
+		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: state
-		dataCategory: StateOrProvince
 
 		annotation SummarizationSetBy = Automatic
 
@@ -98,22 +114,6 @@ table counterfactual
 
 		annotation SummarizationSetBy = Automatic
 
-	measure 'CF Act quota' = SUM(counterfactual[quota_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 4d255b9e-edee-46b0-8fc3-7cbc07e4bfc2
-
-	measure 'CF per-head share' = SUM(counterfactual[proportional_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: cafff1d0-d08b-46c3-ab44-38d0ac0b0134
-
-	measure 'CF quota less share' = SUM(counterfactual[gap_usd])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: d3f8e9ce-728a-4d83-bed4-2e2c8fd007c5
-
-	measure 'CF quota less share (2025 $)' = SUM(counterfactual[gap_usd_2025])
-		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 1f53b617-0755-44db-8502-87964a1b55d1
-
 	partition counterfactual = m
 		mode: import
 		source =
@@ -125,3 +125,4 @@ table counterfactual
 				  #"Changed column type"
 
 	annotation PBI_ResultType = Table
+
