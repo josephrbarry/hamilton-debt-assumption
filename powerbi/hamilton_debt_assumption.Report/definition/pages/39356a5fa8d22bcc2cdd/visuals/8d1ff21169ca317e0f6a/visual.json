@@ -37,22 +37,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "waterfall"
-                        }
-                      },
-                      "Property": "usd_1790_m"
+                    "SourceRef": {
+                      "Entity": "waterfall"
                     }
                   },
-                  "Function": 0
+                  "Property": "WF 1790 $ millions"
                 }
               },
-              "queryRef": "Sum(waterfall.usd_1790_m)",
-              "nativeQueryRef": "Sum of usd_1790_m",
+              "queryRef": "waterfall.WF 1790 $ millions",
+              "nativeQueryRef": "WF 1790 $ millions",
               "displayName": "1790 $ millions"
             }
           ]

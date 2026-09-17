@@ -10,7 +10,7 @@
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "stackedBarChart",
+    "visualType": "barChart",
     "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
@@ -38,42 +38,32 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "assumed_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Assumed (final)"
                 }
               },
-              "queryRef": "Sum(states.assumed_usd)",
-              "nativeQueryRef": "Sum of assumed_usd",
+              "queryRef": "states.Assumed (final)",
+              "nativeQueryRef": "Assumed (final)",
               "displayName": "Assumed (final)"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_unused_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Unused quota"
                 }
               },
-              "queryRef": "Sum(states.quota_unused_usd)",
-              "nativeQueryRef": "Sum of quota_unused_usd",
+              "queryRef": "states.Unused quota",
+              "nativeQueryRef": "Unused quota",
               "displayName": "Unused quota"
             }
           ]
@@ -83,18 +73,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "states"
-                      }
-                    },
-                    "Property": "quota_usd"
+                  "SourceRef": {
+                    "Entity": "states"
                   }
                 },
-                "Function": 0
+                "Property": "Act quota"
               }
             },
             "direction": "Descending"
@@ -379,7 +364,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(states.assumed_usd)"
+            "metadata": "states.Assumed (final)"
           }
         },
         {
@@ -397,7 +382,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(states.quota_unused_usd)"
+            "metadata": "states.Unused quota"
           }
         }
       ]

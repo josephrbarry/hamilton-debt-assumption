@@ -34,122 +34,92 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "estimate_1790_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Hamilton estimate"
                 }
               },
-              "queryRef": "Sum(states.estimate_1790_usd)",
-              "nativeQueryRef": "Sum of estimate_1790_usd",
+              "queryRef": "states.Hamilton estimate",
+              "nativeQueryRef": "Hamilton estimate",
               "displayName": "Hamilton estimate"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Act quota"
                 }
               },
-              "queryRef": "Sum(states.quota_usd)",
-              "nativeQueryRef": "Sum of quota_usd",
+              "queryRef": "states.Act quota",
+              "nativeQueryRef": "Act quota",
               "displayName": "Act quota"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "assumed_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Assumed (final)"
                 }
               },
-              "queryRef": "Sum(states.assumed_usd)",
-              "nativeQueryRef": "Sum of assumed_usd",
+              "queryRef": "states.Assumed (final)",
+              "nativeQueryRef": "Assumed (final)",
               "displayName": "Assumed (final)"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "settlement_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "1793 settlement"
                 }
               },
-              "queryRef": "Sum(states.settlement_usd)",
-              "nativeQueryRef": "Sum of settlement_usd",
+              "queryRef": "states.1793 settlement",
+              "nativeQueryRef": "1793 settlement",
               "displayName": "1793 settlement"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "net_position_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Net position"
                 }
               },
-              "queryRef": "Sum(states.net_position_usd)",
-              "nativeQueryRef": "Sum of net_position_usd",
+              "queryRef": "states.Net position",
+              "nativeQueryRef": "Net position",
               "displayName": "Net position"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "net_position_usd_2025"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Net position (2025 $)"
                 }
               },
-              "queryRef": "Sum(states.net_position_usd_2025)",
-              "nativeQueryRef": "Sum of net_position_usd_2025",
+              "queryRef": "states.Net position (2025 $)",
+              "nativeQueryRef": "Net position (2025 $)",
               "displayName": "Net position (2025 $)"
             }
           ]
@@ -159,18 +129,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "states"
-                      }
-                    },
-                    "Property": "net_position_usd"
+                  "SourceRef": {
+                    "Entity": "states"
                   }
                 },
-                "Function": 0
+                "Property": "Net position"
               }
             },
             "direction": "Descending"

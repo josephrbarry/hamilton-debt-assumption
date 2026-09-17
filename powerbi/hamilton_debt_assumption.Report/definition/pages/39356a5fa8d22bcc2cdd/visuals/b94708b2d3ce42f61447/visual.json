@@ -18,22 +18,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_unused_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Unused quota"
                 }
               },
-              "queryRef": "Sum(states.quota_unused_usd)",
-              "nativeQueryRef": "Sum of quota_unused_usd",
+              "queryRef": "states.Unused quota",
+              "nativeQueryRef": "Unused quota",
               "displayName": "Unused quota"
             }
           ]

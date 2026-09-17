@@ -33,102 +33,77 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "enclosure_d_tieout"
-                        }
-                      },
-                      "Property": "quota_usd"
+                    "SourceRef": {
+                      "Entity": "enclosure_d_tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "ED quota"
                 }
               },
-              "queryRef": "Sum(enclosure_d_tieout.quota_usd)",
-              "nativeQueryRef": "Sum of quota_usd",
+              "queryRef": "enclosure_d_tieout.ED quota",
+              "nativeQueryRef": "ED quota",
               "displayName": "Quota"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "enclosure_d_tieout"
-                        }
-                      },
-                      "Property": "subscribed_printed_usd"
+                    "SourceRef": {
+                      "Entity": "enclosure_d_tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "ED subscribed (as printed)"
                 }
               },
-              "queryRef": "Sum(enclosure_d_tieout.subscribed_printed_usd)",
-              "nativeQueryRef": "Sum of subscribed_printed_usd",
+              "queryRef": "enclosure_d_tieout.ED subscribed (as printed)",
+              "nativeQueryRef": "ED subscribed (as printed)",
               "displayName": "Subscribed (as printed)"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "enclosure_d_tieout"
-                        }
-                      },
-                      "Property": "unsubscribed_printed_usd"
+                    "SourceRef": {
+                      "Entity": "enclosure_d_tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "ED unsubscribed (as printed)"
                 }
               },
-              "queryRef": "Sum(enclosure_d_tieout.unsubscribed_printed_usd)",
-              "nativeQueryRef": "Sum of unsubscribed_printed_usd",
+              "queryRef": "enclosure_d_tieout.ED unsubscribed (as printed)",
+              "nativeQueryRef": "ED unsubscribed (as printed)",
               "displayName": "Unsubscribed (as printed)"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "enclosure_d_tieout"
-                        }
-                      },
-                      "Property": "unsubscribed_computed_usd"
+                    "SourceRef": {
+                      "Entity": "enclosure_d_tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "ED unsubscribed (computed)"
                 }
               },
-              "queryRef": "Sum(enclosure_d_tieout.unsubscribed_computed_usd)",
-              "nativeQueryRef": "Sum of unsubscribed_computed_usd",
+              "queryRef": "enclosure_d_tieout.ED unsubscribed (computed)",
+              "nativeQueryRef": "ED unsubscribed (computed)",
               "displayName": "Unsubscribed (computed)"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "enclosure_d_tieout"
-                        }
-                      },
-                      "Property": "variance_usd"
+                    "SourceRef": {
+                      "Entity": "enclosure_d_tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "ED variance"
                 }
               },
-              "queryRef": "Sum(enclosure_d_tieout.variance_usd)",
-              "nativeQueryRef": "Sum of variance_usd",
+              "queryRef": "enclosure_d_tieout.ED variance",
+              "nativeQueryRef": "ED variance",
               "displayName": "Variance"
             },
             {
@@ -148,22 +123,17 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "enclosure_d_tieout"
-                        }
-                      },
-                      "Property": "subscribed_reconciled_usd"
+                    "SourceRef": {
+                      "Entity": "enclosure_d_tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "ED subscribed (reconciled)"
                 }
               },
-              "queryRef": "Sum(enclosure_d_tieout.subscribed_reconciled_usd)",
-              "nativeQueryRef": "Sum of subscribed_reconciled_usd",
+              "queryRef": "enclosure_d_tieout.ED subscribed (reconciled)",
+              "nativeQueryRef": "ED subscribed (reconciled)",
               "displayName": "Subscribed (reconciled)"
             }
           ]

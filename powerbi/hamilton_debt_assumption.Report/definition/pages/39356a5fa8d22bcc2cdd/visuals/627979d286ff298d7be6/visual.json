@@ -18,22 +18,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_per_capita"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 1
+                  "Property": "Quota per head"
                 }
               },
-              "queryRef": "Avg(states.quota_per_capita)",
-              "nativeQueryRef": "Avg of quota_per_capita",
+              "queryRef": "states.Quota per head",
+              "nativeQueryRef": "Quota per head",
               "displayName": "Quota per head"
             }
           ]

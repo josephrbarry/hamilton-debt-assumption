@@ -1,9 +1,9 @@
 table tieout
-	lineageTag: 50518503-b539-42c9-b4f4-fa036071c470
+	lineageTag: 2b86d4ee-ec01-457f-a2e9-5fe93393812d
 
 	column document
 		dataType: string
-		lineageTag: 6cea032b-983e-4d4a-a831-648762bafcd6
+		lineageTag: 98c2d789-d042-4db3-818a-0d5d14c429ae
 		summarizeBy: none
 		sourceColumn: document
 
@@ -11,7 +11,7 @@ table tieout
 
 	column line
 		dataType: string
-		lineageTag: fdc55883-c8b0-4344-bb75-e83d79e1c395
+		lineageTag: c3d29ec6-7701-4ce9-990f-9fb215993545
 		summarizeBy: none
 		sourceColumn: line
 		sortByColumn: line_order
@@ -21,7 +21,7 @@ table tieout
 	column stated_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 2974459d-ed27-46d3-83a2-5d4be0f36f56
+		lineageTag: 2d71fcfa-b13c-487b-8a61-e9c0340357af
 		summarizeBy: none
 		sourceColumn: stated_usd
 
@@ -30,7 +30,7 @@ table tieout
 	column computed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 83cc2703-9af6-44b9-8da4-fd64b1a65211
+		lineageTag: 9e828105-998a-4d71-a490-bfee3309d13e
 		summarizeBy: none
 		sourceColumn: computed_usd
 
@@ -39,7 +39,7 @@ table tieout
 	column variance_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: b39f470b-998e-4cf6-9001-55fac4f093d8
+		lineageTag: 7a3ff235-ff52-4576-8f99-7f942f7a2199
 		summarizeBy: none
 		sourceColumn: variance_usd
 
@@ -47,7 +47,7 @@ table tieout
 
 	column status
 		dataType: string
-		lineageTag: 35515ab0-8b55-4631-8683-1723e9725963
+		lineageTag: 651be610-a5de-42ea-b364-6916fa8ad2ac
 		summarizeBy: none
 		sourceColumn: status
 
@@ -56,11 +56,23 @@ table tieout
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: f24f1fff-9649-4622-bfaa-0ee5506c43ed
+		lineageTag: e82e025d-a273-4bd1-87df-7f487519e6d0
 		summarizeBy: none
 		sourceColumn: line_order
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'Stated' = SUM(tieout[stated_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f6b0b3f0-6586-4df9-820b-5b9188deaff3
+
+	measure 'Computed' = SUM(tieout[computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 39ae878c-81c5-47f1-8a0d-5b4df6ff41d3
+
+	measure 'Variance' = SUM(tieout[variance_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 6b17c07a-91a5-427f-9f8b-d21545da8a5f
 
 	partition tieout = m
 		mode: import

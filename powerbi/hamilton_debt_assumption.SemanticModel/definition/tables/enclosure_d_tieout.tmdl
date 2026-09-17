@@ -1,9 +1,9 @@
 table enclosure_d_tieout
-	lineageTag: df12e1ae-6cbc-48dc-b7d1-47a5fe2460c8
+	lineageTag: 10d35115-29c0-457b-84d1-83e4f55e04e8
 
 	column state
 		dataType: string
-		lineageTag: 327f678c-7152-4e0e-9cf2-e7246c9dc62c
+		lineageTag: 420261a1-2f64-4f4d-8aa1-bcf2bfe5002c
 		summarizeBy: none
 		sourceColumn: state
 		sortByColumn: line_order
@@ -13,7 +13,7 @@ table enclosure_d_tieout
 	column quota_usd
 		dataType: int64
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: e971a9e5-d759-4f4c-9e97-63ff1af7db6b
+		lineageTag: 7a602d48-0cc4-4594-881d-e9f151586de2
 		summarizeBy: none
 		sourceColumn: quota_usd
 
@@ -22,7 +22,7 @@ table enclosure_d_tieout
 	column subscribed_printed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: b9bdb28c-a3e0-4b0e-bbe9-61a194f82b81
+		lineageTag: a258010b-0652-4f34-aff8-73c92fa91a16
 		summarizeBy: none
 		sourceColumn: subscribed_printed_usd
 
@@ -31,7 +31,7 @@ table enclosure_d_tieout
 	column unsubscribed_printed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 36de07b1-62c2-433c-99d4-c978392c7412
+		lineageTag: 15bfae17-850e-4824-b8c7-9f421f5262c2
 		summarizeBy: none
 		sourceColumn: unsubscribed_printed_usd
 
@@ -40,7 +40,7 @@ table enclosure_d_tieout
 	column oversubscribed_printed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 0422e65a-a869-4aa7-9370-9286119ce42e
+		lineageTag: fd129933-3123-4f35-afdc-e3c51efbf477
 		summarizeBy: none
 		sourceColumn: oversubscribed_printed_usd
 
@@ -49,7 +49,7 @@ table enclosure_d_tieout
 	column unsubscribed_computed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: c3cf33d8-5c47-46ac-8e97-302027e2d5d5
+		lineageTag: 1bf65b21-ddf5-43eb-a172-1578dd1bb450
 		summarizeBy: none
 		sourceColumn: unsubscribed_computed_usd
 
@@ -58,7 +58,7 @@ table enclosure_d_tieout
 	column variance_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 707b9474-fdf7-42bd-9874-b78fa9929d3d
+		lineageTag: 0625ad17-9734-448a-bb1f-a664790c9c28
 		summarizeBy: none
 		sourceColumn: variance_usd
 
@@ -66,7 +66,7 @@ table enclosure_d_tieout
 
 	column status
 		dataType: string
-		lineageTag: 465cb4eb-b7f7-440d-9936-f277024bbb97
+		lineageTag: fbf88c97-97c6-48d3-97bb-b807f877de49
 		summarizeBy: none
 		sourceColumn: status
 
@@ -75,7 +75,7 @@ table enclosure_d_tieout
 	column subscribed_reconciled_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 3cbb1a15-18f8-42e6-96b8-31e014a5e8f9
+		lineageTag: 4c4e7f2e-9eed-47e6-b51b-2eb45c9cdce2
 		summarizeBy: none
 		sourceColumn: subscribed_reconciled_usd
 
@@ -84,11 +84,35 @@ table enclosure_d_tieout
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 8bfba37e-1a33-4c89-95bd-f9edd9052c44
+		lineageTag: 41490f01-c83a-48bb-9a48-1fe030c84e49
 		summarizeBy: none
 		sourceColumn: line_order
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'ED quota' = SUM(enclosure_d_tieout[quota_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2c31d3c7-fd0e-4b92-8a02-a3741a81e57c
+
+	measure 'ED subscribed (as printed)' = SUM(enclosure_d_tieout[subscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 273b615c-13b2-4983-80be-70c26d0101a8
+
+	measure 'ED unsubscribed (as printed)' = SUM(enclosure_d_tieout[unsubscribed_printed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 82354ac7-81c9-4f5b-badd-27aed44d69c4
+
+	measure 'ED unsubscribed (computed)' = SUM(enclosure_d_tieout[unsubscribed_computed_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8100d9d4-396c-4f4e-b10e-22136fb2b8bf
+
+	measure 'ED variance' = SUM(enclosure_d_tieout[variance_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a0d6746d-f34e-4b7b-8662-d98d77a05e5e
+
+	measure 'ED subscribed (reconciled)' = SUM(enclosure_d_tieout[subscribed_reconciled_usd])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 28dec20c-6ab7-411b-93e7-14d21a6ed78e
 
 	partition enclosure_d_tieout = m
 		mode: import

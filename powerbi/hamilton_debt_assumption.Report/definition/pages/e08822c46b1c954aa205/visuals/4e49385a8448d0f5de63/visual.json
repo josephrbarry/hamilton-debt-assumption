@@ -38,22 +38,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "net_position_per_capita"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 1
+                  "Property": "Net per head"
                 }
               },
-              "queryRef": "Avg(states.net_position_per_capita)",
-              "nativeQueryRef": "Avg of net_position_per_capita",
+              "queryRef": "states.Net per head",
+              "nativeQueryRef": "Net per head",
               "displayName": "Net per head"
             }
           ]
@@ -82,18 +77,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "states"
-                      }
-                    },
-                    "Property": "net_position_per_capita"
+                  "SourceRef": {
+                    "Entity": "states"
                   }
                 },
-                "Function": 1
+                "Property": "Net per head"
               }
             },
             "direction": "Descending"

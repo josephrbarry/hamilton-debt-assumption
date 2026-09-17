@@ -18,22 +18,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "takeup_pct"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 1
+                  "Property": "Take-up %"
                 }
               },
-              "queryRef": "Avg(states.takeup_pct)",
-              "nativeQueryRef": "Avg of takeup_pct",
+              "queryRef": "states.Take-up %",
+              "nativeQueryRef": "Take-up %",
               "displayName": "Utilization %"
             }
           ]

@@ -37,22 +37,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "tieout"
-                        }
-                      },
-                      "Property": "variance_usd"
+                    "SourceRef": {
+                      "Entity": "tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "Variance"
                 }
               },
-              "queryRef": "Sum(tieout.variance_usd)",
-              "nativeQueryRef": "Sum of variance_usd",
+              "queryRef": "tieout.Variance",
+              "nativeQueryRef": "Variance",
               "displayName": "Variance"
             }
           ]

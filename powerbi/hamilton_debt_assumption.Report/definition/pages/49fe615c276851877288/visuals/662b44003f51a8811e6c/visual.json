@@ -34,62 +34,47 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "settlement_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "1793 settlement"
                 }
               },
-              "queryRef": "Sum(states.settlement_usd)",
-              "nativeQueryRef": "Sum of settlement_usd",
+              "queryRef": "states.1793 settlement",
+              "nativeQueryRef": "1793 settlement",
               "displayName": "Dr - due to state"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "settlement_usd_2025"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "1793 settlement (2025 $)"
                 }
               },
-              "queryRef": "Sum(states.settlement_usd_2025)",
-              "nativeQueryRef": "Sum of settlement_usd_2025",
+              "queryRef": "states.1793 settlement (2025 $)",
+              "nativeQueryRef": "1793 settlement (2025 $)",
               "displayName": "1793 settlement (2025 $)"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "settlement_per_capita"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 1
+                  "Property": "Settlement per head"
                 }
               },
-              "queryRef": "Avg(states.settlement_per_capita)",
-              "nativeQueryRef": "Avg of settlement_per_capita",
+              "queryRef": "states.Settlement per head",
+              "nativeQueryRef": "Settlement per head",
               "displayName": "Settlement per head"
             }
           ]
@@ -99,18 +84,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "states"
-                      }
-                    },
-                    "Property": "settlement_usd"
+                  "SourceRef": {
+                    "Entity": "states"
                   }
                 },
-                "Function": 0
+                "Property": "1793 settlement"
               }
             },
             "direction": "Descending"

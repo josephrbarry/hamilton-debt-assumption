@@ -48,62 +48,47 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "tieout"
-                        }
-                      },
-                      "Property": "stated_usd"
+                    "SourceRef": {
+                      "Entity": "tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "Stated"
                 }
               },
-              "queryRef": "Sum(tieout.stated_usd)",
-              "nativeQueryRef": "Sum of stated_usd",
+              "queryRef": "tieout.Stated",
+              "nativeQueryRef": "Stated",
               "displayName": "Stated"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "tieout"
-                        }
-                      },
-                      "Property": "computed_usd"
+                    "SourceRef": {
+                      "Entity": "tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "Computed"
                 }
               },
-              "queryRef": "Sum(tieout.computed_usd)",
-              "nativeQueryRef": "Sum of computed_usd",
+              "queryRef": "tieout.Computed",
+              "nativeQueryRef": "Computed",
               "displayName": "Computed"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "tieout"
-                        }
-                      },
-                      "Property": "variance_usd"
+                    "SourceRef": {
+                      "Entity": "tieout"
                     }
                   },
-                  "Function": 0
+                  "Property": "Variance"
                 }
               },
-              "queryRef": "Sum(tieout.variance_usd)",
-              "nativeQueryRef": "Sum of variance_usd",
+              "queryRef": "tieout.Variance",
+              "nativeQueryRef": "Variance",
               "displayName": "Variance"
             },
             {

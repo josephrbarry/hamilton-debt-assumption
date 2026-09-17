@@ -16,7 +16,7 @@ The report is laid out as a set of audit workpapers - lettered schedules, a
 tie-out page, a roll-forward, a T-account, totals on every table and negatives in
 parentheses - with one chart form per schedule chosen to match how an accountant
 reads that ledger: a waterfall for the bridge, a matrix for state x step, stacked
-bars and a gauge for utilization, a filled map for the 1793 settlement, a scatter
+bars and a gauge for utilization, a T-account and treemap for the 1793 settlement, a scatter
 for the fairness test, and a diverging bar with a basis slicer for apportionment.
 
 Reference: https://learn.microsoft.com/power-bi/developer/projects/projects-report
@@ -97,12 +97,70 @@ def proj_agg(table: str, name: str, display: str, fn: int = SUM) -> dict:
     }
 
 
+# Column -> DAX measure defined in build_model.py. Tables, cards and totals rows read
+# measures; where no measure exists, fall back to an implicit aggregation.
+MEASURE_FOR = {
+    ("states", "estimate_1790_usd"): "Hamilton estimate",
+    ("states", "quota_usd"): "Act quota",
+    ("states", "quota_usd_2025"): "Act quota (2025 $)",
+    ("states", "quota_vs_estimate_usd"): "Quota less estimate",
+    ("states", "subscribed_1792_usd"): "Subscribed Jan 1792",
+    ("states", "assumed_usd"): "Assumed (final)",
+    ("states", "assumed_usd_2025"): "Assumed (2025 $)",
+    ("states", "quota_unused_usd"): "Unused quota",
+    ("states", "takeup_pct"): "Take-up %",
+    ("states", "settlement_usd"): "1793 settlement",
+    ("states", "settlement_usd_2025"): "1793 settlement (2025 $)",
+    ("states", "settlement_abs_usd"): "Settlement (absolute)",
+    ("states", "net_position_usd"): "Net position",
+    ("states", "net_position_usd_2025"): "Net position (2025 $)",
+    ("states", "pop_total_1790"): "Population 1790",
+    ("states", "pop_share_pct"): "Pop. share %",
+    ("states", "quota_share_pct"): "Quota share %",
+    ("states", "quota_per_capita"): "Quota per head",
+    ("states", "assumed_per_capita"): "Relief per head",
+    ("states", "settlement_per_capita"): "Settlement per head",
+    ("states", "settlement_per_capita_2025"): "Settlement per head (2025 $)",
+    ("states", "net_position_per_capita"): "Net per head",
+    ("states", "net_position_per_capita_2025"): "Net per head (2025 $)",
+    ("ledger_long", "usd_1790"): "GL 1790 $",
+    ("ledger_long", "usd_2025"): "GL 2025 $",
+    ("waterfall", "usd_1790_m"): "WF 1790 $ millions",
+    ("rollforward", "usd_1790"): "RF 1790 $",
+    ("rollforward", "usd_2025"): "RF 2025 $",
+    ("counterfactual", "quota_usd"): "CF Act quota",
+    ("counterfactual", "proportional_usd"): "CF per-head share",
+    ("counterfactual", "gap_usd"): "CF quota less share",
+    ("counterfactual", "gap_usd_2025"): "CF quota less share (2025 $)",
+    ("stats", "p_value"): "p-value",
+    ("tieout", "stated_usd"): "Stated",
+    ("tieout", "computed_usd"): "Computed",
+    ("tieout", "variance_usd"): "Variance",
+    ("enclosure_d_tieout", "quota_usd"): "ED quota",
+    ("enclosure_d_tieout", "subscribed_printed_usd"): "ED subscribed (as printed)",
+    ("enclosure_d_tieout", "unsubscribed_printed_usd"): "ED unsubscribed (as printed)",
+    ("enclosure_d_tieout", "unsubscribed_computed_usd"): "ED unsubscribed (computed)",
+    ("enclosure_d_tieout", "variance_usd"): "ED variance",
+    ("enclosure_d_tieout", "subscribed_reconciled_usd"): "ED subscribed (reconciled)",
+}
+
+
+def proj_measure(table: str, measure: str, display: str | None = None) -> dict:
+    p = {"field": {"Measure": {"Expression": {"SourceRef": {"Entity": table}}, "Property": measure}},
+         "queryRef": f"{table}.{measure}", "nativeQueryRef": measure}
+    if display:
+        p["displayName"] = display
+    return p
+
+
 def proj_sum(table, name, display):
-    return proj_agg(table, name, display, SUM)
+    m = MEASURE_FOR.get((table, name))
+    return proj_measure(table, m, display) if m else proj_agg(table, name, display, SUM)
 
 
 def proj_avg(table, name, display):
-    return proj_agg(table, name, display, AVG)
+    m = MEASURE_FOR.get((table, name))
+    return proj_measure(table, m, display) if m else proj_agg(table, name, display, AVG)
 
 
 def series_colors(series: list[dict], colors: list[str]) -> list[dict]:
@@ -266,7 +324,7 @@ def bar_chart(name, x, y, w, h, *, category, series, title, subtitle=None, color
     elif colors:
         objects["dataPoint"] = series_colors(series, colors)
     sort = sort_field if sort_field is not None else series[0]["field"]
-    return visual(name, "stackedBarChart" if stacked else "clusteredBarChart", x, y, w, h,
+    return visual(name, "barChart" if stacked else "clusteredBarChart", x, y, w, h,
                   roles=roles, sort_by=sort, sort_dir=sort_dir, title=title, subtitle=subtitle,
                   filters=filters, objects=objects)
 
@@ -361,6 +419,18 @@ def filled_map(name, x, y, w, h, *, location, legend_field, legend_pairs, toolti
                  "legend": legend(True, "Bottom"),
                  "mapControls": [{"properties": {"autoZoom": lit("true"), "zoomButtons": lit("false")}}],
                  "mapStyles": [{"properties": {"mapTheme": lit("'grayscale'")}}]})
+
+
+def treemap(name, x, y, w, h, *, group, details, value, title, subtitle=None, colors=None) -> dict:
+    objects = {"labels": data_labels(True, 0, "1000000D"),
+               "categoryLabels": [{"properties": {"show": lit("true"), "fontFamily": lit(f"'{FONT}'"),
+                                                  "fontSize": lit("10D"), "color": color(WHITE)}}],
+               "legend": legend(True, "Bottom")}
+    if colors:
+        objects["dataPoint"] = category_colors(group, colors)
+    return visual(name, "treemap", x, y, w, h,
+                  roles={"Group": [group], "Details": [details], "Values": [value]},
+                  title=title, subtitle=subtitle, objects=objects)
 
 
 def scatter(name, x, y, w, h, *, category, xf, yf, title, subtitle=None, legend_field=None,
@@ -682,11 +752,13 @@ def page_settlement() -> str:
         "its share of the common cost. Debit side = the Union owed the state (creditor). Credit side = the state "
         "owed the Union (debtor). Virginia is on the credit side. Source: Commissioners to Washington, 29 Jun 1793.", 5,
     ) + [
-        filled_map("p4-map", M, TOP, map_w, h,
-                   location=STATE, legend_field=POSITION, legend_pairs=POSITION_COLORS,
-                   tooltips=[SETTLEMENT, SETTLEMENT_25, SETTLEMENT_PC],
-                   title="The thirteen states by settlement position",
-                   subtitle="Teal = creditor. Red = debtor. Hover for the balance in 1790 and 2025 $."),
+        treemap("p4-treemap", M, TOP, map_w, h,
+                group=POSITION, details=STATE, value=proj_sum("states", "settlement_abs_usd", "Balance (absolute)"),
+                title="The two sides of the account, to scale",
+                subtitle="Tile area = absolute balance. The teal block and the red block are the same size: "
+                         "$3,517,584 each. Massachusetts and South Carolina are two-thirds of the debit side; "
+                         "New York is 59% of the credit side.",
+                colors=POSITION_COLORS),
         table("p4-dr", lx, TOP, t_w, t_h,
               values=[STATE, DEBIT, SETTLEMENT_25, SETTLEMENT_PC],
               title="Dr  ·  Creditor states: balances due TO the state",

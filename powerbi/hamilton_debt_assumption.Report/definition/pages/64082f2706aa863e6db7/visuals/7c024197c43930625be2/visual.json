@@ -57,22 +57,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "ledger_long"
-                        }
-                      },
-                      "Property": "usd_1790"
+                    "SourceRef": {
+                      "Entity": "ledger_long"
                     }
                   },
-                  "Function": 0
+                  "Property": "GL 1790 $"
                 }
               },
-              "queryRef": "Sum(ledger_long.usd_1790)",
-              "nativeQueryRef": "Sum of usd_1790",
+              "queryRef": "ledger_long.GL 1790 $",
+              "nativeQueryRef": "GL 1790 $",
               "displayName": "1790 $"
             }
           ]

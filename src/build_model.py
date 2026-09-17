@@ -34,6 +34,59 @@ DATA_CATEGORY = {("states", "state"): "StateOrProvince", ("ledger_long", "state"
 # Many-side column -> states.state, so a region slicer on states filters everything.
 RELATIONSHIPS = [("ledger_long", "state"), ("counterfactual", "state"), ("enclosure_d_tieout", "state")]
 
+# DAX measures. Tables and totals rows read these, so a totals row computes the right
+# thing (overall utilization, not an average of percentages). Names are model-wide
+# unique, so measures on other tables carry a short prefix.
+USD = r"\$#,0;(\$#,0);\$#,0"
+USD2 = r"\$#,0.00;(\$#,0.00);\$#,0.00"
+PCT = "0.0"
+MEASURES: dict[str, list[tuple[str, str, str]]] = {
+    "states": [
+        ("Hamilton estimate", "SUM(states[estimate_1790_usd])", USD),
+        ("Act quota", "SUM(states[quota_usd])", USD),
+        ("Act quota (2025 $)", "SUM(states[quota_usd_2025])", USD),
+        ("Quota less estimate", "SUM(states[quota_vs_estimate_usd])", USD),
+        ("Subscribed Jan 1792", "SUM(states[subscribed_1792_usd])", USD),
+        ("Assumed (final)", "SUM(states[assumed_usd])", USD),
+        ("Assumed (2025 $)", "SUM(states[assumed_usd_2025])", USD),
+        ("Unused quota", "SUM(states[quota_unused_usd])", USD),
+        ("Take-up %", "DIVIDE(SUM(states[assumed_usd]), SUM(states[quota_usd])) * 100", PCT),
+        ("1793 settlement", "SUM(states[settlement_usd])", USD),
+        ("1793 settlement (2025 $)", "SUM(states[settlement_usd_2025])", USD),
+        ("Settlement (absolute)", "SUM(states[settlement_abs_usd])", USD),
+        ("Net position", "SUM(states[net_position_usd])", USD),
+        ("Net position (2025 $)", "SUM(states[net_position_usd_2025])", USD),
+        ("Population 1790", "SUM(states[pop_total_1790])", "#,0"),
+        ("Pop. share %", "SUM(states[pop_share_pct])", PCT),
+        ("Quota share %", "SUM(states[quota_share_pct])", PCT),
+        ("Quota per head", "DIVIDE(SUM(states[quota_usd]), SUM(states[pop_total_1790]))", USD2),
+        ("Relief per head", "DIVIDE(SUM(states[assumed_usd]), SUM(states[pop_total_1790]))", USD2),
+        ("Settlement per head", "DIVIDE(SUM(states[settlement_usd]), SUM(states[pop_total_1790]))", USD2),
+        ("Settlement per head (2025 $)", "DIVIDE(SUM(states[settlement_usd_2025]), SUM(states[pop_total_1790]))", USD2),
+        ("Net per head", "DIVIDE(SUM(states[net_position_usd]), SUM(states[pop_total_1790]))", USD2),
+        ("Net per head (2025 $)", "DIVIDE(SUM(states[net_position_usd_2025]), SUM(states[pop_total_1790]))", USD2),
+    ],
+    "ledger_long": [("GL 1790 $", "SUM(ledger_long[usd_1790])", USD),
+                    ("GL 2025 $", "SUM(ledger_long[usd_2025])", USD)],
+    "waterfall": [("WF 1790 $ millions", "SUM(waterfall[usd_1790_m])", "#,0.00;(#,0.00);#,0.00")],
+    "rollforward": [("RF 1790 $", "SUM(rollforward[usd_1790])", USD),
+                    ("RF 2025 $", "SUM(rollforward[usd_2025])", USD)],
+    "counterfactual": [("CF Act quota", "SUM(counterfactual[quota_usd])", USD),
+                       ("CF per-head share", "SUM(counterfactual[proportional_usd])", USD),
+                       ("CF quota less share", "SUM(counterfactual[gap_usd])", USD),
+                       ("CF quota less share (2025 $)", "SUM(counterfactual[gap_usd_2025])", USD)],
+    "stats": [("p-value", "AVERAGE(stats[p_value])", "0.000")],
+    "tieout": [("Stated", "SUM(tieout[stated_usd])", USD),
+               ("Computed", "SUM(tieout[computed_usd])", USD),
+               ("Variance", "SUM(tieout[variance_usd])", USD)],
+    "enclosure_d_tieout": [("ED quota", "SUM(enclosure_d_tieout[quota_usd])", USD),
+                           ("ED subscribed (as printed)", "SUM(enclosure_d_tieout[subscribed_printed_usd])", USD),
+                           ("ED unsubscribed (as printed)", "SUM(enclosure_d_tieout[unsubscribed_printed_usd])", USD),
+                           ("ED unsubscribed (computed)", "SUM(enclosure_d_tieout[unsubscribed_computed_usd])", USD),
+                           ("ED variance", "SUM(enclosure_d_tieout[variance_usd])", USD),
+                           ("ED subscribed (reconciled)", "SUM(enclosure_d_tieout[subscribed_reconciled_usd])", USD)],
+}
+
 
 def uid() -> str:
     return str(uuid.uuid4())
@@ -88,6 +141,9 @@ def table_tmdl(name: str, df: pd.DataFrame) -> str:
         if (name, c) in DATA_CATEGORY:
             out.append(f"\t\tdataCategory: {DATA_CATEGORY[(name, c)]}")
         out += ["", "\t\tannotation SummarizationSetBy = Automatic", ""]
+    for mname, dax, fmt in MEASURES.get(name, []):
+        out += [f"\tmeasure '{mname}' = {dax}", f"\t\tformatString: {fmt}",
+                f"\t\tlineageTag: {uid()}", ""]
     path = str(DATA / f"{name}.csv")
     out += [
         f"\tpartition {name} = m",

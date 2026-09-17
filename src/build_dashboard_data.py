@@ -55,6 +55,7 @@ s = pd.DataFrame({
     "quota_per_free_person": df.quota_pc_free,
     "quota_z_score": df.z_score,
     "quota_gap_vs_population_usd": df.gap_vs_pop_total_1790,
+    "settlement_abs_usd": df.settlement_balance_usd.abs(),
 })
 for c in [c for c in s.columns if c.endswith("_usd") or c.endswith("per_capita")
           or c.endswith("per_free_person")]:

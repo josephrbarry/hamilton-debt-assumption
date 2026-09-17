@@ -18,22 +18,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "assumed_usd_2025"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Assumed (2025 $)"
                 }
               },
-              "queryRef": "Sum(states.assumed_usd_2025)",
-              "nativeQueryRef": "Sum of assumed_usd_2025",
+              "queryRef": "states.Assumed (2025 $)",
+              "nativeQueryRef": "Assumed (2025 $)",
               "displayName": "Assumed (2025 $)"
             }
           ]

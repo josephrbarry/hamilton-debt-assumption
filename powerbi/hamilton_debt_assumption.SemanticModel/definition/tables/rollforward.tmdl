@@ -1,10 +1,10 @@
 table rollforward
-	lineageTag: 4300f7b8-8121-4797-ac4c-0f14a929babc
+	lineageTag: e0472fcb-d329-448b-845f-e7573e79ef1e
 
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 0ad78754-7f3f-4009-8502-f6bdb9e70dea
+		lineageTag: 90e274a5-53b9-4bec-b15f-2675ee258b74
 		summarizeBy: none
 		sourceColumn: line_order
 
@@ -12,7 +12,7 @@ table rollforward
 
 	column line
 		dataType: string
-		lineageTag: 5d4dc82b-b444-4b6a-b82d-18bebdf79e23
+		lineageTag: 6627f7aa-5a8b-4749-9a37-c537ce5f91ec
 		summarizeBy: none
 		sourceColumn: line
 		sortByColumn: line_order
@@ -22,7 +22,7 @@ table rollforward
 	column usd_1790
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 9b31953a-c8d2-4960-86d9-36575dff0241
+		lineageTag: 4b00d97b-3320-49cd-bb73-d124acaf0a74
 		summarizeBy: none
 		sourceColumn: usd_1790
 
@@ -31,7 +31,7 @@ table rollforward
 	column usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 8a544d08-18ba-4b2b-a621-962f174653f4
+		lineageTag: a2caee3f-014c-4480-9787-ab9065fe3378
 		summarizeBy: none
 		sourceColumn: usd_2025
 
@@ -40,7 +40,7 @@ table rollforward
 	column running_usd_1790
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: ca0c6a1f-b101-41de-b66c-cf76c2b08581
+		lineageTag: 12272361-5d37-4a6d-80d1-99639fd912b3
 		summarizeBy: none
 		sourceColumn: running_usd_1790
 
@@ -49,11 +49,19 @@ table rollforward
 	column running_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 77686656-2f44-4ca7-97d3-aef87019486e
+		lineageTag: 2a76e24f-e959-4f9f-8c4d-5fda23344670
 		summarizeBy: none
 		sourceColumn: running_usd_2025
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'RF 1790 $' = SUM(rollforward[usd_1790])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 38e52e48-95e5-4fc0-9f87-2206ee0e8aba
+
+	measure 'RF 2025 $' = SUM(rollforward[usd_2025])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5fd089f6-5f2e-4a75-8441-d34ab3666acc
 
 	partition rollforward = m
 		mode: import

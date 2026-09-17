@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "33023f853d14402a4b07",
+  "name": "f5a5cb53dd571163636a",
   "position": {
     "x": 48,
     "y": 144,
@@ -10,11 +10,30 @@
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "filledMap",
+    "visualType": "treemap",
     "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
-        "Category": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "states"
+                    }
+                  },
+                  "Property": "position_1793"
+                }
+              },
+              "queryRef": "states.position_1793",
+              "nativeQueryRef": "position_1793",
+              "displayName": "1793 position"
+            }
+          ]
+        },
+        "Details": {
           "projections": [
             {
               "field": {
@@ -34,92 +53,170 @@
             }
           ]
         },
-        "Series": {
+        "Values": {
           "projections": [
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
                       "Entity": "states"
                     }
                   },
-                  "Property": "position_1793"
+                  "Property": "Settlement (absolute)"
                 }
               },
-              "queryRef": "states.position_1793",
-              "nativeQueryRef": "position_1793",
-              "displayName": "1793 position"
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "settlement_usd"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(states.settlement_usd)",
-              "nativeQueryRef": "Sum of settlement_usd",
-              "displayName": "1793 settlement"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "settlement_usd_2025"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(states.settlement_usd_2025)",
-              "nativeQueryRef": "Sum of settlement_usd_2025",
-              "displayName": "1793 settlement (2025 $)"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "settlement_per_capita"
-                    }
-                  },
-                  "Function": 1
-                }
-              },
-              "queryRef": "Avg(states.settlement_per_capita)",
-              "nativeQueryRef": "Avg of settlement_per_capita",
-              "displayName": "Settlement per head"
+              "queryRef": "states.Settlement (absolute)",
+              "nativeQueryRef": "Settlement (absolute)",
+              "displayName": "Balance (absolute)"
             }
           ]
         }
       }
     },
     "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Consolas'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#22262B'"
+                    }
+                  }
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bottom'"
+                }
+              }
+            },
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#22262B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
       "dataPoint": [
         {
           "properties": {
@@ -201,91 +298,6 @@
                 }
               }
             ]
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Bottom'"
-                }
-              }
-            },
-            "showTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Segoe UI'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#22262B'"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "mapControls": [
-        {
-          "properties": {
-            "autoZoom": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "zoomButtons": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "mapStyles": [
-        {
-          "properties": {
-            "mapTheme": {
-              "expr": {
-                "Literal": {
-                  "Value": "'grayscale'"
-                }
-              }
-            }
           }
         }
       ]
@@ -379,7 +391,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'The thirteen states by settlement position'"
+                  "Value": "'The two sides of the account, to scale'"
                 }
               }
             },
@@ -431,7 +443,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Teal = creditor. Red = debtor. Hover for the balance in 1790 and 2025 $.'"
+                  "Value": "'Tile area = absolute balance. The teal block and the red block are the same size: $3,517,584 each. Massachusetts and South Carolina are two-thirds of the debit side; New York is 59% of the credit side.'"
                 }
               }
             },

@@ -33,82 +33,62 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "counterfactual"
-                        }
-                      },
-                      "Property": "quota_usd"
+                    "SourceRef": {
+                      "Entity": "counterfactual"
                     }
                   },
-                  "Function": 0
+                  "Property": "CF Act quota"
                 }
               },
-              "queryRef": "Sum(counterfactual.quota_usd)",
-              "nativeQueryRef": "Sum of quota_usd",
+              "queryRef": "counterfactual.CF Act quota",
+              "nativeQueryRef": "CF Act quota",
               "displayName": "Act quota"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "counterfactual"
-                        }
-                      },
-                      "Property": "proportional_usd"
+                    "SourceRef": {
+                      "Entity": "counterfactual"
                     }
                   },
-                  "Function": 0
+                  "Property": "CF per-head share"
                 }
               },
-              "queryRef": "Sum(counterfactual.proportional_usd)",
-              "nativeQueryRef": "Sum of proportional_usd",
+              "queryRef": "counterfactual.CF per-head share",
+              "nativeQueryRef": "CF per-head share",
               "displayName": "Per-head share"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "counterfactual"
-                        }
-                      },
-                      "Property": "gap_usd"
+                    "SourceRef": {
+                      "Entity": "counterfactual"
                     }
                   },
-                  "Function": 0
+                  "Property": "CF quota less share"
                 }
               },
-              "queryRef": "Sum(counterfactual.gap_usd)",
-              "nativeQueryRef": "Sum of gap_usd",
+              "queryRef": "counterfactual.CF quota less share",
+              "nativeQueryRef": "CF quota less share",
               "displayName": "Quota less per-head share"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "counterfactual"
-                        }
-                      },
-                      "Property": "gap_usd_2025"
+                    "SourceRef": {
+                      "Entity": "counterfactual"
                     }
                   },
-                  "Function": 0
+                  "Property": "CF quota less share (2025 $)"
                 }
               },
-              "queryRef": "Sum(counterfactual.gap_usd_2025)",
-              "nativeQueryRef": "Sum of gap_usd_2025",
+              "queryRef": "counterfactual.CF quota less share (2025 $)",
+              "nativeQueryRef": "CF quota less share (2025 $)",
               "displayName": "Gap (2025 $)"
             }
           ]
@@ -118,18 +98,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "counterfactual"
-                      }
-                    },
-                    "Property": "gap_usd"
+                  "SourceRef": {
+                    "Entity": "counterfactual"
                   }
                 },
-                "Function": 0
+                "Property": "CF quota less share"
               }
             },
             "direction": "Descending"

@@ -34,122 +34,92 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Act quota"
                 }
               },
-              "queryRef": "Sum(states.quota_usd)",
-              "nativeQueryRef": "Sum of quota_usd",
+              "queryRef": "states.Act quota",
+              "nativeQueryRef": "Act quota",
               "displayName": "Act quota"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "subscribed_1792_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Subscribed Jan 1792"
                 }
               },
-              "queryRef": "Sum(states.subscribed_1792_usd)",
-              "nativeQueryRef": "Sum of subscribed_1792_usd",
+              "queryRef": "states.Subscribed Jan 1792",
+              "nativeQueryRef": "Subscribed Jan 1792",
               "displayName": "Subscribed Jan 1792"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "assumed_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Assumed (final)"
                 }
               },
-              "queryRef": "Sum(states.assumed_usd)",
-              "nativeQueryRef": "Sum of assumed_usd",
+              "queryRef": "states.Assumed (final)",
+              "nativeQueryRef": "Assumed (final)",
               "displayName": "Assumed (final)"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_unused_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Unused quota"
                 }
               },
-              "queryRef": "Sum(states.quota_unused_usd)",
-              "nativeQueryRef": "Sum of quota_unused_usd",
+              "queryRef": "states.Unused quota",
+              "nativeQueryRef": "Unused quota",
               "displayName": "Unused quota"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "takeup_pct"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 1
+                  "Property": "Take-up %"
                 }
               },
-              "queryRef": "Avg(states.takeup_pct)",
-              "nativeQueryRef": "Avg of takeup_pct",
+              "queryRef": "states.Take-up %",
+              "nativeQueryRef": "Take-up %",
               "displayName": "Take-up %"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "assumed_usd_2025"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Assumed (2025 $)"
                 }
               },
-              "queryRef": "Sum(states.assumed_usd_2025)",
-              "nativeQueryRef": "Sum of assumed_usd_2025",
+              "queryRef": "states.Assumed (2025 $)",
+              "nativeQueryRef": "Assumed (2025 $)",
               "displayName": "Assumed (2025 $)"
             }
           ]
@@ -159,18 +129,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "states"
-                      }
-                    },
-                    "Property": "takeup_pct"
+                  "SourceRef": {
+                    "Entity": "states"
                   }
                 },
-                "Function": 1
+                "Property": "Take-up %"
               }
             },
             "direction": "Descending"

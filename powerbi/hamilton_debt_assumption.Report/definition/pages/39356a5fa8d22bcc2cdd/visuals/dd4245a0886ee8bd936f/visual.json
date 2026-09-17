@@ -18,22 +18,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Act quota"
                 }
               },
-              "queryRef": "Sum(states.quota_usd)",
-              "nativeQueryRef": "Sum of quota_usd",
+              "queryRef": "states.Act quota",
+              "nativeQueryRef": "Act quota",
               "displayName": "Act quota"
             }
           ]

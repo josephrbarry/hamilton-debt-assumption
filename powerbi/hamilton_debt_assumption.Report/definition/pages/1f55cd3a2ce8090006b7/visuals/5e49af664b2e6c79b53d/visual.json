@@ -18,22 +18,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "assumed_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Assumed (final)"
                 }
               },
-              "queryRef": "Sum(states.assumed_usd)",
-              "nativeQueryRef": "Sum of assumed_usd",
+              "queryRef": "states.Assumed (final)",
+              "nativeQueryRef": "Assumed (final)",
               "displayName": "Assumed (final)"
             }
           ]
@@ -42,22 +37,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Act quota"
                 }
               },
-              "queryRef": "Sum(states.quota_usd)",
-              "nativeQueryRef": "Sum of quota_usd",
+              "queryRef": "states.Act quota",
+              "nativeQueryRef": "Act quota",
               "displayName": "Act quota"
             }
           ]
@@ -66,22 +56,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Act quota"
                 }
               },
-              "queryRef": "Sum(states.quota_usd)",
-              "nativeQueryRef": "Sum of quota_usd",
+              "queryRef": "states.Act quota",
+              "nativeQueryRef": "Act quota",
               "displayName": "Act quota"
             }
           ]

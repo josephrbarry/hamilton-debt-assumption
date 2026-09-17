@@ -38,22 +38,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "counterfactual"
-                        }
-                      },
-                      "Property": "gap_usd"
+                    "SourceRef": {
+                      "Entity": "counterfactual"
                     }
                   },
-                  "Function": 0
+                  "Property": "CF quota less share"
                 }
               },
-              "queryRef": "Sum(counterfactual.gap_usd)",
-              "nativeQueryRef": "Sum of gap_usd",
+              "queryRef": "counterfactual.CF quota less share",
+              "nativeQueryRef": "CF quota less share",
               "displayName": "Quota less per-head share"
             }
           ]
@@ -82,18 +77,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "counterfactual"
-                      }
-                    },
-                    "Property": "gap_usd"
+                  "SourceRef": {
+                    "Entity": "counterfactual"
                   }
                 },
-                "Function": 0
+                "Property": "CF quota less share"
               }
             },
             "direction": "Descending"

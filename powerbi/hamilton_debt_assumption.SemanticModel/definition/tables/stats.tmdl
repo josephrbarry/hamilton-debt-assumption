@@ -1,9 +1,9 @@
 table stats
-	lineageTag: e77e93eb-a279-4f12-8e5c-6f5687aefdff
+	lineageTag: 3ea8c9fb-efe6-4d37-86db-28fa90a82b63
 
 	column group
 		dataType: string
-		lineageTag: bd01c374-8be5-4ec9-8658-c7d30b5662d7
+		lineageTag: d25792ab-4beb-49c2-bdcc-a1be82146a7c
 		summarizeBy: none
 		sourceColumn: group
 
@@ -11,7 +11,7 @@ table stats
 
 	column question
 		dataType: string
-		lineageTag: ddecd7f3-fe96-4cbb-986b-0cde67aaaf9b
+		lineageTag: 117dc989-fe1c-48be-b191-dcb421924d3d
 		summarizeBy: none
 		sourceColumn: question
 
@@ -19,7 +19,7 @@ table stats
 
 	column test
 		dataType: string
-		lineageTag: 463a9d65-a877-4646-9ea1-f10b3f10d565
+		lineageTag: bea3ff5c-cfce-4df8-a3ce-2358047a0e25
 		summarizeBy: none
 		sourceColumn: test
 		sortByColumn: test_order
@@ -28,7 +28,7 @@ table stats
 
 	column statistic
 		dataType: string
-		lineageTag: de1cecc3-b823-4c7c-9227-87505dbf7f91
+		lineageTag: 98150d82-ad9b-4fbb-9ab1-3902bb45758e
 		summarizeBy: none
 		sourceColumn: statistic
 
@@ -37,7 +37,7 @@ table stats
 	column p_value
 		dataType: double
 		formatString: 0.000
-		lineageTag: 827b9e27-e384-46ea-9d5b-3160059bb392
+		lineageTag: a43529b1-6cec-43d4-a96d-ad55fca25a34
 		summarizeBy: none
 		sourceColumn: p_value
 
@@ -45,7 +45,7 @@ table stats
 
 	column read
 		dataType: string
-		lineageTag: 689fd58f-16cb-471f-b955-969ca27419d2
+		lineageTag: e986d5fe-3923-4d25-b5e8-84809bcd4b63
 		summarizeBy: none
 		sourceColumn: read
 
@@ -54,11 +54,15 @@ table stats
 	column test_order
 		dataType: int64
 		formatString: 0
-		lineageTag: edf2a75f-abdf-4872-b098-74d099a984a7
+		lineageTag: a6e9d741-ed78-403d-92d8-54c42c0f32c1
 		summarizeBy: none
 		sourceColumn: test_order
 
 		annotation SummarizationSetBy = Automatic
+
+	measure 'p-value' = AVERAGE(stats[p_value])
+		formatString: 0.000
+		lineageTag: 10ff01e3-975d-469d-b944-a2d6cb58dc45
 
 	partition stats = m
 		mode: import

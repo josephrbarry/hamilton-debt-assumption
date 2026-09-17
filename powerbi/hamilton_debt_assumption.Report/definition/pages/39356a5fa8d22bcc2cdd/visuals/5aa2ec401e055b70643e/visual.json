@@ -33,42 +33,32 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "rollforward"
-                        }
-                      },
-                      "Property": "usd_1790"
+                    "SourceRef": {
+                      "Entity": "rollforward"
                     }
                   },
-                  "Function": 0
+                  "Property": "RF 1790 $"
                 }
               },
-              "queryRef": "Sum(rollforward.usd_1790)",
-              "nativeQueryRef": "Sum of usd_1790",
+              "queryRef": "rollforward.RF 1790 $",
+              "nativeQueryRef": "RF 1790 $",
               "displayName": "1790 $"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "rollforward"
-                        }
-                      },
-                      "Property": "usd_2025"
+                    "SourceRef": {
+                      "Entity": "rollforward"
                     }
                   },
-                  "Function": 0
+                  "Property": "RF 2025 $"
                 }
               },
-              "queryRef": "Sum(rollforward.usd_2025)",
-              "nativeQueryRef": "Sum of usd_2025",
+              "queryRef": "rollforward.RF 2025 $",
+              "nativeQueryRef": "RF 2025 $",
               "displayName": "2025 $"
             }
           ]

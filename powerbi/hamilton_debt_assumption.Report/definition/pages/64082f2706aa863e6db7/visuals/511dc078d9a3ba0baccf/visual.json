@@ -34,82 +34,62 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "estimate_1790_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Hamilton estimate"
                 }
               },
-              "queryRef": "Sum(states.estimate_1790_usd)",
-              "nativeQueryRef": "Sum of estimate_1790_usd",
+              "queryRef": "states.Hamilton estimate",
+              "nativeQueryRef": "Hamilton estimate",
               "displayName": "Hamilton estimate"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Act quota"
                 }
               },
-              "queryRef": "Sum(states.quota_usd)",
-              "nativeQueryRef": "Sum of quota_usd",
+              "queryRef": "states.Act quota",
+              "nativeQueryRef": "Act quota",
               "displayName": "Act quota"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_vs_estimate_usd"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Quota less estimate"
                 }
               },
-              "queryRef": "Sum(states.quota_vs_estimate_usd)",
-              "nativeQueryRef": "Sum of quota_vs_estimate_usd",
+              "queryRef": "states.Quota less estimate",
+              "nativeQueryRef": "Quota less estimate",
               "displayName": "Quota less estimate"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "states"
-                        }
-                      },
-                      "Property": "quota_usd_2025"
+                    "SourceRef": {
+                      "Entity": "states"
                     }
                   },
-                  "Function": 0
+                  "Property": "Act quota (2025 $)"
                 }
               },
-              "queryRef": "Sum(states.quota_usd_2025)",
-              "nativeQueryRef": "Sum of quota_usd_2025",
+              "queryRef": "states.Act quota (2025 $)",
+              "nativeQueryRef": "Act quota (2025 $)",
               "displayName": "Act quota (2025 $)"
             }
           ]
@@ -119,18 +99,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "states"
-                      }
-                    },
-                    "Property": "quota_vs_estimate_usd"
+                  "SourceRef": {
+                    "Entity": "states"
                   }
                 },
-                "Function": 0
+                "Property": "Quota less estimate"
               }
             },
             "direction": "Ascending"
