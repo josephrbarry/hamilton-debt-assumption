@@ -158,15 +158,17 @@ pd.DataFrame(st, columns=["group", "question", "test", "statistic", "p_value", "
 
 # ---------------------------------------------------------------- tie-out (footing schedule)
 sub = pd.read_csv(ROOT / "data" / "subscriptions_1792.csv").set_index("state")
-printed = sub.subscribed_usd.copy()
-printed["North Carolina"] -= 500000            # the figure as printed, before reconciliation
-oversub_printed = sub.oversubscribed_usd.copy()
-oversub_printed["Massachusetts"] += 30000      # printed $477,013.81; arithmetic gives $447,013.81
+printed = sub.subscribed_usd.copy()            # the figures as published (Founders Online / ASP 1832)
+printed["North Carolina"] -= 500000            # printed $1,166,355.57; reconciled $1,666,355.57
+printed["Massachusetts"] -= 30000              # printed $4,447,013.81; reconciled $4,477,013.81
+oversub_printed = sub.oversubscribed_usd.copy()  # over-subscribed column is printed correctly
+unsub_printed = sub.unsubscribed_usd.copy()
+unsub_printed["Maryland"] -= 30                # printed $500,744.60; reconciled $500,774.60
 enc = pd.DataFrame({
     "state": sub.index,
     "quota_usd": sub.quota_usd.values,
     "subscribed_printed_usd": printed.values,
-    "unsubscribed_printed_usd": sub.unsubscribed_usd.values,
+    "unsubscribed_printed_usd": unsub_printed.values,
     "oversubscribed_printed_usd": oversub_printed.values,
 })
 enc["unsubscribed_computed_usd"] = (enc.quota_usd - enc.subscribed_printed_usd).clip(lower=0)
@@ -184,18 +186,18 @@ tie = [
     ("Funding Act sec. 14, Aug 1790", "Quota column", 21500000, df.quota_usd.sum()),
     ("Schedule E, Jan 1790", "Nine known states ('about twenty-one millions and a half')", 21500000,
      df.debt_estimate_1790_usd.sum()),
-    ("Enclosure D, Jan 1792", "Subscribed column, as printed", 18328186.21, printed.sum()),
-    ("Enclosure D, Jan 1792", "North Carolina line: quota less unsubscribed vs printed subscribed",
+    ("Enclosure D, Jan 1792", "Subscribed column, as published", 18328186.21, printed.sum()),
+    ("Enclosure D, Jan 1792", "North Carolina line: quota less printed unsubscribed vs printed subscribed",
      1166355.57, 2400000 - 733644.43),
-    ("Enclosure D, Jan 1792", "Subscribed column, after NC reconciliation", 18328186.21, sub.subscribed_usd.sum()),
-    ("Enclosure D, Jan 1792", "Massachusetts line: subscribed less quota vs printed over-subscribed",
-     477013.81, 4447013.81 - 4000000),
-    ("Enclosure D, Jan 1792", "Over-subscribed column, as printed", 1255851.82, oversub_printed.sum()),
-    ("Enclosure D, Jan 1792", "Unsubscribed column", 4427665.61, sub.unsubscribed_usd.sum()),
-    ("Enclosure D, Jan 1792", "Printed total explained: quota - unsubscribed + over-subscribed (both as printed)",
-     18328186.21, 21500000 - 4427665.61 + oversub_printed.sum()),
-    ("Enclosure D, Jan 1792", "Reconciled total: quota - unsubscribed + over-subscribed (MA corrected)",
-     sub.subscribed_usd.sum(), 21500000 - 4427665.61 + sub.oversubscribed_usd.sum()),
+    ("Enclosure D, Jan 1792", "Massachusetts line: quota plus printed over-subscribed vs printed subscribed",
+     4447013.81, 4000000 + 477013.81),
+    ("Enclosure D, Jan 1792", "Maryland line: quota less printed subscribed vs printed unsubscribed",
+     500744.60, 800000 - 299225.40),
+    ("Enclosure D, Jan 1792", "Subscribed column, NC and MA corrected", 18328186.21, sub.subscribed_usd.sum()),
+    ("Enclosure D, Jan 1792", "Over-subscribed column, as published", 1255851.82, oversub_printed.sum()),
+    ("Enclosure D, Jan 1792", "Unsubscribed column, MD corrected", 4427665.61, sub.unsubscribed_usd.sum()),
+    ("Enclosure D, Jan 1792", "Printed total explained: quota - unsubscribed + over-subscribed (corrected)",
+     18328186.21, 21500000 - sub.unsubscribed_usd.sum() + sub.oversubscribed_usd.sum()),
     ("Bayley (Treasury, 1881)", "Amount assumed column", 18271786.47, df.assumed_usd.sum()),
     ("Commissioners, Jun 1793", "Creditor states (Jefferson's pencilled total)", 3517584,
      df[df.settlement_balance_usd > 0].settlement_balance_usd.sum()),
@@ -205,7 +207,8 @@ tie = [
 tie_df = pd.DataFrame(tie, columns=["document", "line", "stated_usd", "computed_usd"])
 tie_df["variance_usd"] = tie_df.computed_usd - tie_df.stated_usd
 tie_df["status"] = np.where(tie_df.variance_usd.abs() < 1, "Ties",
-                   np.where(tie_df.variance_usd.abs() < 5000, "Ties (rounded)", "Does not foot"))
+                   np.where(tie_df.variance_usd.abs() < 100, "Immaterial",
+                   np.where(tie_df.variance_usd.abs() < 5000, "Ties (rounded)", "Does not foot")))
 tie_df["line_order"] = range(1, len(tie_df) + 1)
 tie_df.to_csv(OUT / "tieout.csv", index=False)
 

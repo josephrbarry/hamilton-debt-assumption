@@ -10,7 +10,7 @@ Before analyzing, each table was footed against its own printed totals.
 
 - Funding Act quotas sum to $21,500,000 [$780,450,000] - ties to the Act's $21.5M.
 - 1793 settlement: creditors $3,517,584 [$127,688,299], debtors $3,517,584 [$127,688,299] - ties to Jefferson's pencilled total of $3,517,584 and nets to zero.
-- Enclosure D (1792 subscriptions): **does not foot as printed.** The subscribed column sums to $17,798,186 against a stated $18,328,186. Row-level tie-out (quota - subscribed = unsubscribed) isolates a $500,000 error in the North Carolina line; the reconciled figure $1,666,355.57 is used here. A second line error: Massachusetts's over-subscription is printed as $477,013.81 but $4,447,013.81 less the $4,000,000 quota is $447,013.81 - $30,000 high. That error was carried into the printed total, which is why the reconciled column ($18,298,186) is $30,000 below it. A $30 Maryland difference is immaterial. Both errors are in single printed lines, not in the Treasury's arithmetic. See `data/SOURCES.md`.
+- Enclosure D (1792 subscriptions): **does not foot as published.** On Founders Online the subscribed column sums to $17,798,186 against a stated $18,328,186. Row-level tie-out (quota - subscribed = unsubscribed) isolates a $500,000 error in the North Carolina line ($1,666,355.57 reconciled), a $30,000 error in the Massachusetts line ($4,477,013.81 reconciled) and a $30 error in Maryland's unsubscribed line ($500,774.60). With those three cells corrected every column foots to its printed total to the penny: the Treasury's arithmetic was right and the published cells are wrong. Comparison of four printings (1792 pamphlet, Seybert 1818, American State Papers 1832, Founders Online) traces the errors to the 1832 reprint. Reconciled figures used here. See `data/SOURCES.md`.
 - Schedule E: Hamilton's nine known states sum to $21,501,206; he wrote 'about twenty-one millions and a half'. Ties.
 
 ## 1. Opening balance: what Hamilton knew (Schedule E, 9 Jan 1790)
@@ -49,7 +49,7 @@ Assumption was a *ceiling*. Creditors had to bring state paper to a federal loan
 | Connecticut | 1.60M [58M] | 1.46M [53M] | 1.60M [58M] | 100% | 0.00M [0M] | 0.46M [17M] |
 | Rhode Island | 0.20M [7M] | 0.34M [12M] | 0.20M [7M] | 100% | 0.00M [0M] | 0.35M [13M] |
 | South Carolina | 4.00M [145M] | 4.63M [168M] | 4.00M [145M] | 100% | 0.00M [0M] | 1.97M [71M] |
-| Massachusetts | 4.00M [145M] | 4.45M [161M] | 3.98M [145M] | 100% | 0.02M [1M] | 1.84M [67M] |
+| Massachusetts | 4.00M [145M] | 4.48M [163M] | 3.98M [145M] | 100% | 0.02M [1M] | 1.84M [67M] |
 | New York | 1.20M [44M] | 1.03M [37M] | 1.18M [43M] | 99% | 0.02M [1M] | 0.20M [7M] |
 | New Hampshire | 0.30M [11M] | 0.24M [9M] | 0.28M [10M] | 94% | 0.02M [1M] | 0.10M [4M] |
 | New Jersey | 0.80M [29M] | 0.60M [22M] | 0.70M [25M] | 87% | 0.10M [4M] | 0.21M [8M] |
@@ -60,7 +60,7 @@ Assumption was a *ceiling*. Creditors had to bring state paper to a federal loan
 | Pennsylvania | 2.20M [80M] | 0.68M [25M] | 0.78M [28M] | 35% | 1.42M [52M] | 0.50M [18M] |
 | Delaware | 0.20M [7M] | 0.05M [2M] | 0.06M [2M] | 30% | 0.14M [5M] | 0.00M [0M] |
 
-- Total: 21.50M [780M] authorized; 18.30M [664M] subscribed in the first window; **18.27M [663M] finally assumed** after the window was extended to 1793 and the three over-subscribed states were scaled back to quota. Overall utilization 85%.
+- Total: 21.50M [780M] authorized; 18.33M [665M] subscribed in the first window; **18.27M [663M] finally assumed** after the window was extended to 1793 and the three over-subscribed states were scaled back to quota. Overall utilization 85%.
 - 3.23M [117M] of quota went unused. Pennsylvania alone left 1.42M [52M] on the table (35% take-up). Lowest utilization: Delaware (30%), Pennsylvania (35%), Maryland (65%).
 - The extension mattered: Pennsylvania's subscriptions rose from 0.68M [25M] to 0.78M [28M], Maryland's from 0.30M [11M] to 0.52M [19M], North Carolina's from 1.67M [60M] to 1.79M [65M]. Virginia's rose from 2.55M [93M] to 2.93M [107M], still 84% of quota.
 - Massachusetts, Rhode Island, and South Carolina brought in *more* than their quota in the first window - their real debt exceeded the Act. Hamilton's Schedule E had said so for MA and SC; Congress capped them anyway. The quota was a ceiling: RI finished exactly at quota, SC $348 under, MA $18,267 under.

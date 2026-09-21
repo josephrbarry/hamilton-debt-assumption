@@ -1,14 +1,14 @@
 document,line,stated_usd,computed_usd,variance_usd,status,line_order
 "Funding Act sec. 14, Aug 1790",Quota column,21500000.0,21500000.0,0.0,Ties,1
 "Schedule E, Jan 1790",Nine known states ('about twenty-one millions and a half'),21500000.0,21501205.61,1205.609999999404,Ties (rounded),2
-"Enclosure D, Jan 1792","Subscribed column, as printed",18328186.21,17798186.21,-530000.0,Does not foot,3
-"Enclosure D, Jan 1792",North Carolina line: quota less unsubscribed vs printed subscribed,1166355.57,1666355.5699999998,499999.99999999977,Does not foot,4
-"Enclosure D, Jan 1792","Subscribed column, after NC reconciliation",18328186.21,18298186.21,-30000.0,Does not foot,5
-"Enclosure D, Jan 1792",Massachusetts line: subscribed less quota vs printed over-subscribed,477013.81,447013.8099999996,-30000.000000000407,Does not foot,6
-"Enclosure D, Jan 1792","Over-subscribed column, as printed",1255851.82,1255851.82,0.0,Ties,7
-"Enclosure D, Jan 1792",Unsubscribed column,4427665.61,4427635.61,-30.0,Ties (rounded),8
-"Enclosure D, Jan 1792",Printed total explained: quota - unsubscribed + over-subscribed (both as printed),18328186.21,18328186.21,0.0,Ties,9
-"Enclosure D, Jan 1792",Reconciled total: quota - unsubscribed + over-subscribed (MA corrected),18298186.21,18298186.21,0.0,Ties,10
+"Enclosure D, Jan 1792","Subscribed column, as published",18328186.21,17798186.21,-530000.0,Does not foot,3
+"Enclosure D, Jan 1792",North Carolina line: quota less printed unsubscribed vs printed subscribed,1166355.57,1666355.5699999998,499999.99999999977,Does not foot,4
+"Enclosure D, Jan 1792",Massachusetts line: quota plus printed over-subscribed vs printed subscribed,4447013.81,4477013.81,30000.0,Does not foot,5
+"Enclosure D, Jan 1792",Maryland line: quota less printed subscribed vs printed unsubscribed,500744.6,500774.6,30.0,Immaterial,6
+"Enclosure D, Jan 1792","Subscribed column, NC and MA corrected",18328186.21,18328186.21,0.0,Ties,7
+"Enclosure D, Jan 1792","Over-subscribed column, as published",1255851.82,1255851.82,0.0,Ties,8
+"Enclosure D, Jan 1792","Unsubscribed column, MD corrected",4427665.61,4427665.61,0.0,Ties,9
+"Enclosure D, Jan 1792",Printed total explained: quota - unsubscribed + over-subscribed (corrected),18328186.21,18328186.21,0.0,Ties,10
 "Bayley (Treasury, 1881)",Amount assumed column,18271786.47,18271786.47,0.0,Ties,11
 "Commissioners, Jun 1793",Creditor states (Jefferson's pencilled total),3517584.0,3517584.0,0.0,Ties,12
 "Commissioners, Jun 1793",Debtor states,3517584.0,3517584.0,0.0,Ties,13

@@ -63,7 +63,7 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "c",
+                    "Name": "t",
                     "Entity": "counterfactual",
                     "Type": 0
                   }
@@ -77,7 +77,7 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "c"
+                                  "Source": "t"
                                 }
                               },
                               "Property": "basis"

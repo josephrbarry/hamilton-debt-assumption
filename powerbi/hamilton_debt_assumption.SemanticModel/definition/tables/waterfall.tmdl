@@ -1,14 +1,14 @@
 table waterfall
-	lineageTag: ca5f3ae8-302d-4c2f-8819-555dbf5e8e00
+	lineageTag: d9b602c6-d884-4726-87e9-962c7cc25a3f
 
 	measure 'WF 1790 $ millions' = SUM(waterfall[usd_1790_m])
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: c97f650a-c575-4d89-845c-d66c9afac93d
+		lineageTag: 88808e20-a8ee-4dd5-ace4-f6e20d0bbc94
 
 	column step_order
 		dataType: int64
 		formatString: 0
-		lineageTag: e82509ea-b3ab-4b4b-823c-a5e45e75e827
+		lineageTag: 10906996-7c3f-42ff-b6c4-ce7b04419fd2
 		summarizeBy: none
 		sourceColumn: step_order
 
@@ -16,7 +16,7 @@ table waterfall
 
 	column step
 		dataType: string
-		lineageTag: 7e24b654-44e6-4c5f-95e5-bbcae20731a7
+		lineageTag: 418fdebe-2243-48cb-9005-f34af2a642bf
 		summarizeBy: none
 		sourceColumn: step
 		sortByColumn: step_order
@@ -26,7 +26,7 @@ table waterfall
 	column usd_1790
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 687bbdc7-7264-4f94-b8eb-c8c088736a97
+		lineageTag: a35b1d1e-af75-4430-b060-a0ec3ea4e9cd
 		summarizeBy: none
 		sourceColumn: usd_1790
 
@@ -35,7 +35,7 @@ table waterfall
 	column usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: f4bcfdcf-a692-4a8b-a3a4-58108c3571d1
+		lineageTag: bc8244b1-0a5d-4205-8ae1-db17ee92293e
 		summarizeBy: none
 		sourceColumn: usd_2025
 
@@ -44,7 +44,7 @@ table waterfall
 	column usd_1790_m
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 38bb0438-c789-4c12-9ea9-3882f9eddefc
+		lineageTag: c610f3df-b5b6-4131-b71e-6222c070d7b8
 		summarizeBy: none
 		sourceColumn: usd_1790_m
 
@@ -53,7 +53,7 @@ table waterfall
 	column usd_2025_m
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 8d995819-2041-4eb1-92ca-c349f4a61bc2
+		lineageTag: 0b5858b2-21eb-44bd-920c-999222191361
 		summarizeBy: none
 		sourceColumn: usd_2025_m
 

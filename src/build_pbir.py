@@ -629,21 +629,22 @@ def page_tieout() -> str:
         ("2.  Where a total does not foot, tie each line: quota less subscribed must equal unsubscribed.", 10, False, INK),
         ("3.  Isolate the line, quantify the variance, decide materiality, disclose.", 10, False, INK),
         ("Finding", 13, True, RED, HFONT),
-        ("Enclosure D (Treasury, 25 Jan 1792) prints subscriptions totalling $18,328,186.21. The column sums "
-         "to $17,798,186.21. Line-level tie-out isolates the whole $500,000 in North Carolina: quota "
-         "$2,400,000 less printed subscribed $1,166,355.57 gives $1,233,644.43 unsubscribed, but the "
-         "document prints $733,644.43. The reconciled figure $1,666,355.57 is used throughout.", 10, False, INK),
-        ("After that correction the column is still $30,000 short of the printed total. A second line "
-         "explains it: Massachusetts's over-subscription is printed as $477,013.81, but $4,447,013.81 "
-         "subscribed less the $4,000,000 quota is $447,013.81. The Treasury carried the wrong line into "
-         "its total. Reconciled total: $18,298,186.21. Maryland is $30 out - immaterial.", 10, False, INK),
-        ("Both errors sit in single printed lines, not in the Treasury's arithmetic. Every other "
-         "document ties.", 10, True, TEAL),
+        ("Enclosure D (Treasury, 25 Jan 1792), as published on Founders Online, prints subscriptions "
+         "totalling $18,328,186.21. The column sums to $17,798,186.21. Line-level tie-out isolates "
+         "$500,000 in North Carolina: quota $2,400,000 less printed unsubscribed $733,644.43 gives "
+         "$1,666,355.57 subscribed, but the document prints $1,166,355.57.", 10, False, INK),
+        ("The remaining $30,000 is Massachusetts: quota $4,000,000 plus the printed over-subscription "
+         "$477,013.81 gives $4,477,013.81 subscribed, but the document prints $4,447,013.81. Maryland's "
+         "unsubscribed line is $30 out. With those three cells corrected, every column foots to the "
+         "printed total to the penny.", 10, False, INK),
+        ("The Treasury's arithmetic was right; the published cells are wrong. Four printings compared "
+         "(1792 pamphlet, Seybert 1818, American State Papers 1832, Founders Online): the errors enter "
+         "with the 1832 reprint. Every other document ties.", 10, True, TEAL),
     ]
     vis = header(
-        "p1", "B", "Tie-out: three documents foot to the penny, one to Hamilton's own rounding, one has two line errors.",
+        "p1", "B", "Tie-out: three documents foot to the penny, one to Hamilton's own rounding, one has three cell errors in the published copy.",
         "Each table was footed against its own printed total before any analysis. Ties = variance under $1. "
-        "Ties (rounded) = Schedule E, $1,206 against Hamilton's 'about twenty-one millions and a half'. "
+        "Ties (rounded) = Schedule E, $1,206 against Hamilton's 'about twenty-one millions and a half'. Immaterial = under $100. "
         "Does not foot = investigated and disclosed below.", 2,
     ) + [
         table("p1-tieout", M, TOP, left_w, top_h,

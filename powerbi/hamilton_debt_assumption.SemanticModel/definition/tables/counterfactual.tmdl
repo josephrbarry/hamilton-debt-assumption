@@ -1,25 +1,25 @@
 table counterfactual
-	lineageTag: 4a9cd6ad-0ad6-496c-a0a4-32947705997c
+	lineageTag: 5dcedd0c-2473-45c2-9d3e-c6fce6ba9ba9
 
 	measure 'CF Act quota' = SUM(counterfactual[quota_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: cba0e340-070a-49dc-8998-11225012e47b
+		lineageTag: 6f09aff9-8303-4cfe-8975-e87a607c8a32
 
 	measure 'CF per-head share' = SUM(counterfactual[proportional_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 7bbf6a09-e2f7-4a96-8e2c-dd64cf07f5f1
+		lineageTag: c4e19f99-227b-477a-bac2-2801bb211044
 
 	measure 'CF quota less share' = SUM(counterfactual[gap_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 8d3fd9eb-a7d1-4288-bf66-1db28a0017b7
+		lineageTag: 75755047-18b0-4e6e-80e6-3ed71406328d
 
 	measure 'CF quota less share (2025 $)' = SUM(counterfactual[gap_usd_2025])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: ed2bee49-ca70-402d-b491-97e47fbbde4b
+		lineageTag: 9112db95-251a-4bd6-8f5b-9bb93197344b
 
 	column state
 		dataType: string
-		lineageTag: 3602e5b3-cf8e-46a8-b291-241172f3df9c
+		lineageTag: d006afd9-2745-40f0-a9b0-124ee9dea6c5
 		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: state
@@ -28,7 +28,7 @@ table counterfactual
 
 	column region
 		dataType: string
-		lineageTag: 42ef3658-44c0-431d-a07c-00ab7a1ca321
+		lineageTag: 0837d7c5-ff12-4b2d-91d2-82e00881710e
 		summarizeBy: none
 		sourceColumn: region
 
@@ -36,7 +36,7 @@ table counterfactual
 
 	column basis
 		dataType: string
-		lineageTag: 9278cf30-1dbf-49fe-a84d-d1aacb524150
+		lineageTag: 078aced3-9850-4815-9827-e046c5eba69c
 		summarizeBy: none
 		sourceColumn: basis
 
@@ -45,7 +45,7 @@ table counterfactual
 	column quota_usd
 		dataType: int64
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 9c825d28-832a-4354-9008-adbaab0e28af
+		lineageTag: c3422366-4548-488f-8a2c-0af2c8f0a4a2
 		summarizeBy: none
 		sourceColumn: quota_usd
 
@@ -54,7 +54,7 @@ table counterfactual
 	column proportional_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: de2b2584-dbc6-4ee0-aa34-a5d2908a3993
+		lineageTag: 58b62f85-1878-4e87-9b5a-4f5e6011f2ea
 		summarizeBy: none
 		sourceColumn: proportional_usd
 
@@ -63,7 +63,7 @@ table counterfactual
 	column gap_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 261b3e57-4f99-4dad-8bf7-229d1c1e24b1
+		lineageTag: c9405a18-00f6-4df0-94e1-e9d3d89ca3a9
 		summarizeBy: none
 		sourceColumn: gap_usd
 
@@ -72,7 +72,7 @@ table counterfactual
 	column quota_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 6e9bcfca-2368-4dd6-a246-6041f2765744
+		lineageTag: 69daa09f-c47a-40bb-8533-8d5252255403
 		summarizeBy: none
 		sourceColumn: quota_usd_2025
 
@@ -81,7 +81,7 @@ table counterfactual
 	column gap_usd_2025
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: b1f803a6-4e0c-4d6b-81df-823426194303
+		lineageTag: 62d9c86c-d51b-41c6-8eea-af822083b197
 		summarizeBy: none
 		sourceColumn: gap_usd_2025
 
@@ -90,7 +90,7 @@ table counterfactual
 	column quota_m
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 5536bd90-db23-4eea-8e01-58ce04476722
+		lineageTag: 7efd600e-dd69-49f8-b99f-fdc22ff568c2
 		summarizeBy: none
 		sourceColumn: quota_m
 
@@ -99,7 +99,7 @@ table counterfactual
 	column proportional_m
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: c66abb54-c544-475e-ab33-1f6d4cf6ee76
+		lineageTag: 2bf33273-f022-4241-8334-ec4f2c9be5d3
 		summarizeBy: none
 		sourceColumn: proportional_m
 
@@ -108,7 +108,7 @@ table counterfactual
 	column gap_m
 		dataType: double
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 38b388cd-21bf-4f7f-9e25-ab3a13b3f632
+		lineageTag: 0b477a4b-2cf0-45e2-a72a-f7e296a052d0
 		summarizeBy: none
 		sourceColumn: gap_m
 

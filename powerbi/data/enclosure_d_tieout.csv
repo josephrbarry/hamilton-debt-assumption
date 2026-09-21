@@ -1,6 +1,6 @@
 state,quota_usd,subscribed_printed_usd,unsubscribed_printed_usd,oversubscribed_printed_usd,unsubscribed_computed_usd,oversubscribed_computed_usd,variance_usd,status,subscribed_reconciled_usd,line_order
 New Hampshire,300000,242501.25,57498.75,0.0,57498.75,0.0,0.0,Ties,242501.25,1
-Massachusetts,4000000,4447013.81,0.0,477013.81,0.0,447013.8099999996,-30000.000000000407,Does not foot,4447013.81,2
+Massachusetts,4000000,4447013.81,0.0,477013.81,0.0,447013.8099999996,-30000.000000000407,Does not foot,4477013.81,2
 Rhode Island,200000,344259.49,0.0,144259.49,0.0,144259.49,0.0,Ties,344259.49,3
 Connecticut,1600000,1455331.81,144668.19,0.0,144668.18999999994,0.0,-5.820766091346741e-11,Ties,1455331.81,4
 New York,1200000,1028238.75,171761.25,0.0,171761.25,0.0,0.0,Ties,1028238.75,5

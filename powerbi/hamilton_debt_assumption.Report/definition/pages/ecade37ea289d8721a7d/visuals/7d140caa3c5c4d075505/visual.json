@@ -194,7 +194,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Tie-out: three documents foot to the penny, one to Hamilton's own rounding, one has two line errors.",
+                    "value": "Tie-out: three documents foot to the penny, one to Hamilton's own rounding, one has three cell errors in the published copy.",
                     "textStyle": {
                       "fontFamily": "Georgia",
                       "fontSize": "18pt",
@@ -207,7 +207,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Each table was footed against its own printed total before any analysis. Ties = variance under $1. Ties (rounded) = Schedule E, $1,206 against Hamilton's 'about twenty-one millions and a half'. Does not foot = investigated and disclosed below.",
+                    "value": "Each table was footed against its own printed total before any analysis. Ties = variance under $1. Ties (rounded) = Schedule E, $1,206 against Hamilton's 'about twenty-one millions and a half'. Immaterial = under $100. Does not foot = investigated and disclosed below.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

@@ -1,13 +1,13 @@
 state,quota_usd,subscribed_usd,unsubscribed_usd,oversubscribed_usd,remaining_state_debt_usd,remaining_debt_basis
 New Hampshire,300000,242501.25,57498.75,0,100000.00,a - recent official communication
-Massachusetts,4000000,4447013.81,0,447013.81,1838540.66,b - Jan 1790 return plus interest
+Massachusetts,4000000,4477013.81,0,477013.81,1838540.66,b - Jan 1790 return plus interest
 Rhode Island,200000,344259.49,0,144259.49,349259.69,c - informal information
 Connecticut,1600000,1455331.81,144668.19,0,458436.52,a - recent official communication
 New York,1200000,1028238.75,171761.25,0,195639.79,a - recent official communication
 New Jersey,800000,599703.56,200296.44,0,207647.78,a - recent official communication
 Pennsylvania,2200000,675101.33,1524898.67,0,500000.00,a - recent official communication
 Delaware,200000,53305.84,146694.16,0,0,none
-Maryland,800000,299225.40,500744.60,0,430000.00,c - informal information
+Maryland,800000,299225.40,500774.60,0,430000.00,c - informal information
 Virginia,3500000,2552570.88,947429.12,0,1172555.25,d - VA House of Delegates committee Nov 1791
 North Carolina,2400000,1666355.57,733644.43,0,713192.30,e - NC Comptroller May 1790
 South Carolina,4000000,4634578.52,0,634578.52,1965756.33,b - Jan 1790 return plus interest

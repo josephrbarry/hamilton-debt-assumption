@@ -63,23 +63,28 @@ fair share). Negative = debtor state. Interest computed to 31 Dec 1789. Totals:
 creditors $3,517,584, debtors $3,517,584 (the settlement nets to zero by design).
 
 ### Footing note on Enclosure D (found while tying out the table)
-The printed subscribed column sums to $17,798,186.21, not the $18,328,186.21 the
-document states. Tying each row (quota - subscribed = unsubscribed):
-- North Carolina: printed $1,166,355.57 subscribed vs $733,644.43 unsubscribed.
-  These only reconcile if subscribed = $1,666,355.57. The transcription appears to
-  have dropped $500,000; this file uses the reconciled figure.
-- Massachusetts: printed $477,013.81 over-subscribed, but $4,447,013.81 subscribed
-  less the $4,000,000 quota is $447,013.81. The printed line is $30,000 too high;
-  this file uses the reconciled figure. (Found in independent re-audit.)
-- Maryland: $30 discrepancy between subscribed and unsubscribed ($299,225.40 vs
-  $500,744.60 against an $800,000 quota). Left as printed; immaterial.
-- Reconciliation: after the NC correction the subscribed column sums to
-  $18,298,186.21, which is $30,000 short of the printed $18,328,186.21 - exactly
-  the Massachusetts over-subscription error, which the Treasury carried into its
-  total (quota - unsubscribed + over-subscribed, using the printed MA line, gives
-  the printed total to within the $30 Maryland difference). So the document's
-  true subscribed total is $18,298,186.21, the printed total is overstated by
-  $30,000, and both errors are in single printed lines rather than the arithmetic.
+As published on Founders Online, the subscribed column sums to $17,798,186.21, not the
+$18,328,186.21 the document states. Tying each row (quota - subscribed = unsubscribed,
+or subscribed - quota = over-subscribed):
+- North Carolina: printed $1,166,355.57 subscribed vs $733,644.43 unsubscribed against a
+  $2,400,000 quota. These only reconcile if subscribed = $1,666,355.57 ($500,000 dropped).
+- Massachusetts: printed $4,447,013.81 subscribed vs $477,013.81 over-subscribed against a
+  $4,000,000 quota. These only reconcile if subscribed = $4,477,013.81 ($30,000 dropped).
+  An earlier pass of this project corrected the over-subscribed line instead and concluded
+  the Treasury had carried a $30,000 error into its total; that was wrong (see below).
+- Maryland: printed $299,225.40 subscribed vs $500,744.60 unsubscribed against an $800,000
+  quota; reconciles only if unsubscribed = $500,774.60 ($30 dropped).
+- Reconciliation: with those three cells corrected, the subscribed column sums to
+  $18,328,186.21, the over-subscribed column to $1,255,851.82 and the unsubscribed column to
+  $4,427,665.61 - each exactly the total the document prints. The Treasury's arithmetic was
+  right; the published cells are what is wrong. This file uses the reconciled figures.
+- Provenance of the errors (checked 19 Sep 2026 against four witnesses): the 1792 Childs &
+  Swaine pamphlet printing (Evans / TCP N19158, p. 15), Adam Seybert, *Statistical Annals*
+  (1818), p. 726, *American State Papers: Finance* vol. 1 (1832), and the Founders Online
+  transcription. Each printing has its own slips (the pamphlet keys MA as 4,177,013.81 and
+  is $2 out in the unsubscribed total; Seybert has a $60 slip in Virginia), but the $500,000
+  NC, $30,000 MA and $30 MD errors first appear in the 1832 *American State Papers* and were
+  carried into Founders Online from there. No published source was found that notes them.
 
 ## assumed_final_bayley.csv - the final assumed amount per state
 Rafael A. Bayley, *History of the National Loans of the United States from July 4,

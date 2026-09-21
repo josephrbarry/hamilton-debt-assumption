@@ -128,14 +128,15 @@ w(f"- Funding Act quotas sum to {usd(df.quota_usd.sum())} - ties to the Act's $2
 w(f"- 1793 settlement: creditors {usd(df[df.settlement_balance_usd > 0].settlement_balance_usd.sum())}, "
   f"debtors {usd(-df[df.settlement_balance_usd < 0].settlement_balance_usd.sum())} - ties to "
   "Jefferson's pencilled total of $3,517,584 and nets to zero.")
-w("- Enclosure D (1792 subscriptions): **does not foot as printed.** The subscribed column "
-  "sums to $17,798,186 against a stated $18,328,186. Row-level tie-out (quota - subscribed = "
-  "unsubscribed) isolates a $500,000 error in the North Carolina line; the reconciled figure "
-  "$1,666,355.57 is used here. A second line error: Massachusetts's over-subscription is "
-  "printed as $477,013.81 but $4,447,013.81 less the $4,000,000 quota is $447,013.81 - $30,000 "
-  "high. That error was carried into the printed total, which is why the reconciled column "
-  "($18,298,186) is $30,000 below it. A $30 Maryland difference is immaterial. Both errors are "
-  "in single printed lines, not in the Treasury's arithmetic. See `data/SOURCES.md`.")
+w("- Enclosure D (1792 subscriptions): **does not foot as published.** On Founders Online the "
+  "subscribed column sums to $17,798,186 against a stated $18,328,186. Row-level tie-out "
+  "(quota - subscribed = unsubscribed) isolates a $500,000 error in the North Carolina line "
+  "($1,666,355.57 reconciled), a $30,000 error in the Massachusetts line ($4,477,013.81 "
+  "reconciled) and a $30 error in Maryland's unsubscribed line ($500,774.60). With those three "
+  "cells corrected every column foots to its printed total to the penny: the Treasury's "
+  "arithmetic was right and the published cells are wrong. Comparison of four printings "
+  "(1792 pamphlet, Seybert 1818, American State Papers 1832, Founders Online) traces the "
+  "errors to the 1832 reprint. Reconciled figures used here. See `data/SOURCES.md`.")
 w("- Schedule E: Hamilton's nine known states sum to $21,501,206; he wrote 'about twenty-one "
   "millions and a half'. Ties.\n")
 

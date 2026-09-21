@@ -1,21 +1,21 @@
 table tieout
-	lineageTag: 927cc773-7929-42db-9faf-4a0e26143513
+	lineageTag: 5d914398-5a81-4926-9e7c-47e87d75b128
 
 	measure Stated = SUM(tieout[stated_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 76d20207-e658-48d8-8e42-bf0b0583c5b4
+		lineageTag: 4debfe4b-2692-4e8f-90da-7c83181374be
 
 	measure Computed = SUM(tieout[computed_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 9e66c7ab-91ad-4d5c-965e-aee3f69bde3d
+		lineageTag: 029c68fc-c533-41e0-ab7e-ede53a28e206
 
 	measure Variance = SUM(tieout[variance_usd])
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: c0ee8f85-9046-42b9-9311-a1198172cc17
+		lineageTag: ff14e96f-734c-4718-8745-049c2398a6df
 
 	column document
 		dataType: string
-		lineageTag: c929a0ef-116a-4cea-9393-c7da3fa36228
+		lineageTag: 58469b1b-5ee1-47f2-b463-b78b6fa2da1d
 		summarizeBy: none
 		sourceColumn: document
 
@@ -23,7 +23,7 @@ table tieout
 
 	column line
 		dataType: string
-		lineageTag: 47afef64-f9a9-44d3-b704-521bed9eb3ce
+		lineageTag: 258733ee-7da5-43f4-902c-7980ecb196d3
 		summarizeBy: none
 		sourceColumn: line
 		sortByColumn: line_order
@@ -33,7 +33,7 @@ table tieout
 	column stated_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 9ea0ea22-74fd-4c57-8beb-8de64fae8231
+		lineageTag: 35fa5a42-59c9-4b60-b733-a05e9cb75ee1
 		summarizeBy: none
 		sourceColumn: stated_usd
 
@@ -42,7 +42,7 @@ table tieout
 	column computed_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: b8554065-ba19-448b-8410-ea5161bdc7e7
+		lineageTag: 11a663be-f675-4a38-ae4d-e873b4963781
 		summarizeBy: none
 		sourceColumn: computed_usd
 
@@ -51,7 +51,7 @@ table tieout
 	column variance_usd
 		dataType: double
 		formatString: \$#,0;(\$#,0);\$#,0
-		lineageTag: 2bf54aeb-98df-492e-b565-32141084d7e6
+		lineageTag: a4682ba5-61a0-4f22-b3e0-57fc5dcac2ed
 		summarizeBy: none
 		sourceColumn: variance_usd
 
@@ -59,7 +59,7 @@ table tieout
 
 	column status
 		dataType: string
-		lineageTag: da1ba8bf-24b6-4861-b925-33353da1ff70
+		lineageTag: 2bae9aa4-9f11-4bba-a1ea-20558af8d1b5
 		summarizeBy: none
 		sourceColumn: status
 
@@ -68,7 +68,7 @@ table tieout
 	column line_order
 		dataType: int64
 		formatString: 0
-		lineageTag: 63ce5671-53bd-48fc-a5be-efe83f271e9e
+		lineageTag: a56ff6b3-305c-48ac-8e47-0a27f1722d40
 		summarizeBy: none
 		sourceColumn: line_order
 

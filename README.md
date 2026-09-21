@@ -57,12 +57,16 @@ makes the figures trustworthy, and every step of it can be retraced from the rep
 
 ## Headline findings
 
-**The source documents don't all foot.** Hamilton's 1792 subscription table states a
+**The published record of the 1792 subscriptions doesn't foot - and the Treasury was right.**
+The subscription table (Enclosure D, 25 Jan 1792) as it appears on Founders Online states a
 total of $18,328,186 but its rows sum to $17,798,186. Row-level tie-out (quota minus
-subscribed must equal unsubscribed) isolates a $500,000 error in the North Carolina line
-and a $30,000 error in the Massachusetts over-subscription line - and the second one was
-carried into the printed total, which explains the whole gap. Reconciled total:
-$18,298,186. Found before any analysis was run; reconciled figures used throughout.
+subscribed must equal unsubscribed) isolates a $500,000 error in the North Carolina line and
+a $30,000 error in the Massachusetts line, plus a $30 slip in Maryland. Correct those three
+cells and every column foots to the printed total to the penny. Comparing four printings -
+the 1792 Childs & Swaine pamphlet, Seybert's *Statistical Annals* (1818), *American State
+Papers: Finance* vol. 1 (1832), and Founders Online - shows the errors entered with the 1832
+reprint and were copied from it; the Treasury's original arithmetic was sound. Found before
+any analysis was run; reconciled figures used throughout.
 
 **The quotas were set on a balance sheet that was one-third estimate and one-third
 blank.** Six states sent returns. Hamilton estimated three by round number. Four (RI, DE,
@@ -161,8 +165,8 @@ authorized to $18.27M assumed, a roll-forward that foots, and the summary ledger
 ![Schedule A](docs/screenshots/A-summary.png)
 
 **Schedule B - Tie-out.** Every source document footed to its printed total. The 1792
-subscription table has two line errors; correcting them closes the Treasury's own gap
-to zero.
+subscription table as published has three cell errors; correcting them makes every column
+foot to the Treasury's printed total to the penny.
 
 ![Schedule B](docs/screenshots/B-tieout.png)
 
