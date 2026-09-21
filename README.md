@@ -65,8 +65,9 @@ a $30,000 error in the Massachusetts line, plus a $30 slip in Maryland. Correct 
 cells and every column foots to the printed total to the penny. Comparing four printings -
 the 1792 Childs & Swaine pamphlet, Seybert's *Statistical Annals* (1818), *American State
 Papers: Finance* vol. 1 (1832), and Founders Online - shows the errors entered with the 1832
-reprint and were copied from it; the Treasury's original arithmetic was sound. Found before
-any analysis was run; reconciled figures used throughout.
+reprint and were copied from it. Seybert's 1818 printing is the most accurate witness (its
+only slip is $60 in the Virginia line); the Treasury's original arithmetic was sound. Found
+before any analysis was run; reconciled figures used throughout.
 
 **The quotas were set on a balance sheet that was one-third estimate and one-third
 blank.** Six states sent returns. Hamilton estimated three by round number. Four (RI, DE,
