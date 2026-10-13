@@ -330,34 +330,28 @@ w(f"- Per free person instead of per capita: Virginia moves from ${df.set_index(
 # ---------------------------------------------------------------- 9. opinion
 w("""## 9. Opinion
 
-**I side with Hamilton.** The question wasn't whether the allocation was tidy; it was
-whether the new federal government could take a $21.5 million problem off thirteen
-balance sheets and make it one credible obligation. It did. 85% of the authorized sum
-was taken up, two of the three states that brought in more than their quota were
-exactly the two Hamilton's own schedule ranked as owing the most (the third, Rhode
-Island, wasn't in his schedule at all), and within three years the country had a
-funded national debt and, despite a sharp market panic in 1792, credit good enough
-that its bonds traded near or above par.
+**I believe Hamilton's allocation is defensible, based on the data in this report.** The
+question isn't whether the allocation itself was tidy; it was whether the new federal
+government could take a $21.5 million problem off thirteen balance sheets and make it one
+credible obligation. It did. 85% of the authorized sum was taken up; two of the three
+states that came in over quota (MA, SC) were the two Hamilton's schedule ranked as owing
+the most; and within three years the debt was funded. Despite the 1792 panic, U.S. bonds
+traded near or above par.
 
-**The method was rough, and I'd say so in the workpapers.** Six of thirteen states filed
-returns. Four got quotas by round number. Massachusetts and South Carolina were cut by a
-quarter. If I were auditing the allocation itself, I'd write it up. But Hamilton wasn't
-allocating with good data; he was allocating with the data that existed in January 1790,
-and he said so in the report.
+**The method was rough, and the records show it.** Six of thirteen states filed returns;
+four got quotas by round number; MA and SC were cut by a quarter. But Hamilton was
+allocating with the data that existed in January 1790, and he said so in his report to
+Congress.
 
-**The 1793 settlement vindicated him.** The audit Madison demanded found that the biggest
-recipients, Massachusetts and South Carolina, were also the biggest creditors of the Union.
-Relief tracked contribution. Madison's own Virginia, which he said had already paid its
-share, turned out to owe the Union $100,879 - about 12 cents a head, which is to say it
-broke even, exactly as the Compromise of 1790 intended, while receiving $2.9 million of
-relief. His objection had no grievance the numbers supported.
+**The 1793 settlement vindicated him.** The audit Madison demanded found the biggest
+recipients (MA, SC) were also the biggest creditors of the Union. Madison's own Virginia
+turned out to owe the Union $100,879 - 12 cents a head, break-even as the Compromise
+intended - while receiving $2.9M of relief.
 
-**Where I'd push back on Hamilton:** the argument that federal bonds would bind wealthy
-creditors to the new government can't be tested with state-level data, and I don't assume
-it. What I can defend is narrower and, I think, more useful: the outcome was fair on the
-numbers, and it was reconciled in about three and a half years - January 1790 report to
-June 1793 settlement - which compares well with Puerto Rico (2016-22, about six years),
-Greece (2010-18, eight) or Argentina (2001-16, fifteen).
+**Where I'd push back:** the claim that federal bonds would bind creditors to the new
+government can't be tested at the state level, and I don't assume that. What the numbers
+do show is a fair outcome, reconciled in about three and a half years (Jan 1790 report to
+Jun 1793 settlement) - faster than Puerto Rico (~6 yrs), Greece (8) or Argentina (15).
 """)
 
 (OUT / "summary.md").write_text("\n".join(L), encoding="utf-8")

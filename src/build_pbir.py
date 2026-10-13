@@ -554,21 +554,23 @@ def page_summary() -> str:
 
     opinion = [
         ("Opinion", 15, True, NAVY, HFONT),
-        ("I side with Hamilton. The question wasn't whether the allocation was tidy; it was whether "
-         "the new federal government could take a $21.5 million problem off thirteen balance sheets "
-         "and make it one credible obligation. It did: 85% of the authorized sum was taken up; two of "
-         "the three states that came in over quota (MA, SC) were the two Hamilton's schedule ranked as "
-         "owing the most; and within three years the debt was funded and, despite the 1792 panic, "
-         "U.S. bonds traded near or above par.", 11, False, INK),
-        ("The method was rough, and I'd say so in the workpapers. Six of thirteen states filed "
-         "returns; four got quotas by round number; MA and SC were cut by a quarter. But Hamilton "
-         "was allocating with the data that existed in January 1790, and he said so.", 11, False, INK),
+        ("I believe Hamilton's allocation is defensible, based on the data in this report. The question "
+         "isn't whether the allocation itself was tidy; it was whether the new federal government could "
+         "take a $21.5 million problem off thirteen balance sheets and make it one credible obligation. "
+         "It did. 85% of the authorized sum was taken up; two of the three states that came in over "
+         "quota (MA, SC) were the two Hamilton's schedule ranked as owing the most; and within three "
+         "years the debt was funded. Despite the 1792 panic, U.S. bonds traded near or above par.",
+         11, False, INK),
+        ("The method was rough, and the records show it. Six of thirteen states filed returns; four "
+         "got quotas by round number; MA and SC were cut by a quarter. But Hamilton was allocating "
+         "with the data that existed in January 1790, and he said so in his report to Congress.",
+         11, False, INK),
         ("The 1793 settlement vindicated him. The audit Madison demanded found the biggest recipients "
          "(MA, SC) were also the biggest creditors of the Union. Madison's own Virginia turned out to "
          "owe the Union $100,879 - 12 cents a head, break-even as the Compromise intended - while "
          "receiving $2.9M of relief.", 11, False, INK),
         ("Where I'd push back: the claim that federal bonds would bind creditors to the new government "
-         "can't be tested at the state level, and I don't assume it. What the numbers do show is a "
+         "can't be tested at the state level, and I don't assume that. What the numbers do show is a "
          "fair outcome, reconciled in about three and a half years (Jan 1790 report to Jun 1793 "
          "settlement) - faster than Puerto Rico (~6 yrs), Greece (8) or Argentina (15).", 11, False, INK),
         ("Basis of preparation", 13, True, NAVY, HFONT),
