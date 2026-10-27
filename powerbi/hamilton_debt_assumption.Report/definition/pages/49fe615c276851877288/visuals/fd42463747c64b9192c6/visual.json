@@ -6,7 +6,7 @@
     "y": 144,
     "z": 0,
     "height": 330,
-    "width": 586.07999999999993,
+    "width": 586.0799999999999,
     "tabOrder": 0
   },
   "visual": {
@@ -380,7 +380,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cr  ·  Creditor states: balances due TO the state'"
+                  "Value": "'Cr  \u00b7  Creditor states: balances due TO the state'"
                 }
               }
             },

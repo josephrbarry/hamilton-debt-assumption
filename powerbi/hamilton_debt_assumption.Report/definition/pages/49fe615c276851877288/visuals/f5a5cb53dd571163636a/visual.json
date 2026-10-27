@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f5a5cb53dd571163636a",
   "position": {
     "x": 48,
@@ -11,8 +11,28 @@
   },
   "visual": {
     "visualType": "treemap",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "states"
+                    }
+                  },
+                  "Property": "position_1793"
+                }
+              },
+              "queryRef": "states.position_1793",
+              "nativeQueryRef": "position_1793",
+              "displayName": "1793 position"
+            }
+          ]
+        },
         "Details": {
           "projections": [
             {
@@ -29,26 +49,6 @@
               "queryRef": "states.state",
               "nativeQueryRef": "state",
               "displayName": "State"
-            }
-          ]
-        },
-        "Group": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "states"
-                    }
-                  },
-                  "Property": "position_1793"
-                }
-              },
-              "queryRef": "states.position_1793",
-              "nativeQueryRef": "position_1793",
-              "active": true,
-              "displayName": "1793 position"
             }
           ]
         },
@@ -508,7 +508,6 @@
           }
         }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

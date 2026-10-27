@@ -470,13 +470,42 @@ def slicer(name, x, y, w, h, *, field, title, single=False, default=None) -> dic
                  "items": [{"properties": text_style(10, INK)}]})
 
 
+ASSETS = ROOT / "powerbi" / "assets"
+IMAGES = ["rb_logo.png"] + [f"schedule_{c}.png" for c in "ABCDEFGH"]   # see make_schedule_tiles.py
+
+
+def image(name, item, x, y, w, h) -> dict:
+    """A static image registered with the report (RB monogram or a schedule-letter tile)."""
+    v = visual(name, "image", x, y, w, h, bg=None)
+    v["visual"]["objects"] = {
+        "general": [{"properties": {"imageUrl": {"expr": {"ResourcePackageItem": {
+            "PackageName": "RegisteredResources", "PackageType": 1, "ItemName": item}}}}}],
+        "imageScaling": [{"properties": {"imageScalingType": lit("'Fit'")}}]}
+    return v
+
+
+def register_images() -> None:
+    """Copy the header images into the report's RegisteredResources and list them in report.json."""
+    dst = REPORT.parent / "StaticResources" / "RegisteredResources"
+    dst.mkdir(parents=True, exist_ok=True)
+    for item in IMAGES:
+        shutil.copyfile(ASSETS / item, dst / item)
+    rpath = REPORT / "report.json"
+    rj = json.loads(rpath.read_text(encoding="utf-8"))
+    pkgs = [p for p in rj.get("resourcePackages", []) if p["name"] != "RegisteredResources"]
+    pkgs.append({"name": "RegisteredResources", "type": "RegisteredResources",
+                 "items": [{"name": i, "path": i, "type": "Image"} for i in IMAGES]})
+    rj["resourcePackages"] = pkgs
+    rpath.write_text(json.dumps(rj, indent=2), encoding="utf-8")
+
+
 def header(prefix: str, schedule: str, headline: str, caption: str, page_no: int) -> list[dict]:
-    """Full-width band: schedule letter, the page's one-sentence takeaway, workpaper caption."""
+    """Full-width band: RB monogram, schedule letter, the page's one-sentence takeaway, workpaper caption."""
     return [
         textbox(f"{prefix}-band", 0, 0, PAGE_W, BAND_H, [(" ", 4, False, NAVY)], bg=NAVY),
-        textbox(f"{prefix}-schedule", M, 20, 120, BAND_H - 24,
-                [(schedule, 30, True, "#C9B77A", HFONT)]),
-        textbox(f"{prefix}-headline", M + 120, 18, PAGE_W - 2 * M - 300, BAND_H - 24,
+        image(f"{prefix}-logo", "rb_logo.png", M, 14, 84, 84),
+        image(f"{prefix}-schedule", f"schedule_{schedule}.png", M + 96, 14, 84, 84),
+        textbox(f"{prefix}-headline", M + 200, 18, PAGE_W - 2 * M - 380, BAND_H - 24,
                 [(headline, 18, True, WHITE, HFONT), (caption, 10, False, "#C5CEDC")]),
         textbox(f"{prefix}-pageno", PAGE_W - M - 170, 22, 170, 70,
                 [(f"Schedule {schedule}  ·  {page_no} of {TOTAL_PAGES}", 10, False, "#C5CEDC"),
@@ -925,6 +954,7 @@ def clear_desktop_cache() -> None:
 
 def main() -> None:
     clear_desktop_cache()
+    register_images()
     if PAGES.exists():
         shutil.rmtree(PAGES)           # pages are fully generated; start clean
     order = [page_summary(), page_tieout(), page_ledger(), page_takeup(), page_settlement(),

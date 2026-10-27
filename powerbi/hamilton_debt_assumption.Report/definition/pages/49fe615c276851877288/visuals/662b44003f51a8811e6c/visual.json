@@ -6,7 +6,7 @@
     "y": 144,
     "z": 0,
     "height": 330,
-    "width": 586.07999999999993,
+    "width": 586.0799999999999,
     "tabOrder": 0
   },
   "visual": {
@@ -380,7 +380,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dr  ·  Debtor states: balances due FROM the state'"
+                  "Value": "'Dr  \u00b7  Debtor states: balances due FROM the state'"
                 }
               }
             },

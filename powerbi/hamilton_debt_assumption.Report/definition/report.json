@@ -50,6 +50,57 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "rb_logo.png",
+          "path": "rb_logo.png",
+          "type": "Image"
+        },
+        {
+          "name": "schedule_A.png",
+          "path": "schedule_A.png",
+          "type": "Image"
+        },
+        {
+          "name": "schedule_B.png",
+          "path": "schedule_B.png",
+          "type": "Image"
+        },
+        {
+          "name": "schedule_C.png",
+          "path": "schedule_C.png",
+          "type": "Image"
+        },
+        {
+          "name": "schedule_D.png",
+          "path": "schedule_D.png",
+          "type": "Image"
+        },
+        {
+          "name": "schedule_E.png",
+          "path": "schedule_E.png",
+          "type": "Image"
+        },
+        {
+          "name": "schedule_F.png",
+          "path": "schedule_F.png",
+          "type": "Image"
+        },
+        {
+          "name": "schedule_G.png",
+          "path": "schedule_G.png",
+          "type": "Image"
+        },
+        {
+          "name": "schedule_H.png",
+          "path": "schedule_H.png",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {
