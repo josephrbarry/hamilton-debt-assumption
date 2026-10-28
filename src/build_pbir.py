@@ -603,8 +603,9 @@ def page_summary() -> str:
          "fair outcome, reconciled in about three and a half years (Jan 1790 report to Jun 1793 "
          "settlement) - faster than Puerto Rico (~6 yrs), Greece (8) or Argentina (15).", 11, False, INK),
         ("Basis of preparation", 13, True, NAVY, HFONT),
-        ("Five primary ledgers, each footed before use (Schedule B). One does not foot: two line "
-         "errors in the 1792 subscription table ($500,000 and $30,000), reconciled and disclosed.", 10, False, GREY),
+        ("Five primary ledgers, each footed before use (Schedule B). One does not foot: three cell "
+         "errors in the 1792 subscription table as later reprinted ($500,000, $30,000 and $30), "
+         "reconciled and disclosed.", 10, False, GREY),
         ("1790 specie dollars; 2025 dollars at 36.3x CPI. $21.5M was ~11% of 1790 GDP (a modern "
          "reconstruction), about $3.4 trillion in today's economy.", 10, False, GREY),
     ]
@@ -668,9 +669,10 @@ def page_tieout() -> str:
          "$477,013.81 gives $4,477,013.81 subscribed, but the document prints $4,447,013.81. Maryland's "
          "unsubscribed line is $30 out. With those three cells corrected, every column foots to the "
          "printed total to the penny.", 10, False, INK),
-        ("The Treasury's arithmetic was right; the published cells are wrong. Four printings compared "
-         "(1792 pamphlet, Seybert 1818, American State Papers 1832, Founders Online): the errors enter "
-         "with the 1832 reprint. Every other document ties.", 10, True, TEAL),
+        ("The Treasury's arithmetic was right; the published cells are wrong. Of four printings, the 1792 "
+         "pamphlet is correct in every cell; Seybert (1818) has a $60 Virginia slip; American State Papers "
+         "(1832) and Founders Online (Syrett 1966, from a manuscript) carry these three errors. "
+         "Every other document ties.", 10, True, TEAL),
     ]
     vis = header(
         "p1", "B", "Tie-out: three documents foot to the penny, one to Hamilton's own rounding, one has three cell errors in the published copy.",

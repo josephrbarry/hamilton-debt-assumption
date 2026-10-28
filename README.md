@@ -62,12 +62,14 @@ The subscription table (Enclosure D, 25 Jan 1792) as it appears on Founders Onli
 total of $18,328,186 but its rows sum to $17,798,186. Row-level tie-out (quota minus
 subscribed must equal unsubscribed) isolates a $500,000 error in the North Carolina line and
 a $30,000 error in the Massachusetts line, plus a $30 slip in Maryland. Correct those three
-cells and every column foots to the printed total to the penny. Comparing four printings -
-the 1792 Childs & Swaine pamphlet, Seybert's *Statistical Annals* (1818), *American State
-Papers: Finance* vol. 1 (1832), and Founders Online - shows the errors entered with the 1832
-reprint and were copied from it. Seybert's 1818 printing is the most accurate witness (its
-only slip is $60 in the Virginia line); the Treasury's original arithmetic was sound. Found
-before any analysis was run; reconciled figures used throughout.
+cells and every column foots to the printed total to the penny. Of four printings checked
+against page images, only the 1792 Childs & Swaine pamphlet is correct in every cell.
+Seybert's *Statistical Annals* (1818) has one $60 slip in Virginia. *American State Papers:
+Finance* vol. 1 (1832, pp. 150-151) and Founders Online carry all three errors; Founders
+Online reproduces the 1966 *Papers of Alexander Hamilton*, which was transcribed from a
+manuscript (note 36), so the errors likely trace to the handwritten copy sent to Congress
+rather than to the 1832 reprint. The Treasury's original arithmetic was sound. Found before
+any analysis was run; reconciled figures used throughout.
 
 **The quotas were set on a balance sheet that was one-third estimate and one-third
 blank.** Six states sent returns. Hamilton estimated three by round number. Four (RI, DE,

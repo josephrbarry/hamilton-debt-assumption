@@ -134,9 +134,10 @@ w("- Enclosure D (1792 subscriptions): **does not foot as published.** On Founde
   "($1,666,355.57 reconciled), a $30,000 error in the Massachusetts line ($4,477,013.81 "
   "reconciled) and a $30 error in Maryland's unsubscribed line ($500,774.60). With those three "
   "cells corrected every column foots to its printed total to the penny: the Treasury's "
-  "arithmetic was right and the published cells are wrong. Comparison of four printings "
-  "(1792 pamphlet, Seybert 1818, American State Papers 1832, Founders Online) traces the "
-  "errors to the 1832 reprint. Reconciled figures used here. See `data/SOURCES.md`.")
+  "arithmetic was right and the published cells are wrong. Of four printings, only the 1792 "
+  "pamphlet is correct; American State Papers (1832) and Founders Online (Syrett 1966, from a "
+  "manuscript) carry the errors, which likely trace to the handwritten copy sent to Congress. "
+  "Reconciled figures used here. See `data/SOURCES.md`.")
 w("- Schedule E: Hamilton's nine known states sum to $21,501,206; he wrote 'about twenty-one "
   "millions and a half'. Ties.\n")
 

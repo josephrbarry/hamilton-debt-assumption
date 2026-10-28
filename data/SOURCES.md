@@ -78,13 +78,26 @@ or subscribed - quota = over-subscribed):
   $18,328,186.21, the over-subscribed column to $1,255,851.82 and the unsubscribed column to
   $4,427,665.61 - each exactly the total the document prints. The Treasury's arithmetic was
   right; the published cells are what is wrong. This file uses the reconciled figures.
-- Provenance of the errors (checked 19 Sep 2026 against four witnesses): the 1792 Childs &
-  Swaine pamphlet printing (Evans / TCP N19158, p. 15), Adam Seybert, *Statistical Annals*
-  (1818), p. 726, *American State Papers: Finance* vol. 1 (1832), and the Founders Online
-  transcription. Each printing has its own slips (the pamphlet keys MA as 4,177,013.81 and
-  is $2 out in the unsubscribed total; Seybert has a $60 slip in Virginia), but the $500,000
-  NC, $30,000 MA and $30 MD errors first appear in the 1832 *American State Papers* and were
-  carried into Founders Online from there. No published source was found that notes them.
+- Provenance of the errors (re-checked 14 Oct 2026 against page images of four printings):
+  - 1792 Childs & Swaine pamphlet (Evans 24926, p. 15; Readex page image): correct in every
+    cell. Its only flaw is the signature, printed "ALEXARDER HAMILTON". The 2008 Text Creation
+    Partnership transcription of it (N19158) adds typing errors of its own (MA 4,177,013.81,
+    SC over-subscription 634,573.52, unsubscribed total 4,427,663.61, a dropped Georgia cell)
+    that are not in the original.
+  - Adam Seybert, *Statistical Annals* (1818), p. 726: correct except VA subscribed
+    2,552,510.88 ($60 low), Connecticut marked (d) for (a), and "received" for "revived" in
+    note 3. https://archive.org/details/cu31924030394641
+  - *American State Papers: Finance* vol. 1 (1832), pp. 150-151: the $500,000 NC, $30,000 MA
+    and $30 MD errors, the subscribed column headed "Amount unsubscribed", and the date
+    January 25, 1792 (the pamphlet has the 23d). https://archive.org/details/americanstatepap01inunit
+  - Founders Online reproduces *The Papers of Alexander Hamilton*, vol. 10, ed. Harold C.
+    Syrett (1966), pp. 555-556: the same three errors and date, header corrected. Syrett's
+    note 36 says he worked from a manuscript ("In MS the word 'unsubscribed' is used"); his
+    source note lists first the signed copy sent to the House (DS, RG 233, Reports of the
+    Secretary of the Treasury, Second Congress, National Archives).
+  - Reading: the errors are most likely in that 1792 House manuscript, which both the 1832
+    and 1966 editors followed, not introduced by the 1832 reprint. Not yet confirmed against
+    the manuscript itself. No published source was found that notes the errors.
 
 ## assumed_final_bayley.csv - the final assumed amount per state
 Rafael A. Bayley, *History of the National Loans of the United States from July 4,
